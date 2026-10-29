@@ -1,0 +1,18 @@
+{
+  "name": "AN TÂM - Thiền định & Phật pháp Chánh niệm",
+  "short_name": "AN TÂM",
+  "description": "Ứng dụng thiền định, tập thở chánh niệm, âm nhạc thư giãn và kho tàng kinh Phật.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#101D35",
+  "theme_color": "#101D35",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/assets/images/lotus_pond_dawn_1793159474945.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,938 @@
+# MASTER PROMPT: AUDIT, REFACTOR, COMPLETE & PRODUCTION-READY AN TÂM
+
+## I. VAI TRÒ VÀ NHIỆM VỤ
+
+Bạn là một đội ngũ phát triển sản phẩm chuyên nghiệp bao gồm:
+
+- Senior Software Architect.
+- Senior Full-stack Developer.
+- Chuyên gia phát triển ứng dụng di động Android và iOS.
+- Chuyên gia bảo mật ứng dụng và cơ sở dữ liệu.
+- Chuyên gia AI Engineering và RAG.
+- UI/UX Designer chuyên về ứng dụng thiền định, sức khỏe tinh thần và chánh niệm.
+- QA Engineer chuyên kiểm thử ứng dụng trước khi phát hành.
+- Product Manager chịu trách nhiệm về trải nghiệm người dùng, khả năng giữ chân người dùng và mô hình kinh doanh.
+
+Nhiệm vụ của bạn là tiếp nhận TOÀN BỘ mã nguồn hiện tại của ứng dụng AN TÂM — Thiền định & Phật pháp Chánh niệm, kiểm tra, sửa chữa, nâng cấp và hoàn thiện dự án thành một sản phẩm có chất lượng đủ để đưa vào quy trình phát hành thực tế.
+
+Đây không phải nhiệm vụ tạo một bản demo, thiết kế lại giao diện đơn thuần hoặc viết báo cáo phân tích.
+
+Bạn phải trực tiếp làm việc với mã nguồn hiện có, chỉnh sửa các tệp cần thiết, hoàn thiện các chức năng chưa hoạt động, xây dựng những tính năng còn thiếu, chạy các bài kiểm thử phù hợp và xử lý các lỗi phát hiện được.
+
+Mục tiêu cuối cùng là một ứng dụng:
+
+1. Hoạt động ổn định trên Android và iOS.
+2. Có giao diện đẹp, hiện đại, đồng nhất và dễ sử dụng.
+3. Có hệ thống tài khoản và dữ liệu an toàn.
+4. Có các chức năng thiền định, âm thanh, nhật ký và AI hoạt động thực sự.
+5. Có hệ thống thanh toán và Premium được xác minh đúng cách.
+6. Có khả năng mở rộng khi số lượng người dùng tăng.
+7. Có một số tính năng khác biệt giúp người dùng muốn quay lại.
+8. Tuân thủ các yêu cầu hiện hành của Google Play và Apple App Store.
+9. Có tài liệu, cấu hình và quy trình triển khai rõ ràng.
+10. Không che giấu lỗi, không giả lập thành công và không tuyên bố hoàn thành những chức năng chưa được kiểm chứng.
+
+## II. NGUYÊN TẮC BẮT BUỘC KHI LÀM VIỆC VỚI DỰ ÁN
+
+### 1. Giữ nguyên những gì đang hoạt động tốt
+
+Trước khi sửa mã nguồn, hãy đọc toàn bộ cấu trúc dự án.
+
+Xác định:
+- Công nghệ đang sử dụng.
+- Kiến trúc frontend và backend.
+- Các trang và mô-đun hiện có.
+- Những API đã triển khai.
+- Cơ chế đăng nhập.
+- Hệ thống lưu trữ dữ liệu.
+- Cơ chế gọi AI.
+- Các chức năng thanh toán và quảng cáo.
+- Cấu hình Android/iOS.
+- Các bài kiểm thử hiện có.
+
+Không tự ý xóa chức năng đang hoạt động tốt chỉ vì muốn thay đổi kiến trúc.
+
+Không viết lại toàn bộ ứng dụng từ đầu nếu có thể nâng cấp kiến trúc hiện tại một cách an toàn.
+
+Ưu tiên tái sử dụng mã nguồn, dữ liệu, giao diện và các thành phần có chất lượng.
+
+### 2. Không tạo ra những chức năng chỉ có giao diện
+
+Mọi nút bấm, biểu mẫu, bộ lọc, trình phát, tính năng tài khoản và chức năng quản trị đều phải có hành vi thực tế tương ứng.
+
+Không được:
+- Tạo nút bấm nhưng không có xử lý.
+- Tạo biểu đồ bằng dữ liệu giả nhưng trình bày như dữ liệu thực.
+- Tạo thanh toán giả.
+- Giả lập đăng nhập thành công.
+- Hiển thị thông báo thành công khi backend chưa hoàn thành thao tác.
+- Dùng dữ liệu mẫu làm dữ liệu người dùng thật.
+- Bắt lỗi rồi bỏ qua mà không có phương án xử lý.
+- Để các chức năng quan trọng phụ thuộc vào dữ liệu giả trong môi trường production.
+
+Nếu chưa có dịch vụ bên ngoài hoặc chưa được cung cấp API key, hãy xây dựng phần tích hợp đúng cấu trúc, tài liệu cấu hình và trạng thái lỗi phù hợp. Không được tuyên bố chức năng đã hoạt động hoàn chỉnh khi chưa có thông tin xác thực hoặc chưa kiểm thử được.
+
+### 3. Không làm mất dữ liệu hiện tại
+
+Trước khi thay đổi database, schema hoặc cấu trúc lưu trữ:
+
+- Tạo kế hoạch sao lưu.
+- Kiểm tra cấu trúc dữ liệu hiện tại.
+- Xác định quan hệ giữa các bảng và mô-đun.
+- Viết migration có thể kiểm tra và quản lý phiên bản.
+- Xây dựng quy trình chuyển đổi dữ liệu.
+- Kiểm tra tính toàn vẹn sau khi chuyển đổi.
+- Chuẩn bị phương án khôi phục khi migration thất bại.
+
+Không tự ý xóa dữ liệu người dùng hoặc ghi đè dữ liệu sản xuất.
+
+### 4. Phải làm việc theo từng giai đoạn
+
+Không thực hiện những thay đổi lớn một cách thiếu kiểm soát.
+
+Sau mỗi giai đoạn:
+- Chạy kiểm tra kiểu dữ liệu.
+- Chạy lint nếu dự án hỗ trợ.
+- Chạy unit test và integration test phù hợp.
+- Kiểm tra các luồng liên quan.
+- Xử lý lỗi phát sinh.
+- Cập nhật tài liệu.
+- Ghi lại những việc đã hoàn thành và còn tồn đọng.
+
+Ưu tiên sửa lỗi bảo mật và lỗi nghiêm trọng trước khi phát triển tính năng mới.
+
+---
+
+# III. GIAI ĐOẠN 1 — KIỂM TOÁN TOÀN BỘ MÃ NGUỒN
+
+Thực hiện audit toàn bộ dự án AN TÂM.
+
+Đặc biệt kiểm tra các thành phần:
+- package.json và các dependencies.
+- Cấu trúc frontend.
+- Cấu trúc backend.
+- server.ts và các API endpoints.
+- Cấu hình Capacitor.
+- manifest và cấu hình PWA.
+- Các tệp migration SQL.
+- Hệ thống tài khoản.
+- Hệ thống lưu trữ.
+- Trợ lý AI.
+- Kho dữ liệu Phật học.
+- Trình phát âm thanh.
+- Nhật ký cảm xúc.
+- Hệ thống Premium.
+- Quảng cáo nhận thưởng.
+- Bảng quản trị.
+- Quy trình build và triển khai.
+
+Tạo tài liệu AUDIT_REPORT.md gồm:
+
+1. Kiến trúc hiện tại.
+2. Danh sách lỗi phát hiện.
+3. Mức độ nghiêm trọng của từng lỗi.
+4. Tệp mã nguồn liên quan.
+5. Nguyên nhân.
+6. Giải pháp sửa chữa.
+7. Rủi ro nếu không sửa.
+8. Tiêu chí xác nhận lỗi đã được khắc phục.
+
+Phân loại lỗi:
+
+- P0: Lỗ hổng bảo mật, mất dữ liệu, cấp quyền trái phép hoặc lỗi khiến giao dịch không an toàn.
+- P1: Chức năng quan trọng không hoạt động hoặc lỗi nghiêm trọng ảnh hưởng người dùng.
+- P2: Lỗi trải nghiệm, hiệu năng hoặc chức năng chưa hoàn chỉnh.
+- P3: Cải tiến thẩm mỹ và tối ưu không bắt buộc cho bản phát hành đầu tiên.
+
+Sau khi hoàn thành audit, tiếp tục sửa chữa theo mức độ ưu tiên. Không dừng lại ở việc viết báo cáo.
+
+---
+
+# IV. GIAI ĐOẠN 2 — HOÀN THIỆN KIẾN TRÚC VÀ CƠ SỞ DỮ LIỆU
+
+## 1. Đánh giá và nâng cấp hệ thống lưu trữ
+
+Kiểm tra việc sử dụng tệp database.json và các cơ chế lưu trữ hiện tại.
+
+Nếu hệ thống đang sử dụng tệp JSON cho dữ liệu người dùng trong môi trường production, hãy xây dựng kế hoạch chuyển sang cơ sở dữ liệu phù hợp, ưu tiên PostgreSQL hoặc dịch vụ quản lý tương đương.
+
+Có thể cân nhắc Supabase nếu phù hợp với kiến trúc hiện tại.
+
+Không chuyển đổi chỉ vì công nghệ mới phổ biến. Hãy lựa chọn dựa trên nhu cầu bảo mật, độ tin cậy, khả năng mở rộng và chi phí vận hành.
+
+Thiết kế schema phù hợp cho:
+
+- Users.
+- User profiles.
+- Authentication sessions.
+- Meditation sessions.
+- Meditation programs.
+- User progress.
+- Emotion journal.
+- Personal preferences.
+- AI conversations.
+- AI usage records.
+- Subscription records.
+- Verified purchase transactions.
+- Rewarded ad events.
+- Notification preferences.
+- Content library.
+- Admin audit logs.
+
+Chỉ bổ sung các bảng cần thiết và tránh lưu trùng dữ liệu không cần thiết.
+
+## 2. Yêu cầu về tính toàn vẹn dữ liệu
+
+- Sử dụng khóa chính và khóa ngoại hợp lý.
+- Tạo index cho các truy vấn thường xuyên.
+- Sử dụng transaction cho các thao tác cần tính nhất quán.
+- Ngăn chặn việc ghi trùng giao dịch.
+- Có cơ chế xử lý lỗi và retry an toàn.
+- Thiết lập sao lưu và khôi phục.
+- Có migration được quản lý phiên bản.
+- Có kế hoạch xử lý xung đột khi đồng bộ dữ liệu.
+
+Không để dữ liệu nhật ký, cảm xúc hoặc tiến trình của một người dùng bị hiển thị cho tài khoản khác.
+
+## 3. Phân quyền dữ liệu
+
+Triển khai quyền truy cập theo nguyên tắc tối thiểu.
+
+Nếu sử dụng Supabase:
+- Thiết lập Row Level Security cho các bảng phù hợp.
+- Kiểm tra chính sách SELECT, INSERT, UPDATE và DELETE.
+- Không đưa service role key vào frontend.
+- Kiểm tra các quyền truy cập từ cả API và cơ sở dữ liệu.
+
+Không coi việc ẩn nút trên giao diện là biện pháp bảo mật.
+
+Mọi quyền quan trọng phải được xác minh ở phía máy chủ hoặc tầng dữ liệu thích hợp.
+
+---
+
+# V. GIAI ĐOẠN 3 — SỬA CHỮA BẢO MẬT TÀI KHOẢN
+
+Kiểm tra và hoàn thiện:
+
+1. Đăng ký tài khoản.
+2. Đăng nhập.
+3. Đăng xuất.
+4. Đăng xuất khỏi các phiên cần thiết.
+5. Đặt lại mật khẩu.
+6. Xác minh email nếu được sử dụng.
+7. Quản lý phiên đăng nhập.
+8. Hết hạn phiên.
+9. Thay đổi mật khẩu.
+10. Xóa tài khoản.
+11. Xuất dữ liệu cá nhân.
+12. Phân quyền quản trị.
+
+Yêu cầu:
+
+- Không lưu mật khẩu dạng văn bản thuần.
+- Sử dụng thuật toán băm mật khẩu phù hợp.
+- Giới hạn các lần đăng nhập thất bại.
+- Áp dụng rate limiting cho các endpoint nhạy cảm.
+- Không tiết lộ tài khoản có tồn tại hay không qua thông báo thiếu kiểm soát.
+- Bảo vệ các endpoint quản trị.
+- Không cho người dùng tự thay đổi role thành admin.
+- Không lưu bí mật trong mã nguồn công khai.
+- Không ghi mật khẩu, token hoặc nội dung riêng tư vào log.
+- Có cơ chế thu hồi phiên đăng nhập.
+- Có quy trình xử lý tài khoản bị xâm phạm.
+
+Nếu hỗ trợ đăng nhập bằng Google hoặc Apple, phải kiểm tra token và thông tin định danh ở phía máy chủ.
+
+Nếu có tài khoản khách, hãy bảo đảm dữ liệu của tài khoản khách được quản lý an toàn và có quy trình chuyển đổi sang tài khoản chính thức nếu chức năng này được hỗ trợ.
+
+---
+
+# VI. GIAI ĐOẠN 4 — HOÀN THIỆN THANH TOÁN PREMIUM
+
+Đây là hạng mục ưu tiên rất cao.
+
+Kiểm tra endpoint POST /api/subscription/verify và toàn bộ luồng mua gói.
+
+Nếu mã nguồn có thể cấp Premium chỉ vì một biến môi trường đã được cấu hình, hãy sửa triệt để.
+
+## Yêu cầu bắt buộc
+
+1. Xác định nền tảng thanh toán đang sử dụng.
+2. Tích hợp cơ chế mua hàng chính thức phù hợp với Android và iOS.
+3. Xác minh giao dịch thực tế ở phía máy chủ.
+4. Kiểm tra đúng sản phẩm và tài khoản.
+5. Kiểm tra trạng thái giao dịch.
+6. Xử lý giao dịch trùng lặp.
+7. Xử lý gia hạn tự động.
+8. Xử lý hủy đăng ký.
+9. Xử lý hoàn tiền và thu hồi quyền.
+10. Hỗ trợ khôi phục giao dịch.
+11. Xử lý giao dịch đang chờ.
+12. Có log kiểm toán nhưng không lưu thông tin nhạy cảm không cần thiết.
+
+Đối với Google Play, sử dụng API và cơ chế xác minh giao dịch phù hợp với sản phẩm đã đăng ký.
+
+Đối với Apple, sử dụng cơ chế xác minh giao dịch và thông báo máy chủ phù hợp với StoreKit.
+
+Không tin tưởng trạng thái thanh toán do frontend tự gửi lên.
+
+Không cho phép người dùng tự khai báo đã thanh toán.
+
+Không cấp Premium khi xác minh thất bại hoặc dịch vụ xác minh chưa sẵn sàng.
+
+Nếu chưa cấu hình được tài khoản cửa hàng, hãy hoàn thiện phần tích hợp và xây dựng chế độ thử nghiệm riêng. Không được dùng chế độ thử nghiệm để mở quyền Premium thật trong production.
+
+Viết test cho:
+- Giao dịch hợp lệ.
+- Giao dịch không hợp lệ.
+- Giao dịch hết hạn.
+- Giao dịch bị hoàn tiền.
+- Giao dịch trùng.
+- Mất kết nối khi xác minh.
+- Khôi phục giao dịch.
+- Người dùng đổi thiết bị.
+
+---
+
+# VII. GIAI ĐOẠN 5 — SỬA CHỮA HỆ THỐNG QUẢNG CÁO NHẬN THƯỞNG
+
+Kiểm tra endpoint POST /api/ads/rewarded-complete.
+
+Không cấp thưởng chỉ dựa trên yêu cầu từ frontend.
+
+Triển khai cơ chế xác minh sự kiện hoàn thành quảng cáo bằng phương thức được nền tảng quảng cáo hỗ trợ.
+
+Yêu cầu:
+- Xác minh nguồn sự kiện.
+- Xác minh chữ ký hoặc bằng chứng hợp lệ khi nền tảng hỗ trợ.
+- Chống gửi lại sự kiện.
+- Không cấp thưởng hai lần cho một sự kiện.
+- Lưu lịch sử thưởng cần thiết.
+- Giới hạn lạm dụng API.
+- Không cho phép người dùng tự đặt thời hạn thưởng.
+- Không cấp quyền khi thiếu bằng chứng hợp lệ.
+- Có xử lý lỗi và log kiểm toán.
+
+Không giả lập việc xem quảng cáo trong bản production.
+
+Nếu chưa cấu hình nhà cung cấp quảng cáo, chỉ cho phép sử dụng chế độ thử nghiệm có kiểm soát.
+
+---
+
+# VIII. GIAI ĐOẠN 6 — NÂNG CẤP TRỢ LÝ AI PHẬT PHÁP
+
+Giữ lại hệ thống AI hiện có nếu phù hợp, đồng thời kiểm tra và nâng cấp kiến trúc truy xuất kiến thức.
+
+## 1. Xây dựng AI có căn cứ
+
+AI cần có khả năng:
+- Trả lời câu hỏi về Phật pháp.
+- Giải thích khái niệm bằng ngôn ngữ dễ hiểu.
+- Đề xuất bài thực hành chánh niệm.
+- Tóm tắt tài liệu được phép sử dụng.
+- Trích dẫn nguồn khi có căn cứ.
+- Phân biệt trích dẫn nguyên văn với diễn giải.
+- Nói rõ khi không đủ thông tin để trả lời.
+
+Không tự bịa tên kinh, số phẩm, chương, trang hoặc nguồn trích dẫn.
+
+Nếu không tìm thấy nguồn phù hợp trong cơ sở dữ liệu, AI phải nói rõ rằng chưa tìm được nguồn xác minh.
+
+## 2. Nâng cấp RAG
+
+Kiểm tra:
+- Chất lượng dữ liệu đầu vào.
+- Cách chia đoạn tài liệu.
+- Metadata của nguồn.
+- Cách tạo embedding.
+- Cơ chế truy xuất.
+- Độ liên quan của kết quả.
+- Cách đưa nguồn vào câu trả lời.
+- Cách đánh giá độ chính xác.
+
+Mỗi tài liệu cần có metadata phù hợp, chẳng hạn:
+- Tên tài liệu.
+- Tác giả hoặc dịch giả.
+- Truyền thống hoặc nguồn xuất bản nếu xác định được.
+- Phiên bản.
+- Vị trí trích dẫn.
+- Quyền sử dụng.
+- Ngày cập nhật.
+
+Không mặc định rằng mọi tài liệu trên Internet đều được phép sao chép.
+
+## 3. Giới hạn và an toàn AI
+
+- Bảo vệ API key.
+- Giới hạn số lần gọi.
+- Có timeout.
+- Có xử lý lỗi.
+- Theo dõi chi phí.
+- Chống lạm dụng.
+- Không đưa dữ liệu riêng tư vào prompt khi không cần thiết.
+- Không sử dụng nhật ký cá nhân cho AI nếu chưa có cơ sở xử lý và sự đồng ý phù hợp.
+- Không tuyên bố AI có thể chẩn đoán hoặc điều trị bệnh.
+
+Khi người dùng thể hiện dấu hiệu khủng hoảng nghiêm trọng, AI phải ưu tiên hướng dẫn tìm kiếm hỗ trợ phù hợp thay vì chỉ khuyên thiền hoặc trích dẫn giáo lý.
+
+## 4. Kiểm thử AI
+
+Tạo bộ câu hỏi kiểm thử bao gồm:
+- Câu hỏi có nguồn rõ ràng.
+- Câu hỏi không có trong cơ sở dữ liệu.
+- Yêu cầu trích dẫn lời Phật dạy.
+- Các cách diễn giải khác nhau.
+- Câu hỏi ngoài phạm vi.
+- Câu hỏi có nội dung nhạy cảm.
+- Các prompt injection nhằm làm AI bỏ qua quy tắc.
+- Yêu cầu tiết lộ dữ liệu của người dùng khác.
+
+Không tuyên bố AI chính xác tuyệt đối. Hãy báo cáo kết quả đánh giá bằng bộ kiểm thử thực tế.
+
+---
+
+# IX. GIAI ĐOẠN 7 — PHÁT TRIỂN TÍNH NĂNG KHÁC BIỆT
+
+Ưu tiên ba tính năng sau.
+
+## TÍNH NĂNG 1: AI ĐỒNG HÀNH CÙNG CẢM XÚC
+
+Tạo trải nghiệm mới trên trang chủ với câu hỏi:
+
+"Hôm nay tâm bạn đang thế nào?"
+
+Các lựa chọn có thể bao gồm:
+- Bình an.
+- Buồn bã.
+- Lo lắng.
+- Bực bội.
+- Mệt mỏi.
+- Có nhiều suy nghĩ.
+
+Sau khi người dùng chọn, ứng dụng đề xuất một số hoạt động:
+- Bài tập thở.
+- Bài thiền ngắn.
+- Không gian âm thanh.
+- Nội dung Phật pháp phù hợp.
+- Nhật ký cảm xúc.
+
+Người dùng phải có quyền bỏ qua câu hỏi và tự chọn hoạt động khác.
+
+Không yêu cầu người dùng khai báo cảm xúc trước mỗi lần sử dụng.
+
+Không tự động suy đoán trạng thái tâm lý dựa trên hành vi một cách thiếu minh bạch.
+
+Không biến chức năng này thành công cụ chẩn đoán.
+
+## TÍNH NĂNG 2: LỘ TRÌNH BÌNH AN 7 NGÀY VÀ 30 NGÀY
+
+Tạo hệ thống lộ trình thực hành.
+
+Mỗi lộ trình bao gồm:
+- Mục tiêu.
+- Danh sách bài học.
+- Bài thiền.
+- Thời lượng.
+- Nội dung hướng dẫn.
+- Tiến trình.
+- Trạng thái hoàn thành.
+- Chức năng tiếp tục.
+- Khả năng bỏ qua hoặc bắt đầu lại.
+
+Lộ trình phải hoạt động với dữ liệu thực.
+
+Không đánh dấu hoàn thành nếu người dùng chưa thực sự thực hiện hành động tương ứng.
+
+Cho phép người dùng tiếp tục sau khi bỏ lỡ một ngày mà không bị mất tiến trình.
+
+Không ép buộc người dùng phải duy trì chuỗi ngày liên tục.
+
+## TÍNH NĂNG 3: KHÔNG GIAN ÂM THANH CÁ NHÂN
+
+Nâng cấp hệ thống âm thanh hiện có.
+
+Hỗ trợ các khả năng phù hợp với kiến trúc:
+- Phối trộn nhiều lớp âm thanh.
+- Điều chỉnh âm lượng từng lớp.
+- Lưu cấu hình yêu thích.
+- Hẹn giờ dừng.
+- Tiếp tục phát trong nền khi nền tảng cho phép.
+- Điều khiển phát và tạm dừng.
+- Khôi phục trạng thái phù hợp.
+- Quản lý nội dung tải xuống.
+- Xử lý lỗi khi tệp âm thanh không khả dụng.
+
+Chỉ hiển thị những loại âm thanh thực sự có trong thư viện hoặc đã được cung cấp.
+
+Không tạo các nút tải ngoại tuyến nếu chưa triển khai lưu trữ, kiểm tra dung lượng và quản lý tệp.
+
+Kiểm tra quyền sử dụng âm thanh trước khi phát hành.
+
+## TÍNH NĂNG 4: NHẬT KÝ BÌNH AN NÂNG CAO
+
+Nâng cấp nhật ký hiện có:
+- Ghi lại cảm xúc.
+- Ghi chú cá nhân.
+- Ghi lại buổi thực hành.
+- Xem lịch sử.
+- Tìm kiếm.
+- Xuất dữ liệu.
+- Xóa bản ghi.
+- Thiết lập quyền đồng bộ.
+- Thiết lập quyền sử dụng AI.
+
+Có thể bổ sung biểu đồ cảm xúc theo thời gian nhưng phải dùng dữ liệu thực.
+
+Không đưa ra kết luận y khoa từ dữ liệu nhật ký.
+
+## TÍNH NĂNG 5: THÔNG BÁO NHẸ NHÀNG
+
+Cho phép người dùng:
+- Chọn giờ nhắc nhở.
+- Chọn ngày.
+- Chọn tần suất.
+- Tạm dừng.
+- Tắt thông báo.
+
+Thông báo nên nhẹ nhàng và không gây áp lực.
+
+Không gửi thông báo khi người dùng đã tắt quyền hoặc tắt nhắc nhở trong ứng dụng.
+
+Nếu sử dụng thông báo đẩy, cần triển khai đầy đủ quyền thiết bị, token, xử lý token hết hạn và cơ chế gửi thông báo phù hợp.
+
+---
+
+# X. GIAI ĐOẠN 8 — THIẾT KẾ LẠI TRẢI NGHIỆM NGƯỜI DÙNG
+
+Mục tiêu là tạo giao diện hiện đại, cao cấp, nhẹ nhàng và dễ sử dụng.
+
+Không thay đổi thiết kế chỉ để làm giao diện khác đi. Mọi thay đổi phải giúp người dùng hiểu sản phẩm nhanh hơn và hoàn thành hoạt động dễ dàng hơn.
+
+## 1. Định hướng hình ảnh
+
+Phong cách:
+- Tĩnh lặng.
+- Tối giản.
+- Cao cấp.
+- Thân thiện.
+- Có chiều sâu.
+- Phù hợp với thiền định và chánh niệm.
+
+Có thể sử dụng:
+- Nền màu kem hoặc trắng ấm.
+- Xanh lá trầm.
+- Xanh đêm dịu.
+- Màu đất nhẹ.
+- Điểm nhấn vàng ấm có kiểm soát.
+
+Không lạm dụng hiệu ứng phát sáng, gradient mạnh hoặc hình ảnh trang trí gây mất tập trung.
+
+Typography phải dễ đọc trên điện thoại.
+
+Đảm bảo độ tương phản, kích thước chữ và vùng tương tác phù hợp.
+
+## 2. Trang chủ
+
+Tổ chức lại trang chủ theo thứ tự:
+
+1. Lời chào.
+2. Lựa chọn cảm xúc tùy chọn.
+3. Nút bắt đầu thực hành nhanh.
+4. Lộ trình đang theo đuổi.
+5. Không gian âm thanh.
+6. Nội dung Phật pháp.
+7. Tiến trình cá nhân.
+
+Không hiển thị tất cả mô-đun cùng lúc.
+
+Không yêu cầu đăng nhập trước khi cho phép người dùng trải nghiệm nội dung cơ bản nếu không có lý do kỹ thuật hoặc bảo mật rõ ràng.
+
+## 3. Điều hướng
+
+Rà soát toàn bộ:
+- Thanh điều hướng.
+- Nút quay lại.
+- Modal.
+- Bottom sheet.
+- Biểu mẫu.
+- Trình phát âm thanh.
+- Trang hồ sơ.
+- Trang cài đặt.
+- Trang Premium.
+
+Không để xảy ra tình trạng trang bị tràn, nút nằm ngoài màn hình hoặc nội dung bị che bởi bàn phím.
+
+Đảm bảo thao tác cảm ứng dễ sử dụng bằng một tay.
+
+## 4. Trạng thái giao diện
+
+Mọi màn hình có dữ liệu bất đồng bộ phải có:
+- Trạng thái đang tải.
+- Trạng thái thành công.
+- Trạng thái rỗng.
+- Trạng thái lỗi.
+- Cách thử lại khi phù hợp.
+
+Không hiển thị màn hình trắng hoặc spinner vô hạn khi API gặp lỗi.
+
+## 5. Khả năng tiếp cận
+
+Hỗ trợ:
+- Độ tương phản tốt.
+- Cỡ chữ phù hợp.
+- Văn bản thay thế cho hình ảnh cần thiết.
+- Nhãn dễ hiểu cho trình đọc màn hình.
+- Điều hướng bằng bàn phím ở những môi trường phù hợp.
+- Tôn trọng tùy chọn giảm chuyển động khi có thể.
+
+---
+
+# XI. GIAI ĐOẠN 9 — HOÀN THIỆN ỨNG DỤNG ANDROID VÀ IOS
+
+Kiểm tra cấu hình Capacitor và các dependency hiện tại.
+
+Không mặc định rằng một website responsive đồng nghĩa với ứng dụng di động đã hoàn chỉnh.
+
+## Yêu cầu
+
+1. Xác định chính xác phiên bản framework và Capacitor tương thích.
+2. Cài đặt các dependency cần thiết.
+3. Hoàn thiện cấu hình Android.
+4. Hoàn thiện cấu hình iOS.
+5. Kiểm tra build web.
+6. Kiểm tra đồng bộ tài nguyên vào dự án native.
+7. Cấu hình icon.
+8. Cấu hình splash screen.
+9. Cấu hình tên ứng dụng.
+10. Kiểm tra deep link nếu sử dụng.
+11. Kiểm tra điều hướng.
+12. Kiểm tra quyền thiết bị.
+13. Kiểm tra vòng đời ứng dụng.
+14. Kiểm tra âm thanh nền.
+15. Kiểm tra thông báo.
+16. Kiểm tra lưu trữ.
+17. Kiểm tra xử lý mạng.
+18. Kiểm tra ký bản phát hành.
+
+Tạo các script rõ ràng để:
+- Cài dependency.
+- Chạy môi trường phát triển.
+- Build production.
+- Chạy test.
+- Kiểm tra kiểu dữ liệu.
+- Đồng bộ Capacitor.
+- Mở dự án Android.
+- Mở dự án iOS khi môi trường hỗ trợ.
+
+Không tạo ra các script chỉ có tên nhưng không hoạt động.
+
+## Android
+
+Kiểm tra:
+- Application ID.
+- Version code.
+- Version name.
+- Quyền ứng dụng.
+- Cấu hình mạng.
+- Ký bản phát hành.
+- Android App Bundle.
+- Trạng thái khi ứng dụng chạy nền.
+- Hành vi khi hệ thống thu hồi bộ nhớ.
+
+## iOS
+
+Kiểm tra:
+- Bundle ID.
+- Version và build number.
+- Signing.
+- Quyền riêng tư.
+- Trạng thái khi chuyển nền.
+- Điều khiển âm thanh.
+- Khả năng khôi phục giao dịch.
+- Cấu hình thông báo.
+
+Không tuyên bố đã tạo được bản iOS cuối cùng nếu chưa có môi trường macOS và Xcode phù hợp để kiểm thử, ký và xác minh.
+
+---
+
+# XII. GIAI ĐOẠN 10 — KIỂM THỬ VÀ KIỂM SOÁT CHẤT LƯỢNG
+
+Xây dựng bộ kiểm thử phù hợp với dự án.
+
+## 1. Unit tests
+
+Kiểm thử các thành phần:
+- Xử lý dữ liệu.
+- Quy tắc phân quyền.
+- Tính toán tiến trình.
+- Xác minh trạng thái Premium.
+- Xử lý sự kiện quảng cáo.
+- Xử lý trạng thái phát âm thanh.
+- Kiểm tra dữ liệu đầu vào.
+
+## 2. Integration tests
+
+Kiểm tra:
+- Frontend và backend.
+- Backend và database.
+- Hệ thống xác thực.
+- API AI.
+- Quy trình thanh toán.
+- Quy trình xóa dữ liệu.
+- Đồng bộ dữ liệu.
+
+Sử dụng môi trường thử nghiệm và dữ liệu giả có kiểm soát.
+
+## 3. End-to-end tests
+
+Kiểm thử các luồng chính:
+
+LUỒNG A:
+Mở ứng dụng → khám phá nội dung → chọn bài thiền → phát → kết thúc.
+
+LUỒNG B:
+Đăng ký → đăng nhập → ghi nhật ký → đăng xuất → đăng nhập lại → kiểm tra dữ liệu.
+
+LUỒNG C:
+Bắt đầu lộ trình → hoàn thành bài → kiểm tra tiến trình → tiếp tục bài kế tiếp.
+
+LUỒNG D:
+Gửi câu hỏi cho AI → nhận câu trả lời → kiểm tra trạng thái lỗi khi dịch vụ không khả dụng.
+
+LUỒNG E:
+Mua Premium trong môi trường thử nghiệm → xác minh giao dịch → mở quyền → khôi phục giao dịch.
+
+LUỒNG F:
+Yêu cầu xuất dữ liệu → kiểm tra tệp → yêu cầu xóa tài khoản → xác minh các quy tắc xóa dữ liệu.
+
+## 4. Kiểm thử bảo mật
+
+Kiểm tra:
+- Truy cập dữ liệu người dùng khác.
+- Gọi API không có quyền.
+- Tự thay đổi role.
+- Giả mạo trạng thái Premium.
+- Gửi lại sự kiện nhận thưởng.
+- Truy cập endpoint quản trị.
+- Tấn công đầu vào.
+- Rò rỉ secret.
+- Lạm dụng API.
+- Xử lý phiên hết hạn.
+
+## 5. Kiểm thử thiết bị
+
+Kiểm tra trên các thiết bị Android và iPhone phù hợp với phạm vi hỗ trợ.
+
+Đánh giá:
+- Giao diện.
+- Hiệu năng.
+- Pin.
+- Bộ nhớ.
+- Âm thanh.
+- Mạng.
+- Quyền hệ thống.
+- Khả năng phục hồi sau khi ứng dụng bị đóng.
+
+Không coi việc build thành công là bằng chứng ứng dụng không có lỗi.
+
+---
+
+# XIII. GIAI ĐOẠN 11 — QUYỀN RIÊNG TƯ VÀ YÊU CẦU PHÁT HÀNH
+
+Chuẩn bị các nội dung cần thiết:
+
+- Chính sách quyền riêng tư.
+- Điều khoản sử dụng.
+- Thông tin liên hệ hỗ trợ.
+- Cơ chế xóa tài khoản.
+- Cơ chế xuất dữ liệu.
+- Mô tả dữ liệu thu thập.
+- Thông tin về nhà cung cấp AI.
+- Thông tin về quảng cáo và công cụ phân tích.
+- Quy định lưu giữ dữ liệu.
+- Cơ chế xử lý yêu cầu người dùng.
+- Hướng dẫn khôi phục tài khoản khi phù hợp.
+
+Kiểm tra các yêu cầu hiện hành của Google Play và Apple App Store trước khi gửi xét duyệt.
+
+Đặc biệt kiểm tra:
+- Quy định về quyền riêng tư.
+- Khai báo thu thập dữ liệu.
+- Yêu cầu xóa tài khoản.
+- Quy định thanh toán số.
+- Yêu cầu đăng nhập của từng nền tảng.
+- Quyền truy cập thiết bị.
+- Quy định về quảng cáo.
+- Quyền sử dụng nội dung.
+- Nội dung liên quan đến sức khỏe và sức khỏe tinh thần.
+
+Không tự tạo thông tin pháp lý hoặc khai báo sai về hoạt động thực tế của ứng dụng.
+
+---
+
+# XIV. GIAI ĐOẠN 12 — PHÂN TÍCH DỮ LIỆU VÀ TĂNG TRƯỞNG
+
+Triển khai hệ thống phân tích ở mức tối thiểu cần thiết.
+
+Theo dõi các sự kiện phù hợp:
+- App opened.
+- Onboarding completed.
+- First meditation started.
+- Meditation completed.
+- Program started.
+- Program completed.
+- AI interaction completed.
+- Premium purchase initiated.
+- Premium purchase verified.
+- Subscription restored.
+
+Không ghi toàn bộ nội dung nhật ký hoặc cuộc trò chuyện riêng tư vào hệ thống phân tích.
+
+Tôn trọng sự đồng ý và các lựa chọn quyền riêng tư của người dùng.
+
+Tạo báo cáo về:
+- Tỷ lệ hoàn thành bước bắt đầu.
+- Tỷ lệ quay lại.
+- Tỷ lệ hoàn thành bài thiền.
+- Tỷ lệ hoàn thành lộ trình.
+- Tần suất lỗi.
+- Chi phí AI.
+- Tỷ lệ chuyển đổi Premium.
+
+Chỉ triển khai thêm công cụ phân tích khi cần thiết và có cơ sở xử lý dữ liệu phù hợp.
+
+---
+
+# XV. TIÊU CHUẨN HOÀN THÀNH DỰ ÁN
+
+Không đánh dấu dự án hoàn thành chỉ vì đã sửa nhiều tệp.
+
+Dự án phải đạt các điều kiện sau:
+
+## Nhóm A — Mã nguồn
+
+- Các dependency cần thiết được khai báo.
+- Build production thành công trong môi trường phù hợp.
+- Không còn lỗi nghiêm trọng chưa được xử lý.
+- Type checking thành công nếu dự án sử dụng TypeScript.
+- Lint thành công hoặc có danh sách ngoại lệ được giải thích.
+- Các bài kiểm thử quan trọng vượt qua.
+
+## Nhóm B — Backend
+
+- Các endpoint quan trọng có xác thực và phân quyền phù hợp.
+- Dữ liệu được lưu trữ an toàn.
+- Không có endpoint cấp quyền trả phí chỉ dựa trên dữ liệu frontend.
+- Có xử lý lỗi và log phù hợp.
+- Có hướng dẫn cấu hình môi trường.
+- Có quy trình sao lưu và khôi phục.
+
+## Nhóm C — Ứng dụng di động
+
+- Cấu hình Android hoàn chỉnh.
+- Cấu hình iOS hoàn chỉnh ở mức mã nguồn và dự án native.
+- Các luồng cốt lõi hoạt động trên thiết bị thực.
+- Không có lỗi nghiêm trọng về điều hướng hoặc giao diện.
+- Âm thanh và vòng đời ứng dụng được kiểm thử.
+- Quyền hệ thống được sử dụng hợp lý.
+
+## Nhóm D — Tính năng
+
+- Thiền định hoạt động.
+- Nhật ký hoạt động.
+- Tiến trình thực hành được lưu chính xác.
+- AI xử lý lỗi an toàn.
+- Thanh toán được xác minh đúng cách.
+- Quảng cáo nhận thưởng được xác minh.
+- Xuất dữ liệu và xóa tài khoản hoạt động theo chính sách.
+
+## Nhóm E — Phát hành
+
+- Có tài liệu cấu hình.
+- Có chính sách quyền riêng tư.
+- Có thông tin hỗ trợ.
+- Có hướng dẫn build và triển khai.
+- Có checklist xét duyệt.
+- Có danh sách các vấn đề còn tồn tại.
+
+Nếu một yêu cầu chưa đạt, hãy ghi rõ trạng thái BLOCKED hoặc NOT VERIFIED.
+
+Không được giả mạo kết quả test để đánh dấu PASS.
+
+---
+
+# XVI. NHỮNG TỆP VÀ TÀI LIỆU PHẢI BÀN GIAO
+
+Sau khi thực hiện, hãy cập nhật mã nguồn và cung cấp các tài liệu phù hợp với cấu trúc dự án.
+
+Tối thiểu gồm:
+
+1. README.md — Hướng dẫn cài đặt và sử dụng dự án.
+2. AUDIT_REPORT.md — Báo cáo kiểm toán mã nguồn.
+3. IMPLEMENTATION_REPORT.md — Báo cáo các thay đổi.
+4. TEST_REPORT.md — Kết quả kiểm thử thực tế.
+5. DEPLOYMENT_GUIDE.md — Hướng dẫn triển khai.
+6. MOBILE_RELEASE_CHECKLIST.md — Checklist Android/iOS.
+7. DATABASE_MIGRATION.md — Hướng dẫn migration và phục hồi.
+8. SECURITY_NOTES.md — Các vấn đề bảo mật và biện pháp xử lý.
+9. .env.example — Danh sách biến môi trường không chứa secret thật.
+
+Nếu dự án cần thay đổi cấu trúc, hãy cập nhật các tệp cấu hình và script liên quan.
+
+Không tạo tài liệu dài nhưng không phản ánh đúng trạng thái mã nguồn.
+
+Không ghi PASS nếu chưa chạy bài kiểm thử tương ứng.
+
+Không đưa mật khẩu, token hoặc khóa API thật vào tài liệu bàn giao.
+
+---
+
+# XVII. CÁCH THỨC THỰC HIỆN
+
+Hãy bắt đầu bằng việc đọc toàn bộ dự án hiện tại.
+
+Sau đó làm theo trình tự:
+
+BƯỚC 1: Kiểm tra cấu trúc và xác định công nghệ.
+
+BƯỚC 2: Chạy các lệnh kiểm tra hiện có để ghi nhận trạng thái ban đầu.
+
+BƯỚC 3: Lập danh sách lỗi theo mức độ nghiêm trọng.
+
+BƯỚC 4: Sửa các lỗi P0 và P1 trước.
+
+BƯỚC 5: Hoàn thiện kiến trúc database và phân quyền.
+
+BƯỚC 6: Hoàn thiện tài khoản, Premium và quảng cáo.
+
+BƯỚC 7: Hoàn thiện các luồng thiền, âm thanh và nhật ký.
+
+BƯỚC 8: Nâng cấp AI và các tính năng khác biệt.
+
+BƯỚC 9: Tối ưu UI/UX và khả năng tiếp cận.
+
+BƯỚC 10: Hoàn thiện cấu hình Android/iOS.
+
+BƯỚC 11: Chạy kiểm thử, sửa lỗi và kiểm tra lại.
+
+BƯỚC 12: Viết tài liệu triển khai và báo cáo kết quả.
+
+Nếu môi trường thực thi hỗ trợ chỉnh sửa tệp, hãy trực tiếp chỉnh sửa mã nguồn thay vì chỉ đưa ra đoạn code minh họa.
+
+Nếu thiếu quyền truy cập, API key, tài khoản cửa hàng hoặc dịch vụ bên ngoài, hãy hoàn thiện phần có thể thực hiện và ghi rõ những việc cần người quản trị cung cấp.
+
+Không tự ý triển khai lên production, gửi bản phát hành lên cửa hàng hoặc thực hiện các thao tác không thể đảo ngược khi chưa có quyền và sự chấp thuận phù hợp.
+
+## YÊU CẦU CUỐI CÙNG
+
+Tôi không cần một báo cáo nói rằng ứng dụng có nhiều tiềm năng.
+
+Tôi cần bạn biến mã nguồn hiện tại thành một sản phẩm hoàn thiện hơn, với những thay đổi cụ thể, có thể kiểm tra và xác minh.
+
+Hãy ưu tiên chất lượng, bảo mật, độ ổn định và trải nghiệm người dùng.
+
+Giữ lại những phần đang hoạt động tốt, sửa triệt để những phần còn yếu, phát triển các tính năng tạo khác biệt và không làm mất dữ liệu hiện tại.
+
+Bắt đầu kiểm tra dự án ngay bây giờ. Sau khi kiểm tra, hãy tiếp tục thực hiện các công việc có thể hoàn thành trong môi trường hiện tại. Không dừng lại ở việc liệt kê kế hoạch.
+
+Chỉ tuyên bố ứng dụng sẵn sàng phát hành khi có bằng chứng kiểm thử phù hợp. Nếu còn hạng mục chưa xác minh, hãy nêu rõ và hướng dẫn chính xác cách hoàn tất.

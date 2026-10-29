@@ -1,0 +1,820 @@
+# MASTER PROMPT — AUDIT, SỬA LỖI VÀ HOÀN THIỆN TOÀN BỘ APP AN TÂM
+
+## 1. VAI TRÒ VÀ NHIỆM VỤ
+
+Bạn là một đội ngũ phát triển phần mềm chuyên nghiệp gồm:
+
+- Senior Full-stack Engineer: React, TypeScript, Node.js, Express.
+- Mobile Engineer: Capacitor, Android, iOS.
+- Backend & Database Engineer: PostgreSQL, Supabase, database migrations.
+- Security Engineer: xác thực, phân quyền, chống gian lận, bảo vệ dữ liệu.
+- Payment Engineer: Apple StoreKit, Google Play Billing, subscription.
+- Ad Monetization Engineer: AdMob Rewarded Ads, Server-Side Verification.
+- QA Engineer: unit test, integration test, end-to-end test.
+- UI/UX Engineer: tối ưu trải nghiệm, giữ chân người dùng.
+- DevOps Engineer: build, triển khai, logging, monitoring, backup và khôi phục.
+
+Nhiệm vụ của bạn là **đọc toàn bộ source code hiện có của ứng dụng AN TÂM — Thiền định & Phật pháp chánh niệm, sửa trực tiếp các lỗi, hoàn thiện các chức năng, nâng cấp bảo mật, kiểm thử và bàn giao source code hoàn chỉnh có thể chạy được**.
+
+Đây là nhiệm vụ thực thi, không phải nhiệm vụ tư vấn.
+
+Không chỉ viết báo cáo, không chỉ tạo kế hoạch, không chỉ cung cấp đoạn code mẫu. Phải sửa trực tiếp các tệp trong dự án và kiểm tra kết quả.
+
+Không được tuyên bố ứng dụng đã hoàn thiện nếu chưa có bằng chứng kiểm thử tương ứng.
+
+## 2. NGUYÊN TẮC BẮT BUỘC
+
+1. Giữ nguyên tên sản phẩm AN TÂM, cấu trúc dự án và những chức năng đang hoạt động tốt. Chỉ tái cấu trúc khi có lý do kỹ thuật rõ ràng.
+2. Không xóa chức năng đang có chỉ để giảm độ phức tạp.
+3. Không thay thế tính năng thật bằng giao diện giả, dữ liệu demo hoặc hàm trả về thành công giả.
+4. Không tạo nút bấm không có hành động thực tế.
+5. Không tự động cấp quyền Premium, tiền thưởng, điểm thưởng hoặc quyền lợi khi chưa xác minh điều kiện hợp lệ.
+6. Không sử dụng dữ liệu giả để báo cáo kết quả kiểm thử.
+7. Không để lỗi bị che giấu bằng cách bắt ngoại lệ rồi tiếp tục trả về thành công.
+8. Không hardcode API key, mật khẩu, private key, signing secret hoặc thông tin bí mật vào frontend, mã nguồn công khai hay Git.
+9. Không thay đổi công nghệ nền tảng chỉ vì sở thích cá nhân. Ưu tiên sửa trên kiến trúc hiện tại.
+10. Không dừng lại sau khi tìm ra lỗi. Phải sửa, kiểm thử và tiếp tục xử lý lỗi phát sinh.
+11. Nếu cần thông tin bí mật từ chủ dự án, hãy tạo tệp `.env.example`, ghi rõ biến cần cấu hình và tiếp tục triển khai những phần không phụ thuộc vào bí mật đó.
+12. Nếu thiếu tài khoản nhà cung cấp, chứng chỉ ký hoặc môi trường production, hãy hoàn thiện mã tích hợp, tạo kiểm thử giả lập có kiểm soát và ghi rõ phần nào chưa thể xác minh ngoài thực tế.
+
+Mục tiêu là đạt chất lượng production-ready có bằng chứng, không phải chỉ đạt cảm giác hoàn chỉnh trên giao diện.
+
+---
+
+# PHẦN I — KIỂM TRA TOÀN BỘ DỰ ÁN
+
+## 3. Phân tích source code trước khi sửa
+
+Đọc toàn bộ dự án, bao gồm:
+
+- `package.json` và lockfile.
+- Frontend React/TypeScript.
+- Backend Node.js/Express.
+- Các API endpoint.
+- Các context, hooks, components và service.
+- `server.ts` hoặc tệp máy chủ tương đương.
+- `src/data/mockData.ts`.
+- `src/context/AudioContext.tsx`.
+- `src/context/AuthContext.tsx`.
+- `src/components/ads/RewardedAdModal.tsx`.
+- `src/components/subscription/SubscriptionModal.tsx`.
+- Hệ thống affiliate.
+- Hệ thống AI và kho kiến thức Phật pháp.
+- Cấu hình Capacitor.
+- Các tệp migration PostgreSQL/Supabase.
+- Các tệp cấu hình triển khai, Docker, CI/CD nếu có.
+- Các báo cáo hoàn thành trước đây và các bài kiểm thử hiện có.
+
+Tên đường dẫn trên là những vị trí cần ưu tiên rà soát; hãy kiểm tra lại cấu trúc thực tế, không giả định tệp nào chắc chắn tồn tại.
+
+### Yêu cầu đầu ra của giai đoạn kiểm tra
+
+Tạo các tài liệu:
+
+- `AUDIT_REPORT.md`: báo cáo lỗi và rủi ro.
+- `IMPLEMENTATION_PLAN.md`: kế hoạch sửa theo mức độ ưu tiên.
+- `TEST_PLAN.md`: kế hoạch kiểm thử.
+- `RELEASE_CHECKLIST.md`: danh sách điều kiện phát hành.
+- `CHANGELOG.md`: ghi nhận thay đổi trong quá trình sửa.
+
+Phân loại mỗi vấn đề thành:
+
+- P0: lỗi nghiêm trọng về bảo mật, thanh toán, gian lận hoặc mất dữ liệu.
+- P1: chức năng chính không hoạt động hoặc có nguy cơ gây lỗi đáng kể.
+- P2: lỗi trải nghiệm, hiệu năng hoặc độ tin cậy.
+- P3: cải tiến bổ sung.
+
+Với mỗi lỗi, phải ghi:
+
+1. Đường dẫn tệp và vị trí liên quan.
+2. Nguyên nhân thực tế.
+3. Tình huống tái hiện.
+4. Mức độ ảnh hưởng.
+5. Cách sửa.
+6. Bài kiểm thử chứng minh lỗi đã được khắc phục.
+
+Sau khi hoàn thành audit, tiếp tục sửa ngay trong cùng quy trình. Không dừng lại để chỉ chờ người dùng xác nhận báo cáo.
+
+---
+
+# PHẦN II — BẢO MẬT VÀ XÁC THỰC
+
+## 4. Hoàn thiện hệ thống tài khoản
+
+Kiểm tra và hoàn thiện:
+
+- Đăng ký tài khoản.
+- Đăng nhập.
+- Đăng xuất.
+- Làm mới phiên đăng nhập.
+- Khôi phục mật khẩu.
+- Xác minh email nếu được yêu cầu.
+- Đổi mật khẩu.
+- Quản lý phiên và thiết bị đăng nhập.
+- Xóa tài khoản.
+- Xử lý tài khoản bị khóa hoặc bị vô hiệu hóa.
+
+Không được trả về thông báo thành công nếu email chưa gửi được hoặc thao tác phía máy chủ chưa hoàn tất.
+
+Nếu sử dụng JWT:
+
+- Xác minh chữ ký, issuer, audience và thời hạn.
+- Không chấp nhận token hết hạn hoặc token không hợp lệ.
+- Có chính sách refresh token, thu hồi phiên và xoay vòng refresh token phù hợp.
+- Không lưu refresh token dài hạn trong nơi dễ bị JavaScript đọc nếu có phương án bảo mật tốt hơn.
+- Đánh giá nguy cơ XSS, CSRF và đánh cắp phiên theo kiến trúc thực tế.
+
+Nếu sử dụng cookie:
+
+- Cấu hình `HttpOnly`, `Secure`, `SameSite` phù hợp.
+- Có cơ chế chống CSRF khi cần thiết.
+
+Nếu sử dụng OAuth hoặc đăng nhập qua nhà cung cấp bên thứ ba, phải xác minh luồng đăng nhập theo đúng tài liệu của nhà cung cấp.
+
+## 5. Phân quyền và bảo vệ API
+
+Xây dựng hoặc kiểm tra middleware xác thực và phân quyền tập trung.
+
+Mọi API cần được phân loại:
+
+- Public.
+- Authenticated user.
+- Premium user.
+- Admin.
+- Internal service.
+
+Yêu cầu:
+
+- Người dùng A không thể xem, sửa hoặc xóa dữ liệu của người dùng B.
+- Không tin `userId`, `role`, `isPremium`, `rewardAmount` hoặc quyền lợi do frontend gửi lên.
+- Mọi quyền quan trọng phải được xác định phía máy chủ.
+- Kiểm tra quyền sở hữu tài nguyên ở từng API.
+- Chống truy cập trái phép vào endpoint admin.
+- Không để lộ stack trace, token, API key hoặc dữ liệu nội bộ trong phản hồi lỗi.
+- Có rate limit phù hợp cho đăng nhập, reset mật khẩu, AI, quảng cáo và API tốn phí.
+- Có kiểm tra đầu vào, giới hạn kích thước request và chống injection.
+- Cấu hình CORS theo danh sách domain được phép, không mở tùy tiện.
+- Có log bảo mật nhưng không ghi mật khẩu, token hoặc dữ liệu nhạy cảm.
+
+Viết kiểm thử cho các trường hợp không có token, token giả, token hết hạn, sai quyền, sửa ID người dùng và truy cập API admin trái phép.
+
+---
+
+# PHẦN III — CƠ SỞ DỮ LIỆU VÀ TÍNH NHẤT QUÁN
+
+## 6. Chuyển hệ thống dữ liệu sang kiến trúc production
+
+Hiện dự án có dấu hiệu sử dụng `data/database.json` trong khi cũng có các tệp liên quan đến PostgreSQL.
+
+Hãy xác định nguồn dữ liệu thực tế và chuyển sang PostgreSQL hoặc Supabase PostgreSQL cho môi trường production nếu việc kiểm tra xác nhận hệ thống hiện tại vẫn lưu dữ liệu chính bằng JSON.
+
+Không chỉ tạo migration rồi để đó. Phải kết nối database thật qua cấu hình môi trường và sử dụng nó trong các service đang chạy.
+
+### Những dữ liệu cần quản lý
+
+- Users.
+- User profiles.
+- Sessions và refresh tokens nếu có.
+- Meditation sessions.
+- Breathing sessions.
+- Mood journal.
+- Favorites.
+- Learning journeys.
+- Daily streaks.
+- Subscription records.
+- Store transactions.
+- Rewarded ad records.
+- Reward ledger.
+- Affiliate products.
+- Affiliate clicks.
+- Content library.
+- AI conversation history nếu người dùng đồng ý lưu.
+- Notification preferences.
+- Audit logs.
+
+### Yêu cầu kỹ thuật
+
+- Có schema và migration versioned.
+- Có khóa ngoại, unique constraints và index phù hợp.
+- Có transaction cho các thao tác liên quan đến tiền, thưởng và quyền Premium.
+- Có cơ chế chống xử lý trùng giao dịch.
+- Có phân trang cho danh sách dài.
+- Có kiểm soát quyền đọc/ghi ở backend và Row Level Security nếu dùng Supabase.
+- Không sử dụng service-role key ở frontend.
+- Có quy trình backup, restore và kiểm tra khả năng khôi phục.
+- Có migration từ dữ liệu JSON cũ nếu dữ liệu này đang được sử dụng.
+- Không xóa dữ liệu người dùng khi triển khai bản nâng cấp.
+
+Nếu chuyển đổi thất bại, hệ thống phải dừng hoặc báo lỗi rõ ràng, không âm thầm ghi dữ liệu vào hai nơi với kết quả khác nhau.
+
+## 7. Đồng bộ dữ liệu người dùng
+
+Rà soát `AuthContext.tsx`, `AudioContext.tsx` và mọi chỗ sử dụng `localStorage`.
+
+Phân biệt rõ:
+
+- Dữ liệu chỉ mang tính giao diện.
+- Dữ liệu tạm thời.
+- Dữ liệu cần đồng bộ tài khoản.
+- Dữ liệu có giá trị quyền lợi hoặc tài chính.
+
+Không dùng localStorage làm nguồn xác thực cuối cùng cho Premium, phần thưởng, số dư hoặc tiến trình chính thức.
+
+Khi mất mạng:
+
+- Hiển thị trạng thái offline.
+- Giữ dữ liệu tạm hợp lý.
+- Không thông báo lưu thành công nếu chưa được xác nhận.
+- Có cơ chế đồng bộ lại và giải quyết xung đột.
+- Không tạo giao dịch hoặc thưởng trùng sau khi kết nối lại.
+
+---
+
+# PHẦN IV — QUẢNG CÁO VÀ KIẾM TIỀN
+
+## 8. Hoàn thiện Rewarded Ads
+
+Rà soát toàn bộ luồng quảng cáo, đặc biệt:
+
+- `src/components/ads/RewardedAdModal.tsx`.
+- `/api/ads/rewarded-complete`.
+- `/api/ads/admob-ssv`.
+- Những API hoặc service có liên quan đến điểm thưởng.
+
+### Yêu cầu
+
+1. Tích hợp SDK quảng cáo thật tương thích với nền tảng phát hành.
+2. Phân biệt môi trường development, test và production.
+3. Dùng quảng cáo test trong môi trường thử nghiệm.
+4. Không tự cấp thưởng chỉ vì người dùng chờ đủ 15 giây.
+5. Không cho frontend tự quyết định quảng cáo đã được xem hợp lệ.
+6. Không cho phép bỏ qua nonce, transaction ID hoặc các điều kiện bắt buộc của luồng xác minh.
+7. Nếu dùng AdMob Server-Side Verification, phải kiểm tra chữ ký callback theo tài liệu chính thức của Google, xác thực nguồn dữ liệu và chống replay.
+8. Xác minh tính hợp lệ của user ID, ad unit, reward type và reward amount.
+9. Mỗi sự kiện chỉ được xử lý một lần.
+10. Có database transaction và unique constraint để chống cấp thưởng trùng.
+11. Xử lý callback đến chậm, đến nhiều lần hoặc sai thứ tự.
+12. Có nhật ký giao dịch thưởng để đối soát.
+13. Có thông báo lỗi rõ ràng nếu quảng cáo không tải được.
+14. Không cấp thưởng khi người dùng đóng quảng cáo trước khi đạt điều kiện hợp lệ.
+15. Không hiển thị quảng cáo chen ngang khi người dùng đang tập thở hoặc thiền.
+
+Nếu chưa có tài khoản AdMob hoặc cấu hình production, hãy hoàn thiện adapter, giao diện trạng thái và test harness; tuyệt đối không mô phỏng quảng cáo thành công trong production.
+
+### Kiểm thử bắt buộc
+
+- Quảng cáo tải thành công.
+- Không tải được quảng cáo.
+- Người dùng đóng sớm.
+- Callback không hợp lệ.
+- Chữ ký sai.
+- Giao dịch lặp.
+- Nonce hoặc transaction ID bị phát lại.
+- Sai user ID.
+- Gửi đồng thời nhiều request.
+- Mất mạng trong quá trình nhận thưởng.
+- Khởi động lại app sau khi nhận thưởng.
+
+Chỉ công nhận hoàn thành khi phần thưởng được cấp đúng một lần trong các trường hợp hợp lệ và không được cấp trong các trường hợp gian lận.
+
+---
+
+# PHẦN V — PREMIUM VÀ THANH TOÁN THẬT
+
+## 9. Tích hợp Apple và Google Billing
+
+Rà soát:
+
+- `src/components/subscription/SubscriptionModal.tsx`.
+- `/api/subscription/verify`.
+- Toàn bộ model và service quản lý gói Premium.
+
+### Yêu cầu
+
+- Tích hợp StoreKit cho iOS và Google Play Billing cho Android theo quy định hiện hành.
+- Không tự viết một giao diện thanh toán giả rồi coi là đã tích hợp cửa hàng.
+- Xác minh giao dịch phía server bằng API hoặc cơ chế xác minh chính thức của từng nền tảng.
+- Kiểm tra product ID, transaction ID, purchase token, thời hạn, trạng thái giao dịch và tài khoản liên kết.
+- Không cấp Premium chỉ dựa trên giá trị frontend gửi lên hoặc việc biến môi trường tồn tại.
+- Xử lý giao dịch đang chờ, thành công, thất bại, hủy và hoàn tiền.
+- Đồng bộ gia hạn, hết hạn, thu hồi và thay đổi trạng thái đăng ký.
+- Xử lý thông báo máy chủ từ Apple và Google, bao gồm xác minh tính hợp lệ và chống xử lý trùng.
+- Hỗ trợ khôi phục giao dịch khi người dùng cài lại app hoặc đổi thiết bị.
+- Có trang quản lý đăng ký và hướng dẫn hủy theo quy định của nền tảng.
+- Đồng bộ trạng thái Premium giữa backend và mọi thiết bị.
+- Không làm mất quyền lợi hợp lệ khi callback bị chậm; có cơ chế đối soát định kỳ.
+
+Thiết kế database để ghi nhận giao dịch, trạng thái entitlement và lịch sử thay đổi. Tách trạng thái thanh toán khỏi trạng thái quyền sử dụng.
+
+Nếu người dùng mua trên một nền tảng, chỉ cho phép sử dụng quyền lợi trên nền tảng khác theo thiết kế và quy định cửa hàng áp dụng.
+
+### Kiểm thử
+
+- Mua mới.
+- Giao dịch chờ.
+- Giao dịch thất bại.
+- Hủy đăng ký.
+- Gia hạn.
+- Hết hạn.
+- Hoàn tiền.
+- Thu hồi.
+- Khôi phục mua hàng.
+- Giao dịch trùng.
+- Biên lai hoặc purchase token giả.
+- Tài khoản A cố sử dụng giao dịch của tài khoản B.
+- Mất kết nối khi giao dịch đang xử lý.
+
+Không tuyên bố thanh toán production-ready nếu chưa có giao dịch thử nghiệm thực tế qua môi trường sandbox của Apple và Google.
+
+---
+
+# PHẦN VI — AUDIO, THIỀN VÀ HƠI THỞ
+
+## 10. Xây dựng trình phát audio hoàn chỉnh
+
+Rà soát `src/context/AudioContext.tsx`, `src/data/mockData.ts` và toàn bộ màn hình nghe thiền.
+
+Hiện tại cần phân biệt âm thanh tổng hợp, giọng đọc thiết bị và bản thu âm thực tế.
+
+### Yêu cầu chức năng
+
+- Có URL hoặc nguồn tệp audio thực tế cho từng nội dung.
+- Có metadata: tên bài, người đọc, thời lượng, ngôn ngữ, thể loại, quyền sử dụng và ảnh bìa.
+- Phát, tạm dừng, tiếp tục, tua, điều chỉnh âm lượng.
+- Hiển thị thời lượng thực và tiến trình phát chính xác.
+- Xử lý lỗi tải audio, URL hết hạn và mất mạng.
+- Có danh sách yêu thích và nghe gần đây.
+- Có hẹn giờ dừng.
+- Có chế độ phát nền trên thiết bị di động.
+- Hỗ trợ điều khiển từ màn hình khóa và tai nghe nếu nền tảng cho phép.
+- Có xử lý audio interruption khi có cuộc gọi hoặc ứng dụng khác chiếm audio.
+- Không phát hai phiên audio cùng lúc ngoài ý muốn.
+- Có cache hợp lý, giới hạn dung lượng và xóa cache.
+- Có tải ngoại tuyến nếu nội dung được cấp quyền.
+- Có khả năng tiếp tục phát từ vị trí trước đó khi người dùng quay lại.
+
+Nếu dùng CDN hoặc object storage, không nhúng khóa truy cập vào frontend. Dùng URL công khai phù hợp hoặc signed URL khi cần bảo vệ nội dung.
+
+Không tuyên bố đã có thư viện hàng chục bài thu âm thật nếu nguồn nội dung chưa tồn tại.
+
+## 11. Thiền và tập thở
+
+Hoàn thiện các chức năng:
+
+- Bài thở có hướng dẫn bằng hình ảnh, âm thanh và chữ.
+- Có các bài tập theo thời lượng và mục tiêu.
+- Có thể dừng bất kỳ lúc nào.
+- Có chế độ không cần nhìn màn hình.
+- Có lựa chọn âm thanh và rung nếu thiết bị hỗ trợ.
+- Có nhắc người dùng trở lại nhịp thở tự nhiên nếu khó chịu.
+- Không bắt buộc nín thở hoặc thực hiện bài tập cường độ cao.
+- Không đưa ra cam kết chữa bệnh, điều trị mất ngủ hoặc chữa rối loạn tâm lý.
+- Không coi dữ liệu thời gian mở màn hình là bằng chứng chắc chắn người dùng đã thiền.
+
+Khi người dùng hoàn thành, backend ghi nhận phiên hợp lệ theo quy tắc đã công bố. Chỉ cộng tiến trình sau khi nhận kết quả xác nhận từ máy chủ.
+
+---
+
+# PHẦN VII — AI PHẬT PHÁP
+
+## 12. Hoàn thiện AI đồng hành
+
+Rà soát toàn bộ service gọi AI, prompt, kho kiến thức, hệ thống tìm kiếm và giao diện hội thoại.
+
+### Yêu cầu chất lượng
+
+- Có cơ chế truy xuất nguồn tài liệu trước khi trả lời các câu hỏi cần căn cứ kinh điển.
+- Ghi rõ tên tài liệu, bản dịch và vị trí tham chiếu nếu có dữ liệu.
+- Phân biệt nguyên văn kinh điển, diễn giải của biên tập viên và nội dung AI tạo.
+- Không bịa lời Phật, tên kinh, chương, câu hoặc nguồn dẫn.
+- Khi không đủ dữ liệu, phải thừa nhận không chắc chắn.
+- Có cơ chế kiểm soát câu trả lời sai lệch hoặc mang tính áp đặt tôn giáo.
+- Không giả danh Đức Phật, nhà sư hoặc một giảng viên có thật.
+- Không tự nhận là chuyên gia sức khỏe tâm thần.
+- Không dùng AI để chẩn đoán hoặc thay thế điều trị y tế.
+- Có cách xử lý an toàn khi người dùng đề cập đến tự làm hại bản thân hoặc nguy cơ khẩn cấp.
+- Giới hạn tần suất và chi phí gọi API.
+- Không gửi thông tin nhạy cảm không cần thiết cho nhà cung cấp AI.
+- Có chính sách lưu, xóa và thời hạn lưu hội thoại.
+- Có thông báo rõ ràng nếu nội dung được tạo bởi AI.
+
+### Kiểm thử AI
+
+Tạo bộ kiểm thử gồm:
+
+- Câu hỏi giáo lý cơ bản.
+- Câu hỏi yêu cầu trích dẫn chính xác.
+- Câu hỏi không có trong kho dữ liệu.
+- Câu hỏi chứa thông tin sai.
+- Câu hỏi về các trường phái khác nhau.
+- Câu hỏi nhạy cảm về sức khỏe tâm thần.
+- Prompt injection.
+- Yêu cầu tiết lộ dữ liệu người dùng khác.
+- Câu hỏi có thể làm phát sinh nội dung nguy hiểm.
+
+Đánh giá tính đúng đắn, nguồn dẫn, tính nhất quán và khả năng từ chối khi cần. Không chỉ kiểm tra việc API trả về HTTP 200.
+
+---
+
+# PHẦN VIII — NỘI DUNG VÀ AFFILIATE
+
+## 13. Hoàn thiện kho nội dung Phật pháp
+
+Xây dựng hệ thống quản lý nội dung có metadata và quy trình kiểm duyệt.
+
+Mỗi nội dung nên có:
+
+- Tiêu đề.
+- Mô tả.
+- Nội dung chính.
+- Tác giả hoặc người biên tập.
+- Nguồn tham khảo.
+- Bản dịch.
+- Ngôn ngữ.
+- Chủ đề.
+- Thời lượng nếu là audio/video.
+- Trạng thái kiểm duyệt.
+- Quyền sử dụng.
+- Ngày tạo và ngày cập nhật.
+
+Không tự bịa trích dẫn kinh điển hoặc tự động xuất bản nội dung AI chưa kiểm duyệt.
+
+## 14. Hoàn thiện affiliate
+
+Rà soát danh sách sản phẩm, tracking click và hệ thống chuyển hướng.
+
+Yêu cầu:
+
+- Dữ liệu sản phẩm thật từ đối tác hoặc nguồn được phép sử dụng.
+- Ảnh sản phẩm đúng sản phẩm.
+- Giá, tình trạng hàng và đánh giá có nguồn xác minh.
+- Không tạo đánh giá hoặc lời chứng thực giả.
+- Công khai việc app có thể nhận hoa hồng.
+- Chỉ sử dụng affiliate link theo điều khoản chương trình.
+- Tracking click có mã định danh phù hợp nhưng không thu thập quá mức.
+- Có xử lý liên kết hỏng hoặc sản phẩm đã ngừng bán.
+- Có phân biệt quảng cáo, nội dung tài trợ và đề xuất biên tập.
+- Không đặt sản phẩm thương mại chen vào luồng thiền.
+
+Nếu chưa có đối tác thật, hiển thị trạng thái chưa khả dụng thay vì tạo dữ liệu giả để giả lập cửa hàng đang hoạt động.
+
+---
+
+# PHẦN IX — NHẬT KÝ, HÀNH TRÌNH VÀ THÔNG BÁO
+
+## 15. Hoàn thiện dữ liệu tiến trình
+
+Các dữ liệu sau phải nhất quán giữa máy chủ và giao diện:
+
+- Tổng số phút thực hành.
+- Số phiên đã hoàn thành.
+- Chuỗi ngày thực hành.
+- Tiến độ thử thách.
+- Lịch sử bài nghe.
+- Nhật ký cảm xúc.
+- Thành tích và huy hiệu.
+
+Yêu cầu:
+
+- Quy định múi giờ và cách xác định ngày.
+- Xử lý ngày chuyển đổi khi đi du lịch.
+- Không cho phép gửi một phiên hợp lệ nhiều lần để nhân tiến trình.
+- Có chính sách chỉnh sửa và xóa dữ liệu.
+- Có trạng thái đồng bộ và lỗi dễ hiểu.
+- Không bắt buộc người dùng phải duy trì streak liên tục mới được sử dụng tính năng.
+
+## 16. Thông báo
+
+Hoàn thiện thông báo trên web và mobile theo khả năng từng nền tảng.
+
+- Người dùng tự chọn loại thông báo và thời gian.
+- Có thể tắt hoặc đổi lịch bất cứ lúc nào.
+- Xin quyền thông báo vào thời điểm phù hợp, không xin ngay khi mở app nếu chưa giải thích lợi ích.
+- Không gửi thông báo liên tục để gây áp lực.
+- Có kiểm soát múi giờ, giờ yên tĩnh và trùng lịch.
+- Có xử lý token thiết bị hết hạn.
+- Không gửi thông báo cho tài khoản đã đăng xuất hoặc đã xóa.
+- Không đưa nội dung nhật ký riêng tư lên màn hình khóa nếu người dùng chưa cho phép.
+
+---
+
+# PHẦN X — UI/UX VÀ HIỆU NĂNG
+
+## 17. Hoàn thiện giao diện
+
+Giữ phong cách nhẹ nhàng, trang nghiêm, hiện đại của AN TÂM.
+
+Kiểm tra:
+
+- Responsive trên màn hình nhỏ và lớn.
+- Điều hướng bằng bàn phím.
+- Khả năng đọc với screen reader.
+- Độ tương phản.
+- Cỡ chữ có thể điều chỉnh.
+- Trạng thái loading, empty, error, success.
+- Form validation.
+- Trạng thái mạng chậm.
+- Nút thao tác tránh nhấn lặp.
+- Modal và bàn phím ảo trên mobile.
+- Không để chữ, nút hoặc hình ảnh bị tràn.
+- Có xác nhận trước hành động xóa dữ liệu quan trọng.
+
+Tối ưu hiệu năng:
+
+- Lazy loading.
+- Chia nhỏ bundle.
+- Tối ưu ảnh và audio.
+- Giảm render không cần thiết.
+- Cache hợp lý.
+- Giới hạn truy vấn database.
+- Phân trang dữ liệu lớn.
+- Giới hạn kích thước tệp tải lên.
+
+Không đánh đổi bảo mật hoặc độ chính xác để lấy tốc độ.
+
+---
+
+# PHẦN XI — KIỂM THỬ TỰ ĐỘNG
+
+## 18. Thiết lập bộ kiểm thử đầy đủ
+
+Tùy kiến trúc thực tế, sử dụng các công cụ phù hợp như Vitest/Jest, React Testing Library, Supertest và Playwright.
+
+Nếu dự án đã có bộ công cụ tương đương, hãy ưu tiên sử dụng và hoàn thiện bộ hiện có.
+
+### Unit tests
+
+Kiểm thử riêng:
+
+- Auth service.
+- Quyền Premium.
+- Reward service.
+- Subscription service.
+- Database repository.
+- Audio state.
+- Streak calculation.
+- Validation.
+- AI service và nguồn dẫn.
+
+### Integration tests
+
+Kiểm thử các luồng:
+
+1. Đăng ký → xác thực → đăng nhập.
+2. Reset mật khẩu → đăng nhập bằng mật khẩu mới.
+3. Đăng nhập → lưu nhật ký → đăng nhập lại và thấy dữ liệu.
+4. Thiền hoàn thành → backend ghi nhận đúng một lần.
+5. Rewarded ad → xác minh → cộng thưởng đúng một lần.
+6. Thanh toán sandbox → xác minh → mở khóa Premium.
+7. Hủy hoặc hết hạn → cập nhật quyền Premium.
+8. Affiliate click → ghi nhận tracking đúng.
+9. Xóa tài khoản → xử lý dữ liệu theo chính sách.
+10. API admin → chặn tài khoản không có quyền.
+
+### End-to-end tests
+
+Kiểm thử trên giao diện thật:
+
+- Người dùng mới.
+- Người dùng quay lại.
+- Người dùng chưa Premium.
+- Người dùng Premium.
+- Mất mạng.
+- Mạng chậm.
+- Đăng xuất giữa phiên.
+- Mở lại app sau khi bị hệ điều hành đóng.
+- Kích thước màn hình khác nhau.
+
+### Kiểm thử bảo mật
+
+- IDOR/BOLA.
+- Privilege escalation.
+- Authentication bypass.
+- Token giả và hết hạn.
+- SQL injection.
+- XSS.
+- CSRF khi áp dụng.
+- Rate limit.
+- Replay giao dịch.
+- Race condition.
+- Rò rỉ secret.
+- Truy cập dữ liệu chéo tài khoản.
+
+Không được chỉ chạy test rồi bỏ qua test thất bại.
+
+Mọi test thất bại phải được phân tích và sửa hoặc ghi rõ nguyên nhân không thể xử lý cùng bằng chứng. Không được xóa test chỉ để báo cáo toàn bộ PASS.
+
+---
+
+# PHẦN XII — BUILD VÀ PHÁT HÀNH MOBILE
+
+## 19. Hoàn thiện Android/iOS
+
+Kiểm tra `capacitor.config.*`, `package.json` và cấu hình nền tảng.
+
+- Cài đặt các dependency Capacitor cần thiết và tương thích.
+- Cấu hình Android và iOS thực tế.
+- Kiểm tra deep links, status bar, safe area và bàn phím.
+- Xử lý quyền thông báo, audio nền và lưu trữ.
+- Kiểm tra vòng đời ứng dụng.
+- Cấu hình environment production.
+- Không đóng gói API key bí mật vào ứng dụng.
+- Cấu hình HTTPS.
+- Build release Android.
+- Chuẩn bị cấu hình ký ứng dụng.
+- Build iOS trên môi trường macOS phù hợp.
+- Chuẩn bị bundle identifier, version, icon, splash screen và metadata.
+- Kiểm tra chính sách quyền riêng tư, xóa tài khoản, quảng cáo và thanh toán.
+- Chuẩn bị các tài khoản thử nghiệm cho review.
+- Kiểm tra ứng dụng không phụ thuộc localhost hoặc dịch vụ chỉ tồn tại trên máy phát triển.
+
+Nếu môi trường hiện tại không thể build iOS, hãy hoàn thiện cấu hình và cung cấp hướng dẫn thực thi trên macOS; không tuyên bố đã build thành công khi chưa chạy.
+
+---
+
+# PHẦN XIII — CI/CD, GIÁM SÁT VÀ KHÔI PHỤC
+
+## 20. Chuẩn hóa vận hành production
+
+Bổ sung hoặc hoàn thiện:
+
+- `.env.example`.
+- `.gitignore`.
+- Health check.
+- Structured logging.
+- Error monitoring.
+- API timeout.
+- Retry có giới hạn và backoff.
+- Graceful shutdown.
+- Database connection pool.
+- Migration khi triển khai.
+- Backup tự động.
+- Hướng dẫn restore.
+- CI chạy lint, typecheck, tests và build.
+- Quản lý secrets qua môi trường triển khai.
+- Quy trình rollback.
+- Theo dõi lỗi giao dịch và callback quảng cáo.
+- Cảnh báo khi API AI hoặc email vượt giới hạn.
+- Giới hạn chi phí dịch vụ bên thứ ba.
+
+Không ghi nội dung nhật ký, token hoặc dữ liệu cá nhân vào log không cần thiết.
+
+---
+
+# PHẦN XIV — QUY TRÌNH THỰC THI
+
+## 21. Thứ tự bắt buộc
+
+Thực hiện tuần tự nhưng không dừng ở bước báo cáo:
+
+### Bước 1
+Giải nén, kiểm tra toàn bộ source code và xác định cách chạy dự án.
+
+### Bước 2
+Chạy các lệnh cài đặt, lint, typecheck, test và build hiện có. Ghi lại lỗi ban đầu.
+
+### Bước 3
+Lập danh sách lỗi thực tế theo P0/P1/P2/P3.
+
+### Bước 4
+Sửa tất cả lỗi P0: xác thực, phân quyền, thanh toán, quảng cáo thưởng và tính nhất quán dữ liệu.
+
+### Bước 5
+Hoàn thiện database, audio, AI, affiliate, nhật ký, thông báo và các chức năng sản phẩm.
+
+### Bước 6
+Viết và chạy unit tests, integration tests, end-to-end tests cùng kiểm thử bảo mật.
+
+### Bước 7
+Sửa lỗi phát hiện được, chạy lại các test liên quan và regression tests.
+
+### Bước 8
+Build web production và build mobile trong phạm vi môi trường hiện có.
+
+### Bước 9
+Kiểm tra file bàn giao, cấu hình môi trường và tài liệu triển khai.
+
+### Bước 10
+Bàn giao source code đã sửa cùng báo cáo PASS/FAIL và các điều kiện còn thiếu.
+
+Nếu phát hiện lỗi mới trong khi sửa, hãy bổ sung vào audit và tiếp tục xử lý, không bỏ qua vì lỗi đó không nằm trong danh sách ban đầu.
+
+---
+
+# PHẦN XV — TIÊU CHÍ NGHIỆM THU
+
+## 22. Điều kiện để công nhận hoàn thành
+
+Chỉ được đánh dấu hoàn thành khi có bằng chứng đáp ứng các tiêu chí sau:
+
+### Mã nguồn
+
+- Dependency đã được xác định và cài đặt thành công.
+- Không có lỗi TypeScript nghiêm trọng.
+- Lint đạt yêu cầu đã cấu hình.
+- Build production thành công.
+- Không còn import hỏng hoặc API endpoint không tồn tại trong các luồng chính.
+
+### Bảo mật
+
+- Không còn lỗi P0 chưa giải quyết.
+- Các bài test phân quyền và truy cập chéo tài khoản đạt yêu cầu.
+- Không có bí mật production bị nhúng trong frontend hoặc source code.
+- Các API quan trọng có validation và kiểm soát quyền.
+
+### Dữ liệu
+
+- Database migration chạy được.
+- CRUD các dữ liệu chính hoạt động.
+- Đồng bộ tài khoản đúng.
+- Backup và restore có quy trình kiểm chứng.
+- Các thao tác thưởng và giao dịch có tính nhất quán.
+
+### Kiếm tiền
+
+- Không thể tự giả lập quảng cáo thành công để nhận thưởng.
+- Callback quảng cáo được xác minh theo tài liệu chính thức.
+- Giao dịch Premium được xác minh từ Apple/Google hoặc môi trường thử nghiệm tương ứng.
+- Hủy, hết hạn, hoàn tiền và khôi phục giao dịch được kiểm thử.
+
+### Chức năng
+
+- Audio thực sự phát được từ nguồn hợp lệ.
+- Nhật ký, hành trình và tài khoản hoạt động nhất quán.
+- AI có cơ chế kiểm soát nguồn dẫn và nội dung rủi ro.
+- Affiliate không hiển thị dữ liệu sản phẩm giả như dữ liệu thật.
+- Thông báo hoạt động đúng trong phạm vi nền tảng hỗ trợ.
+
+### Mobile
+
+- Build được trên nền tảng có sẵn.
+- Các chức năng chính đã được thử nghiệm trên thiết bị hoặc emulator.
+- Cấu hình ký và phát hành được ghi rõ.
+- Không có crash hoặc lỗi chặn luồng chính chưa được xử lý.
+
+### Bằng chứng
+
+Mỗi tiêu chí phải có một trong các bằng chứng:
+
+- Log chạy lệnh.
+- Kết quả test.
+- Báo cáo kiểm thử.
+- Ảnh chụp hoặc video thử nghiệm.
+- Mã giao dịch sandbox.
+- Kết quả build.
+- Tệp cấu hình hoặc migration đã kiểm tra.
+
+Không được đánh dấu PASS chỉ vì đã viết code cho chức năng đó.
+
+Nếu một hạng mục cần tài khoản thật, chứng chỉ, API key hoặc môi trường ngoài quyền kiểm soát, phải ghi là BLOCKED hoặc NOT VERIFIED và hướng dẫn chính xác cách hoàn tất.
+
+---
+
+# PHẦN XVI — BÀN GIAO SOURCE CODE
+
+## 23. Những gì phải trả lại
+
+Bàn giao:
+
+1. Source code hoàn chỉnh đã sửa.
+2. Một file ZIP chứa dự án có thể tải về.
+3. `AUDIT_REPORT.md`.
+4. `IMPLEMENTATION_PLAN.md` đã cập nhật kết quả thực tế.
+5. `TEST_PLAN.md` và kết quả test.
+6. `RELEASE_CHECKLIST.md`.
+7. `CHANGELOG.md`.
+8. `.env.example`.
+9. Hướng dẫn cài đặt và chạy local.
+10. Hướng dẫn cấu hình database và migration.
+11. Hướng dẫn triển khai backend.
+12. Hướng dẫn build Android.
+13. Hướng dẫn build iOS nếu có môi trường phù hợp.
+14. Danh sách API và service bên thứ ba cần cấu hình.
+15. Danh sách những chức năng chưa thể xác minh ngoài thực tế.
+
+Không đưa API key, mật khẩu, token, certificate hoặc dữ liệu người dùng thật vào ZIP.
+
+Trước khi đóng gói, phải kiểm tra ZIP có source code, các tệp cấu hình mẫu, migration, test và tài liệu cần thiết. Không được chỉ gửi báo cáo hoặc một vài tệp code rời rạc.
+
+## 24. Báo cáo cuối cùng
+
+Báo cáo ngắn gọn nhưng có bằng chứng, gồm:
+
+- Số lỗi đã phát hiện.
+- Số lỗi đã sửa theo từng mức P0/P1/P2/P3.
+- Những chức năng đã hoàn thiện.
+- Kết quả lint, typecheck, test và build.
+- Những test còn thất bại.
+- Những mục bị BLOCKED hoặc NOT VERIFIED.
+- Cách chạy ứng dụng.
+- Đường dẫn file ZIP bàn giao.
+
+Tuyệt đối không ghi “100% hoàn hảo”, “không còn lỗi” hoặc “đã sẵn sàng production” nếu không có đủ bằng chứng để chứng minh.
+
+## YÊU CẦU CUỐI CÙNG
+
+Hãy bắt đầu bằng việc kiểm tra source code hiện tại, sau đó trực tiếp sửa toàn bộ các lỗi được phát hiện theo thứ tự ưu tiên.
+
+Mục tiêu là đưa AN TÂM từ một prototype nhiều tính năng thành ứng dụng có kiến trúc vững chắc, dữ liệu nhất quán, bảo mật tốt, trải nghiệm ổn định và có thể thương mại hóa sau khi hoàn tất các cấu hình production cần thiết.
+
+**Không chỉ đề xuất. Hãy thực hiện, kiểm thử, sửa lỗi và bàn giao sản phẩm thực tế.**

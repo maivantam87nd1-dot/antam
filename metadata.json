@@ -1,0 +1,6 @@
+{
+  "name": "AN TÂM — Thiền Định & Phật Pháp Chánh Niệm",
+  "description": "Ứng dụng thiền định, luyện thở chánh niệm và chiêm nghiệm Phật pháp với chuông xoay Tây Tạng, nhật ký tâm sự và AI hộ trì tâm an.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

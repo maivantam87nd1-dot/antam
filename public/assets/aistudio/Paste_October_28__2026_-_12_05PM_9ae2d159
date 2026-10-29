@@ -1,0 +1,1242 @@
+
+# MASTER PROMPT AN TÂM V4.0
+## PRODUCTION HARDENING + AI BUDDHIST COMPANION + FREEMIUM MONETIZATION + MOBILE RELEASE
+
+---
+
+# PHẦN 1. VAI TRÒ VÀ MỤC TIÊU
+
+Bạn là một đội ngũ phát triển phần mềm chuyên nghiệp, chịu trách nhiệm trực tiếp hoàn thiện ứng dụng AN TÂM hiện tại.
+
+Đội ngũ bao gồm:
+
+- Principal Software Architect.
+- Senior React/TypeScript Engineer.
+- Backend Engineer.
+- Database Engineer.
+- AI Engineer.
+- Mobile iOS Engineer.
+- Mobile Android Engineer.
+- Security Engineer.
+- UX/UI Designer.
+- QA Automation Engineer.
+- Product Growth Engineer.
+- Monetization Specialist.
+- App Store Release Specialist.
+
+Bạn phải làm việc trên mã nguồn hiện tại, không tạo ứng dụng mới thay thế.
+
+## Mục tiêu sản phẩm
+
+Phát triển AN TÂM thành một ứng dụng thiền định, Phật pháp và chăm sóc đời sống tinh thần có chất lượng cao, có thể vận hành thương mại trên Android và iOS.
+
+AN TÂM không được chỉ là ứng dụng nghe nhạc thiền hoặc chatbot thông thường.
+
+Ứng dụng cần kết hợp:
+
+1. Thiền định.
+2. Tập thở.
+3. Thư viện kinh Phật và kiến thức Phật giáo.
+4. Âm thanh thư giãn và hỗ trợ giấc ngủ.
+5. Nhật ký và theo dõi hành trình cá nhân.
+6. AI hỏi đáp Phật pháp có dẫn nguồn.
+7. AI giải thích nội dung kinh.
+8. AI gợi ý hoạt động phù hợp với nhu cầu.
+9. Trải nghiệm miễn phí có giá trị.
+10. Premium dành cho người muốn sử dụng nâng cao.
+11. Quảng cáo và affiliate minh bạch.
+12. Hệ thống quản trị và phân tích dữ liệu thực.
+13. Ứng dụng mobile có thể phát hành thực tế.
+
+## Nguyên tắc không thể thỏa hiệp
+
+**KHÔNG DEMO GIẢ. KHÔNG THANH TOÁN GIẢ. KHÔNG DỮ LIỆU GIẢ. KHÔNG TẠO NÚT BẤM CHO CÓ. KHÔNG TUYÊN BỐ PASS KHI CHƯA KIỂM THỬ.**
+
+Mỗi tính năng phải có logic thật và có thể kiểm chứng.
+
+Nếu thiếu API key, tài khoản dịch vụ, chứng chỉ ký ứng dụng hoặc cấu hình bên ngoài, hãy hoàn thiện phần mã nguồn có thể triển khai và đánh dấu chính xác phần còn bị chặn.
+
+Không được tạo dữ liệu giả để che giấu việc chưa tích hợp.
+
+Không được tự nhận đã xuất bản thành công nếu chưa có bằng chứng.
+
+---
+
+# PHẦN 2. BẮT BUỘC KIỂM TRA DỰ ÁN HIỆN TẠI
+
+Trước khi sửa bất kỳ chức năng nào, hãy kiểm tra toàn bộ mã nguồn AN TÂM.
+
+Đặc biệt kiểm tra:
+
+- `package.json`
+- `server.ts`
+- `vite.config.ts`
+- `capacitor.config.ts`
+- `tsconfig.json`
+- `src/App.tsx`
+- `src/main.tsx`
+- `src/index.css`
+- `src/context/`
+- `src/components/`
+- `src/services/`
+- `src/pages/`
+- `src/data/`
+- `src/hooks/`
+- `data/database.json`
+- Cấu hình AI.
+- Authentication.
+- Subscription.
+- Admin Dashboard.
+- Audio.
+- Notification.
+- Các file tài nguyên.
+- Các script build và deploy.
+
+Nếu đường dẫn thực tế khác, hãy tìm đúng vị trí tương ứng trong dự án.
+
+## 2.1. Xác minh các lỗi của phiên bản trước
+
+Phiên bản trước đã có những vấn đề sau cần được kiểm tra lại:
+
+### Lỗi A: Premium giả
+
+Trong `SubscriptionModal.tsx`, ứng dụng có đoạn tạo biên nhận giả dạng:
+
+`RECEIPT_SANDBOX_...`
+
+Backend nhận biên nhận và có thể cấp quyền Premium mà không xác minh giao dịch thật.
+
+### Lỗi B: Mật khẩu quản trị mặc định
+
+Trong `server.ts`, có cơ chế sử dụng mật khẩu mặc định:
+
+`AnTamAdmin@2026`
+
+khi không có biến môi trường.
+
+### Lỗi C: Database JSON
+
+Dữ liệu người dùng được lưu trong:
+
+`data/database.json`
+
+### Lỗi D: AI RAG chưa hoàn chỉnh
+
+Bộ kiến thức Phật giáo được lưu trực tiếp trong mã nguồn và chưa có đầy đủ quy trình quản lý, xác minh nguồn và truy xuất kiến thức production.
+
+### Lỗi E: AI rate limiting chưa phù hợp
+
+Hệ thống có giới hạn sử dụng nhưng chưa có kiến trúc đủ tin cậy cho nhiều người dùng và kiểm soát chi phí production.
+
+### Lỗi F: Capacitor chưa hoàn chỉnh
+
+Dự án có cấu hình Capacitor nhưng chưa có bằng chứng đầy đủ về dependency, native project, native audio, notifications và thanh toán.
+
+**Hãy kiểm tra lại từng lỗi trong mã nguồn hiện tại. Không mặc định rằng lỗi vẫn còn nếu code đã thay đổi, nhưng không được bỏ qua nếu chưa xác minh.**
+
+---
+
+# PHẦN 3. SỬA TRIỆT ĐỂ BẢO MẬT VÀ TÀI KHOẢN
+
+## 3.1. Loại bỏ mật khẩu quản trị mặc định
+
+Không được chứa mật khẩu quản trị mặc định trong mã nguồn.
+
+Không tự cấp quyền admin dựa trên:
+
+- Email chứa từ `admin`.
+- Tên người dùng.
+- Tham số từ frontend.
+- Giá trị do người dùng tự gửi.
+
+Quyền admin phải được thiết lập thông qua quy trình quản trị an toàn.
+
+Yêu cầu:
+
+- Khởi tạo tài khoản quản trị có kiểm soát.
+- Không cho người dùng tự nâng cấp role.
+- Có thể vô hiệu hóa tài khoản.
+- Ghi audit log cho hành động quản trị.
+- Có quy trình khôi phục quyền quản trị an toàn.
+
+## 3.2. Authentication
+
+Hoàn thiện:
+
+- Đăng ký email/password.
+- Đăng nhập.
+- Đăng xuất.
+- Xác minh email.
+- Quên mật khẩu.
+- Đổi mật khẩu.
+- Google Login.
+- Sign in with Apple khi cần thiết.
+- Guest Mode.
+- Liên kết tài khoản khách với tài khoản chính.
+- Xóa tài khoản.
+- Xuất dữ liệu cá nhân.
+
+Ưu tiên sử dụng Supabase Auth nếu phù hợp với dự án.
+
+Không tự xây dựng cơ chế xác thực mật khẩu nếu dịch vụ xác thực đã cung cấp giải pháp an toàn, đầy đủ hơn.
+
+## 3.3. Phân quyền
+
+Không tin tưởng `userId`, `role`, `isPremium` hoặc `isAdmin` do client gửi lên.
+
+Xác định danh tính từ token/session đã xác minh.
+
+Mọi API phải kiểm tra quyền truy cập.
+
+## 3.4. Bảo vệ API
+
+Triển khai:
+
+- Input validation.
+- Authentication.
+- Authorization.
+- Rate limiting.
+- Request size limits.
+- Error handling.
+- Audit logging.
+- Abuse prevention.
+- Secret management.
+
+Không trả stack trace, secret hoặc thông tin nhạy cảm về client trong môi trường production.
+
+---
+
+# PHẦN 4. DATABASE PRODUCTION
+
+Chuyển dữ liệu JSON sang PostgreSQL/Supabase nếu việc kiểm tra xác nhận ứng dụng vẫn sử dụng JSON làm cơ sở dữ liệu chính.
+
+Không xóa dữ liệu cũ trước khi sao lưu và kiểm tra migration.
+
+## 4.1. Các nhóm dữ liệu
+
+Thiết kế hoặc điều chỉnh các bảng:
+
+- profiles
+- user_preferences
+- user_roles
+- meditation_content
+- buddhist_content
+- audio_content
+- content_categories
+- content_sources
+- content_licenses
+- favorites
+- listening_history
+- meditation_sessions
+- breathing_sessions
+- journal_entries
+- mood_checkins
+- mindfulness_journeys
+- journey_progress
+- notification_preferences
+- device_tokens
+- subscriptions
+- purchase_events
+- entitlements
+- ai_conversations
+- ai_messages
+- ai_usage
+- knowledge_sources
+- knowledge_chunks
+- affiliate_offers
+- affiliate_click_events
+- ad_events
+- admin_audit_logs
+
+Không tạo các bảng trùng lặp nếu đã tồn tại cấu trúc tương đương.
+
+## 4.2. Quy định
+
+- Có migrations.
+- Có foreign keys.
+- Có indexes phù hợp.
+- Có unique constraints.
+- Có transaction khi cần.
+- Có backup strategy.
+- Có quy trình phục hồi dữ liệu.
+- Có chính sách lưu giữ và xóa dữ liệu.
+
+Bật Row Level Security khi sử dụng Supabase.
+
+Người dùng chỉ được đọc và sửa dữ liệu thuộc quyền sở hữu của mình.
+
+Không lưu nhật ký riêng tư hoặc hội thoại AI vào hệ thống analytics quảng cáo.
+
+---
+
+# PHẦN 5. MÔ HÌNH KINH DOANH FREEMIUM
+
+AN TÂM phải cho phép người dùng trải nghiệm sản phẩm trước khi quyết định trả tiền.
+
+Không bắt người dùng thanh toán ngay khi mở ứng dụng.
+
+Không khóa toàn bộ chức năng cơ bản sau màn hình đăng ký.
+
+## 5.1. Ba nhóm quyền sử dụng
+
+### Nhóm 1: Guest – Trải nghiệm không cần tài khoản
+
+Người dùng có thể:
+
+- Xem giới thiệu ứng dụng.
+- Khám phá thư viện.
+- Nghe các bài miễn phí được cho phép.
+- Thử bài tập thở.
+- Thử một số bài thiền.
+- Xem một số nội dung Phật pháp.
+- Trải nghiệm một số câu hỏi AI miễn phí nếu hệ thống được cấu hình.
+- Xem trang Premium.
+
+Không yêu cầu đăng ký ngay từ đầu.
+
+Khi người dùng muốn đồng bộ dữ liệu, lưu hành trình dài hạn hoặc sử dụng tính năng cần tài khoản, hãy đề nghị đăng ký.
+
+Phải thông báo rõ dữ liệu Guest nào sẽ được giữ lại khi đăng ký và dữ liệu nào có thể mất khi xóa ứng dụng.
+
+### Nhóm 2: Free – Tài khoản miễn phí
+
+Cho phép người dùng:
+
+- Nghe thư viện nội dung miễn phí.
+- Sử dụng các bài tập thở cơ bản.
+- Theo dõi tiến độ thiền cơ bản.
+- Lưu một số nội dung yêu thích.
+- Sử dụng nhật ký cá nhân.
+- Trải nghiệm AI với hạn mức hợp lý.
+- Nhận thông báo theo cài đặt.
+- Sử dụng các nội dung miễn phí khác.
+
+Giới hạn phải được lấy từ cấu hình hệ thống, không hardcode ở nhiều nơi.
+
+### Nhóm 3: Premium
+
+Premium có thể cung cấp:
+
+- Thư viện thiền nâng cao.
+- Nội dung độc quyền có bản quyền.
+- Chương trình thiền dài ngày.
+- Âm thanh chất lượng cao nếu nguồn hỗ trợ.
+- Tải nội dung offline.
+- AI hạn mức cao hơn.
+- Giải thích kinh chuyên sâu.
+- Cá nhân hóa nâng cao.
+- Các tính năng mở rộng khác có giá trị thực.
+
+Chỉ bán quyền lợi đang thực sự tồn tại.
+
+Không quảng cáo "AI không giới hạn" nếu vẫn có giới hạn kỹ thuật hoặc chi phí.
+
+Không quảng cáo "hàng nghìn bài thiền" nếu thư viện không có đủ nội dung.
+
+## 5.2. Cho trải nghiệm Premium trước khi mua
+
+Bổ sung chế độ xem trước.
+
+Ví dụ:
+
+- Nghe thử 60–120 giây của một bài Premium nếu quyền sử dụng nội dung cho phép.
+- Xem trước nội dung khóa học.
+- Xem chương trình thiền dài ngày.
+- Thử một số chức năng AI nâng cao với hạn mức miễn phí.
+- Xem trước giao diện và các tính năng Premium.
+
+Sau trải nghiệm, hiển thị thông tin:
+
+- Quyền lợi.
+- Giá thực tế.
+- Chu kỳ thanh toán.
+- Thời gian dùng thử nếu có.
+- Điều kiện gia hạn.
+- Cách hủy.
+- Điều kiện hoàn tiền theo chính sách áp dụng.
+
+Không tự động đăng ký trả phí khi người dùng chỉ bấm nghe thử.
+
+Không tự động kích hoạt dùng thử nếu người dùng chưa đồng ý.
+
+Không được làm cho nút đóng màn hình Premium khó tìm.
+
+Không sử dụng giao diện đánh lừa hoặc gây áp lực thanh toán.
+
+## 5.3. Thử Premium có thời hạn
+
+Nếu muốn triển khai dùng thử miễn phí:
+
+- Dùng trial thật của StoreKit hoặc Google Play Billing khi phù hợp.
+- Xác định rõ thời hạn.
+- Hiển thị thông tin gia hạn và mức giá.
+- Kiểm tra quyền dùng thử theo quy định của store.
+- Đồng bộ trạng thái dùng thử với backend.
+- Xử lý hết hạn và hủy.
+- Không tạo trial vô hạn bằng cách xóa dữ liệu cục bộ.
+
+Nếu chưa có cấu hình store, hiển thị trạng thái chưa sẵn sàng và không giả lập giao dịch.
+
+---
+
+# PHẦN 6. HỆ THỐNG THANH TOÁN PREMIUM THỰC
+
+Đây là hạng mục ưu tiên rất cao.
+
+## 6.1. Xóa hoàn toàn biên nhận giả
+
+Xóa mọi logic tạo biên nhận kiểu:
+
+`RECEIPT_SANDBOX_${Date.now()}...`
+
+Không sử dụng chuỗi ngẫu nhiên để chứng minh đã thanh toán.
+
+Không cho phép frontend tự gửi:
+
+`isPremium = true`
+
+để nâng cấp quyền.
+
+## 6.2. Android
+
+Tích hợp Google Play Billing theo tài liệu chính thức hiện hành.
+
+Phải xác minh giao dịch ở backend bằng cơ chế phù hợp của Google Play.
+
+## 6.3. iOS
+
+Tích hợp StoreKit theo hướng được Apple hỗ trợ.
+
+Phải xác minh giao dịch và entitlement ở backend theo kiến trúc phù hợp.
+
+## 6.4. Entitlement
+
+Xây dựng hệ thống quyền sử dụng dựa trên trạng thái giao dịch thực.
+
+Cần xử lý:
+
+- Purchase.
+- Restore.
+- Renewal.
+- Expiration.
+- Refund.
+- Revocation.
+- Billing Retry.
+- Grace Period nếu áp dụng.
+
+Lưu lịch sử giao dịch phù hợp để đối soát.
+
+Không lưu thông tin thanh toán nhạy cảm không cần thiết.
+
+## 6.5. Khi chưa cấu hình thanh toán
+
+Có thể hoàn thiện giao diện và integration code, nhưng phải hiển thị rõ:
+
+`Thanh toán chưa được cấu hình cho môi trường này.`
+
+Không cấp Premium.
+
+Không ghi nhận giao dịch giả.
+
+Không đánh dấu PASS.
+
+---
+
+# PHẦN 7. HỆ THỐNG KIẾM TIỀN TỪ QUẢNG CÁO
+
+AN TÂM có thể tạo doanh thu quảng cáo từ người dùng miễn phí, nhưng phải ưu tiên trải nghiệm thư giãn.
+
+## 7.1. Nguyên tắc quảng cáo
+
+Không hiển thị quảng cáo:
+
+- Giữa bài thiền.
+- Giữa bài kinh.
+- Giữa một phiên tập thở.
+- Giữa nội dung hướng dẫn thư giãn.
+- Trên màn hình đang phát âm thanh thiền nếu quảng cáo làm gián đoạn.
+- Dưới dạng nút giả khiến người dùng bấm nhầm.
+- Bằng cách che khuất nút thoát hoặc nút điều khiển.
+
+Không sử dụng âm thanh quảng cáo bất ngờ trong các hoạt động thiền.
+
+Không sử dụng quảng cáo gây áp lực, mê tín hoặc khai thác nỗi sợ của người dùng.
+
+Không đưa quảng cáo không phù hợp với ứng dụng Phật pháp và chăm sóc tinh thần.
+
+## 7.2. Vị trí quảng cáo phù hợp
+
+Ưu tiên:
+
+1. Banner nhỏ tại một số khu vực khám phá nội dung.
+2. Thẻ tài trợ được đánh dấu rõ trong trang khám phá.
+3. Khu vực nội dung đề xuất có nhãn "Được tài trợ".
+4. Quảng cáo tự nhiên ở màn hình kết thúc một hoạt động, nếu phù hợp và không gây khó chịu.
+5. Rewarded Ads tùy chọn để mở thêm một nội dung miễn phí, nếu chính sách nền tảng cho phép.
+
+Không cần đặt quảng cáo ở tất cả màn hình.
+
+## 7.3. Rewarded Ads
+
+Có thể triển khai mô hình:
+
+Người dùng chọn xem một quảng cáo tự nguyện để mở khóa một quyền lợi nhỏ trong thời gian giới hạn.
+
+Ví dụ:
+
+- Mở một bài thiền bổ sung trong ngày.
+- Nghe thử một nội dung nhất định.
+- Mở một bài hướng dẫn thư giãn.
+
+Điều kiện:
+
+- Nói rõ phần thưởng trước khi xem.
+- Người dùng chủ động đồng ý.
+- Chỉ cấp thưởng khi SDK quảng cáo xác nhận hoàn thành.
+- Với phần thưởng có giá trị cần bảo vệ, xác minh server-side khi nền tảng hỗ trợ.
+- Không cho quảng cáo thay thế hoàn toàn quyền lợi Premium.
+- Không yêu cầu người dùng xem quảng cáo để tiếp tục một bài thiền đang diễn ra.
+
+Không tạo phần thưởng bằng cách chỉ tăng biến trên frontend nếu có nguy cơ bị sửa đổi.
+
+## 7.4. Tích hợp AdMob hoặc mạng quảng cáo phù hợp
+
+Trước khi lựa chọn SDK, kiểm tra khả năng tương thích với:
+
+- Capacitor.
+- Android.
+- iOS.
+- Chính sách Google Play.
+- Chính sách App Store.
+- Consent Requirements.
+- Privacy Manifest.
+- ATT khi áp dụng.
+
+Không giả định plugin quảng cáo bất kỳ đang hoạt động chỉ vì đã cài package.
+
+Phải kiểm tra SDK và sự kiện quảng cáo thực tế.
+
+Không sử dụng test ads để chứng minh doanh thu production.
+
+Test ads chỉ dùng trong quá trình phát triển.
+
+## 7.5. Quảng cáo và quyền riêng tư
+
+Phải có:
+
+- Privacy Policy.
+- Consent Management khi cần.
+- Cơ chế từ chối quảng cáo cá nhân hóa khi áp dụng.
+- Hạn chế thu thập dữ liệu.
+- Xử lý quyền riêng tư theo khu vực phân phối.
+- Không gửi nội dung nhật ký hoặc hội thoại AI đến mạng quảng cáo.
+- Không dùng nội dung tâm sự để nhắm mục tiêu quảng cáo nhạy cảm.
+
+Không đưa dữ liệu nhạy cảm về cảm xúc, sức khỏe tinh thần hoặc tôn giáo vào hệ thống nhắm mục tiêu quảng cáo.
+
+## 7.6. Premium và quảng cáo
+
+Premium nên được miễn quảng cáo thông thường nếu đây là quyền lợi đã công bố.
+
+Nếu có nội dung tài trợ hoặc affiliate trong Premium, phải công bố rõ.
+
+Không để người dùng trả tiền nhưng vẫn bị quảng cáo làm gián đoạn các nội dung mà gói Premium cam kết không quảng cáo.
+
+---
+
+# PHẦN 8. HỆ THỐNG AFFILIATE CÓ TRÁCH NHIỆM
+
+Affiliate là nguồn doanh thu bổ sung, không phải mục tiêu thay thế giá trị cốt lõi của AN TÂM.
+
+## 8.1. Danh mục sản phẩm phù hợp
+
+Có thể giới thiệu:
+
+- Gối thiền.
+- Đệm thiền.
+- Dụng cụ hỗ trợ tư thế.
+- Loa nghe âm thanh.
+- Tai nghe.
+- Đèn ngủ.
+- Đèn đọc sách.
+- Máy khuếch tán hương thơm khi sản phẩm và nền tảng cho phép.
+- Sách Phật pháp có nguồn xuất bản rõ ràng.
+- Sách về chánh niệm.
+- Sản phẩm hỗ trợ không gian nghỉ ngơi.
+
+Chỉ quảng bá sản phẩm hợp pháp, có thông tin rõ ràng và phù hợp với đối tượng sử dụng.
+
+Không tuyên bố sản phẩm chữa bệnh hoặc điều trị các vấn đề tâm lý nếu không có căn cứ và không được phép.
+
+Không quảng bá sản phẩm mê tín hoặc hứa hẹn thay đổi số phận, tiêu trừ nghiệp chướng hay đạt giác ngộ bằng việc mua hàng.
+
+## 8.2. Giao diện affiliate
+
+Xây dựng một khu vực riêng:
+
+**Góc An Tâm – Sản phẩm hỗ trợ thiền và thư giãn**
+
+Mỗi sản phẩm có:
+
+- Tên.
+- Hình ảnh được phép sử dụng.
+- Mô tả.
+- Giá tham khảo nếu có dữ liệu đáng tin cậy.
+- Thông tin đối tác.
+- Nút xem sản phẩm.
+- Affiliate URL.
+- Thời điểm cập nhật.
+- Trạng thái còn hiệu lực.
+
+Tất cả đường dẫn phải được quản trị viên kiểm tra trước khi xuất bản.
+
+Không tự tạo link affiliate.
+
+Không bịa giá, đánh giá hoặc thông tin sản phẩm.
+
+Nếu không có API giá thực, không được tự tuyên bố giá đang cập nhật trực tiếp.
+
+## 8.3. Minh bạch affiliate
+
+Mọi thẻ sản phẩm affiliate phải có nhãn dễ hiểu:
+
+"Có thể chứa liên kết tiếp thị liên kết. AN TÂM có thể nhận hoa hồng khi bạn mua hàng qua liên kết này, không làm tăng chi phí của bạn nếu chương trình áp dụng như vậy."
+
+Điều chỉnh thông báo cho đúng chương trình affiliate thực tế.
+
+Không che giấu bản chất thương mại của liên kết.
+
+## 8.4. Theo dõi affiliate
+
+Có thể theo dõi:
+
+- Lượt hiển thị.
+- Lượt nhấp.
+- Tỷ lệ nhấp.
+- Nguồn trang.
+- Chiến dịch.
+- Tổng doanh thu hoa hồng nếu đối tác cung cấp dữ liệu.
+
+Không tự ghi nhận lượt mua thành công chỉ dựa vào việc người dùng nhấp link.
+
+Chỉ báo cáo doanh thu affiliate khi có dữ liệu xác nhận từ đối tác hoặc báo cáo được nhập và đối soát.
+
+## 8.5. Không phá hỏng trải nghiệm
+
+Không hiển thị affiliate:
+
+- Giữa bài thiền.
+- Giữa nội dung kinh Phật.
+- Trong câu trả lời AI theo cách lợi dụng tâm trạng người dùng.
+- Ngay sau khi người dùng tâm sự về nỗi buồn với mục đích bán hàng.
+- Dưới dạng lời khuyên tôn giáo mang tính ép buộc mua sản phẩm.
+
+Không để AI tự ý chèn link bán hàng vào mọi câu trả lời.
+
+Nếu AI đề xuất sản phẩm, phải có lý do phù hợp, được kiểm soát và đánh dấu nội dung thương mại.
+
+---
+
+# PHẦN 9. AN TÂM AI – TÍNH NĂNG TẠO KHÁC BIỆT
+
+Đây là trọng tâm tạo giá trị dài hạn cho ứng dụng.
+
+Xây dựng:
+
+**AN TÂM AI – TRỢ LÝ PHẬT PHÁP VÀ CHÁNH NIỆM**
+
+Không chỉ tạo chatbot trả lời chung chung.
+
+AI phải liên kết với thư viện nội dung thật và các hoạt động có thể thực hiện trong ứng dụng.
+
+## 9.1. AI hỏi đáp Phật pháp
+
+Cho phép người dùng hỏi:
+
+- Nhân quả là gì?
+- Vô thường có ý nghĩa gì?
+- Tứ Diệu Đế là gì?
+- Bát Chánh Đạo là gì?
+- Chánh niệm được thực hành như thế nào?
+- Ý nghĩa của một đoạn kinh cụ thể?
+- Làm thế nào để thực hành từ bi trong đời sống?
+
+AI phải:
+
+- Trả lời bằng tiếng Việt tự nhiên.
+- Giải thích dễ hiểu.
+- Không bịa lời Phật dạy.
+- Không bịa tên kinh.
+- Không bịa nguồn.
+- Phân biệt trích dẫn và diễn giải.
+- Nêu rõ khi chưa có đủ thông tin.
+- Hiển thị nguồn tham khảo nếu có.
+
+## 9.2. RAG có nguồn thật
+
+Triển khai kiến trúc:
+
+User Question  
+→ Backend AI Gateway  
+→ Search Knowledge Base  
+→ Retrieve Verified Sources  
+→ Gemini  
+→ Validate References  
+→ Answer + Sources  
+→ Related Actions.
+
+Sử dụng tài liệu được phép sử dụng.
+
+Mỗi nguồn phải có:
+
+- ID.
+- Tên tài liệu.
+- Tác giả hoặc dịch giả nếu có.
+- Nguồn xuất bản.
+- Bản quyền hoặc giấy phép.
+- Ngôn ngữ.
+- Nội dung gốc.
+- Ngày kiểm duyệt.
+- Trạng thái xuất bản.
+
+Có thể sử dụng PostgreSQL và pgvector nếu phù hợp.
+
+Không bắt buộc dùng vector database nếu một giải pháp đơn giản hơn đáp ứng tốt yêu cầu, nhưng phải chứng minh chất lượng truy xuất bằng kiểm thử.
+
+## 9.3. AI giải thích kinh Phật
+
+Trong màn hình đọc kinh, thêm:
+
+"Giải thích bằng AI".
+
+Các chế độ:
+
+- Dễ hiểu.
+- Chuyên sâu.
+- Liên hệ đời sống.
+
+AI phải trích dẫn nguồn và phân biệt rõ nội dung gốc với phần diễn giải.
+
+## 9.4. AI gợi ý thiền
+
+Người dùng nói:
+
+"Tôi muốn thư giãn."
+
+AI tìm nội dung thực trong thư viện và gợi ý bài phù hợp.
+
+Mỗi đề xuất phải có ID hợp lệ.
+
+Khi người dùng nhấn, ứng dụng phải mở đúng nội dung hoặc thực hiện đúng hoạt động.
+
+Không tạo nút dẫn đến nội dung không tồn tại.
+
+## 9.5. AI hỗ trợ cảm xúc
+
+AI có thể trò chuyện về những khó khăn đời sống thường ngày.
+
+Không tự nhận là bác sĩ hoặc nhà trị liệu.
+
+Không chẩn đoán.
+
+Không thay thế dịch vụ hỗ trợ chuyên nghiệp.
+
+Không khai thác sự cô đơn để thúc đẩy thanh toán.
+
+Không dùng câu trả lời về khủng hoảng cảm xúc làm cơ hội hiển thị quảng cáo.
+
+## 9.6. Kiểm soát chi phí AI
+
+Triển khai:
+
+- Server-side API Key.
+- Model Configuration.
+- Usage Quota.
+- Rate Limiting.
+- Token Limits.
+- Timeout.
+- Retry Policy.
+- Cost Monitoring.
+- Abuse Prevention.
+- Safety Filtering.
+
+Không đưa Gemini API key vào frontend.
+
+Không quảng cáo "AI không giới hạn" nếu vẫn có giới hạn kỹ thuật.
+
+Nếu vượt hạn mức, thông báo rõ và cung cấp phương án phù hợp.
+
+---
+
+# PHẦN 10. AUDIO ENGINE VÀ THIỀN
+
+Hoàn thiện hệ thống âm thanh thật.
+
+Chức năng:
+
+- Play.
+- Pause.
+- Seek.
+- Next.
+- Previous.
+- Repeat.
+- Favorites.
+- Playlist.
+- Sleep Timer.
+- Playback Speed.
+- Background Audio.
+- Lock Screen Controls.
+- Resume Playback.
+- Offline Playback.
+
+iOS phải sử dụng cơ chế audio native phù hợp và cấu hình Background Audio.
+
+Android phải sử dụng cơ chế media session và foreground service phù hợp.
+
+Xử lý:
+
+- Cuộc gọi.
+- Bluetooth.
+- Rút tai nghe.
+- Ứng dụng chuyển nền.
+- Khóa màn hình.
+- Mất mạng.
+- Lỗi tải âm thanh.
+
+Không quảng cáo tính năng offline khi chưa tải và lưu file thành công.
+
+Không hiển thị thời lượng hoặc nội dung âm thanh sai với dữ liệu thực.
+
+## Nguyên tắc trải nghiệm
+
+Không chèn quảng cáo làm gián đoạn một phiên thiền đang diễn ra.
+
+Không tự phát âm thanh quảng cáo.
+
+Không yêu cầu người dùng thanh toán giữa bài thiền.
+
+---
+
+# PHẦN 11. CÁC TÍNH NĂNG CÁ NHÂN HÓA
+
+Hoàn thiện:
+
+- Nhật ký.
+- Theo dõi cảm xúc.
+- Lịch sử nghe.
+- Yêu thích.
+- Tiến độ thiền.
+- Hành trình 7 ngày.
+- Hành trình 21 ngày.
+- Nhắc thiền.
+- Câu hỏi phản tư hằng ngày.
+- Lộ trình cá nhân.
+
+Các hành trình phải có nội dung thật.
+
+Không tạo tiến độ hoàn thành giả.
+
+Không tự tăng số ngày thực hành.
+
+Người dùng phải có quyền xem, sửa và xóa dữ liệu cá nhân phù hợp.
+
+Không sử dụng nhật ký cá nhân làm dữ liệu quảng cáo.
+
+---
+
+# PHẦN 12. ADMIN DASHBOARD
+
+Xây dựng hệ thống quản trị thực.
+
+Quản trị viên có thể:
+
+- Quản lý người dùng.
+- Quản lý nội dung.
+- Quản lý bài thiền.
+- Quản lý audio.
+- Quản lý nguồn Phật pháp.
+- Quản lý nguồn kiến thức AI.
+- Kiểm duyệt nội dung.
+- Quản lý affiliate.
+- Quản lý vị trí quảng cáo.
+- Quản lý gói Premium.
+- Quản lý thông báo.
+- Xem analytics.
+- Xem audit logs.
+
+Mỗi thay đổi quan trọng phải ghi lại:
+
+- Ai thực hiện.
+- Thời điểm.
+- Hành động.
+- Đối tượng bị thay đổi.
+- Kết quả.
+
+## 12.1. Analytics thực
+
+Theo dõi các chỉ số có dữ liệu thật:
+
+- Daily Active Users.
+- Monthly Active Users.
+- D7 Retention.
+- D30 Retention.
+- Meditation Sessions.
+- Audio Listening Time.
+- AI Requests.
+- Premium Conversion.
+- Ad Impressions.
+- Ad Clicks.
+- Affiliate Clicks.
+- Affiliate Revenue khi có dữ liệu xác nhận.
+
+Không sử dụng `Math.random()`.
+
+Không sử dụng số cố định để tạo cảm giác dashboard hoạt động.
+
+Nếu chưa có dữ liệu, hiển thị "Chưa có dữ liệu".
+
+---
+
+# PHẦN 13. MOBILE IOS VÀ ANDROID
+
+Tiếp tục sử dụng kiến trúc hiện tại nếu phù hợp.
+
+Nếu dự án đang dùng React + Vite + Capacitor, hãy hoàn thiện Capacitor thay vì tự ý chuyển sang React Native.
+
+Kiểm tra dependency và native plugins thực tế.
+
+## Android
+
+Hoàn thiện:
+
+- Application ID.
+- App Icon.
+- Splash Screen.
+- Native Audio.
+- Push Notifications.
+- Google Login.
+- Billing.
+- Haptic Feedback.
+- Runtime Permissions.
+- Android App Bundle.
+- Release Signing.
+
+## iOS
+
+Hoàn thiện:
+
+- Bundle Identifier.
+- App Icon.
+- Launch Screen.
+- Background Audio.
+- Push Notifications.
+- Sign in with Apple khi áp dụng.
+- StoreKit.
+- Privacy Manifest.
+- Permissions.
+- Release Signing.
+
+Không đánh dấu mobile hoàn thành khi chỉ có giao diện responsive trên trình duyệt.
+
+---
+
+# PHẦN 14. GIAO DIỆN VÀ TRẢI NGHIỆM NGƯỜI DÙNG
+
+Giữ nhận diện AN TÂM hiện tại nếu không có vấn đề lớn.
+
+Phong cách:
+
+- Bình an.
+- Sang trọng.
+- Tinh tế.
+- Hiện đại.
+- Dễ sử dụng.
+- Không quá nhiều hiệu ứng.
+- Không gây áp lực.
+- Tôn trọng tinh thần Phật pháp.
+
+Hỗ trợ:
+
+- Light Mode.
+- Dark Mode.
+- System Theme.
+- Responsive Layout.
+- Accessibility.
+- Loading States.
+- Empty States.
+- Error States.
+
+Tất cả nút phải có hành động thực.
+
+Không sử dụng giao diện giả để che giấu tính năng chưa hoàn thiện.
+
+Không hiển thị thông báo thành công nếu API thực tế thất bại.
+
+---
+
+# PHẦN 15. QUY ĐỊNH VỀ QUẢNG CÁO VÀ APP STORE
+
+Trước khi tích hợp quảng cáo và affiliate, phải kiểm tra chính sách hiện hành của:
+
+- Google Play.
+- Apple App Store.
+- AdMob hoặc mạng quảng cáo được chọn.
+- Chương trình affiliate tương ứng.
+
+Đảm bảo:
+
+- Khai báo thu thập dữ liệu chính xác.
+- Có privacy policy.
+- Có consent phù hợp.
+- Có cơ chế quản lý quảng cáo cá nhân hóa khi cần.
+- Không đặt quảng cáo gây nhầm lẫn.
+- Không tự nhấp quảng cáo.
+- Không thưởng cho lượt nhấp quảng cáo.
+- Chỉ sử dụng rewarded ads theo chính sách nền tảng.
+- Không gửi dữ liệu riêng tư vào hệ thống quảng cáo.
+- Không sử dụng nội dung có bản quyền trái phép.
+
+Không được tuyên bố tuân thủ chính sách chỉ dựa vào suy đoán.
+
+Ghi rõ từng mục đã kiểm tra và những mục còn cần xác minh trước khi phát hành.
+
+---
+
+# PHẦN 16. KIỂM THỬ BẮT BUỘC
+
+Không chỉ chạy build.
+
+Phải kiểm tra:
+
+## Authentication
+
+- Đăng ký.
+- Đăng nhập.
+- Sai mật khẩu.
+- Token hết hạn.
+- Đăng xuất.
+- Guest Mode.
+- Chuyển Guest sang tài khoản.
+- Xóa tài khoản.
+
+## Security
+
+- Truy cập dữ liệu người khác.
+- Sửa role.
+- Tự cấp Premium.
+- Truy cập admin trái phép.
+- Rate limiting.
+- Secret exposure.
+- SQL injection nếu có đường truy vấn liên quan.
+- Input validation.
+
+## AI
+
+- API thật.
+- Model khả dụng.
+- Nguồn tham khảo.
+- Trả lời thiếu nguồn.
+- Lỗi API.
+- Timeout.
+- Quota.
+- Safety.
+- Chi phí.
+
+## Monetization
+
+- Xem thử Premium.
+- Đóng màn hình Premium.
+- Thanh toán thành công trong sandbox.
+- Thanh toán thất bại.
+- Restore.
+- Expiration.
+- Refund.
+- Quảng cáo test.
+- Rewarded Ads.
+- Affiliate click tracking.
+
+## Audio
+
+- Play.
+- Pause.
+- Background.
+- Lock Screen.
+- Bluetooth.
+- Offline.
+- Sleep Timer.
+
+## Mobile
+
+- Build Android.
+- Build iOS.
+- Permissions.
+- Deep Links.
+- Notifications.
+- Haptics.
+- Billing.
+- Crash Handling.
+
+Không báo PASS nếu chưa chạy kiểm thử tương ứng.
+
+---
+
+# PHẦN 17. TIÊU CHÍ NGHIỆM THU
+
+Mỗi tính năng được đánh giá theo:
+
+- PASS: Đã thực hiện và kiểm thử thành công.
+- FAIL: Có lỗi.
+- PARTIAL: Hoàn thành một phần.
+- BLOCKED: Thiếu điều kiện bên ngoài.
+- NOT TESTED: Chưa kiểm thử.
+
+Báo cáo theo bảng:
+
+| Hạng mục | Trạng thái | File thay đổi | Kiểm thử | Bằng chứng |
+|---|---|---|---|---|
+
+Không tạo bằng chứng giả.
+
+Không ghi đã kiểm thử trên iPhone nếu chưa có thiết bị hoặc môi trường kiểm thử tương ứng.
+
+Không ghi đã xác minh giao dịch thật nếu chỉ sử dụng sandbox.
+
+Không ghi đã có doanh thu quảng cáo khi chưa có dữ liệu doanh thu thực.
+
+Không ghi affiliate có chuyển đổi nếu mới chỉ theo dõi lượt nhấp.
+
+---
+
+# PHẦN 18. THỨ TỰ THỰC HIỆN
+
+Thực hiện theo thứ tự:
+
+## GIAI ĐOẠN 1: KHẮC PHỤC LỖI
+
+- Sao lưu mã nguồn.
+- Kiểm tra cấu trúc.
+- Sửa các lỗi build.
+- Sửa file thiếu.
+- Kiểm tra dependency.
+- Khôi phục các chức năng đang hoạt động.
+
+## GIAI ĐOẠN 2: BẢO MẬT
+
+- Xóa mật khẩu admin mặc định.
+- Sửa authentication.
+- Sửa authorization.
+- Xóa Premium giả.
+- Sửa API dữ liệu cá nhân.
+- Bảo vệ secret.
+
+## GIAI ĐOẠN 3: DATABASE
+
+- Thiết lập PostgreSQL/Supabase.
+- Tạo migrations.
+- Chuyển dữ liệu.
+- Bật RLS.
+- Kiểm thử quyền truy cập.
+- Thiết lập backup.
+
+## GIAI ĐOẠN 4: FREEMIUM VÀ PREMIUM
+
+- Guest Mode.
+- Free Tier.
+- Premium.
+- Xem thử.
+- Thanh toán thật.
+- Restore Purchases.
+- Entitlements.
+
+## GIAI ĐOẠN 5: KIẾM TIỀN
+
+- AdMob hoặc mạng phù hợp.
+- Rewarded Ads.
+- Affiliate.
+- Quản lý vị trí quảng cáo.
+- Theo dõi lượt nhấp.
+- Analytics doanh thu thực.
+
+## GIAI ĐOẠN 6: AI
+
+- AI Gateway.
+- RAG.
+- Knowledge Base.
+- Nguồn Phật pháp.
+- AI Q&A.
+- AI Scripture Explanation.
+- AI Recommendations.
+- Usage Tracking.
+- Safety.
+
+## GIAI ĐOẠN 7: MOBILE
+
+- Capacitor.
+- Native Audio.
+- Notifications.
+- Haptics.
+- Android Build.
+- iOS Build.
+- Billing.
+
+## GIAI ĐOẠN 8: KIỂM THỬ RELEASE
+
+- Security Audit.
+- QA.
+- Privacy Audit.
+- Performance.
+- Store Compliance.
+- Release Readiness.
+
+Sau mỗi giai đoạn, tiếp tục giai đoạn kế tiếp nếu môi trường cho phép và không có rủi ro phá hủy dữ liệu.
+
+Nếu bị giới hạn thời gian hoặc môi trường, hãy hoàn thành các hạng mục quan trọng nhất trước, sau đó báo cáo phần còn lại.
+
+Không dừng lại chỉ để đưa ra một bản kế hoạch.
+
+Hãy thực sự sửa mã nguồn khi công cụ cho phép.
+
+---
+
+# PHẦN 19. CHỈ THỊ CUỐI CÙNG
+
+BẮT ĐẦU LÀM VIỆC TRÊN DỰ ÁN AN TÂM HIỆN TẠI.
+
+Không tạo lại ứng dụng từ đầu.
+
+Không xóa chức năng đang hoạt động.
+
+Không tạo giao diện giả.
+
+Không tạo tài khoản giả.
+
+Không tạo giao dịch giả.
+
+Không tạo doanh thu giả.
+
+Không tạo số liệu thống kê giả.
+
+Không giả lập thành công khi API thất bại.
+
+Không bỏ qua kiểm thử bảo mật.
+
+Không đưa ứng dụng lên trạng thái RELEASE READY khi vẫn còn lỗi nghiêm trọng.
+
+Ưu tiên theo thứ tự:
+
+1. Bảo mật.
+2. Tính đúng đắn của dữ liệu.
+3. Chức năng cốt lõi.
+4. Thanh toán thực.
+5. AI có nguồn đáng tin cậy.
+6. Trải nghiệm miễn phí.
+7. Quảng cáo và affiliate minh bạch.
+8. Mobile native.
+9. Kiểm thử.
+10. Phát hành.
+
+Mục tiêu cuối cùng:
+
+**AN TÂM PHẢI LÀ MỘT ỨNG DỤNG CÓ GIÁ TRỊ THỰC CHO NGƯỜI DÙNG, CÓ THỂ VẬN HÀNH THƯƠNG MẠI VÀ TẠO DOANH THU BỀN VỮNG.**
+
+Hãy bắt đầu bằng việc kiểm tra mã nguồn, xác minh các lỗi đã nêu và sửa các lỗi nghiêm trọng trước.

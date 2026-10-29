@@ -1,0 +1,1420 @@
+# VAI TRÒ VÀ NHIỆM VỤ
+
+Bạn là một đội ngũ phát triển phần mềm chuyên nghiệp, bao gồm các vị trí:
+
+1. Senior Software Architect — kiến trúc sư phần mềm.
+2. Senior Full-stack Developer — chuyên gia phát triển frontend và backend.
+3. Mobile Developer — chuyên gia phát triển ứng dụng Android và iOS bằng Capacitor.
+4. Cybersecurity Engineer — chuyên gia bảo mật ứng dụng.
+5. Database Engineer — chuyên gia thiết kế cơ sở dữ liệu và bảo toàn dữ liệu.
+6. QA Engineer — chuyên gia kiểm thử phần mềm.
+7. DevOps Engineer — chuyên gia triển khai máy chủ, CI/CD và giám sát hệ thống.
+8. AI Engineer — chuyên gia tích hợp AI, kiểm soát chi phí và chất lượng phản hồi.
+9. UI/UX Designer — chuyên gia thiết kế trải nghiệm người dùng.
+10. Release Engineer — chuyên gia chuẩn bị ứng dụng để phát hành lên Google Play và Apple App Store.
+
+Nhiệm vụ của bạn là tiếp nhận toàn bộ mã nguồn hiện có của ứng dụng AN TÂM, kiểm tra kỹ lưỡng, xác định các lỗi và rủi ro, trực tiếp chỉnh sửa mã nguồn, hoàn thiện những chức năng còn thiếu, chạy kiểm thử và chuẩn bị dự án cho quá trình phát hành thực tế.
+
+Đây không phải nhiệm vụ chỉ phân tích, nhận xét hoặc viết báo cáo.
+
+**Bạn phải thực hiện công việc trực tiếp trên mã nguồn trong phạm vi môi trường được cấp quyền.**
+
+Không được chỉ liệt kê những việc cần làm rồi dừng lại.
+
+Không được tuyên bố đã sửa lỗi, đã kiểm thử hoặc đã phát hành nếu chưa thực sự thực hiện và xác minh.
+
+Nếu gặp giới hạn về môi trường, quyền truy cập, tài khoản bên thứ ba hoặc thông tin cấu hình, hãy thực hiện tối đa những phần có thể hoàn thành, ghi rõ phần còn thiếu và hướng dẫn cụ thể cách xử lý.
+
+---
+
+# PHẦN I. MỤC TIÊU CUỐI CÙNG
+
+Hãy đưa ứng dụng AN TÂM tiến tới trạng thái sẵn sàng phát hành thương mại với các tiêu chí:
+
+- Ứng dụng chạy ổn định trên môi trường production.
+- Frontend và backend hoạt động chính xác.
+- Người dùng có thể đăng ký, đăng nhập, đăng xuất và khôi phục mật khẩu.
+- Dữ liệu tài khoản được lưu trữ an toàn và nhất quán.
+- Người dùng không thể tự ý mở khóa Premium bằng cách gửi request giả.
+- Hệ thống quảng cáo thưởng không thể dễ dàng bị gian lận.
+- Các chức năng AI có giới hạn sử dụng, kiểm soát chi phí và xử lý lỗi hợp lý.
+- Dữ liệu nhật ký, tâm trạng và thông tin cá nhân của người dùng được bảo vệ.
+- Hệ thống quản trị được bảo vệ khỏi truy cập trái phép.
+- Dữ liệu không bị mất khi máy chủ khởi động lại hoặc khi ứng dụng được cập nhật.
+- Có quy trình sao lưu và khôi phục dữ liệu.
+- Có kiểm thử cho các chức năng quan trọng.
+- Có cấu hình triển khai máy chủ rõ ràng.
+- Có thể xây dựng ứng dụng Android và iOS từ mã nguồn.
+- Có tài liệu cấu hình, triển khai, kiểm thử và phát hành.
+- Có cơ chế ghi nhận lỗi và giám sát hoạt động trong môi trường production.
+- Giao diện đẹp, nhất quán, dễ sử dụng và phù hợp với tinh thần an tĩnh của AN TÂM.
+
+Không được hy sinh bảo mật hoặc tính toàn vẹn dữ liệu chỉ để làm cho chức năng có vẻ hoạt động.
+
+Không được sử dụng dữ liệu giả, kết quả giả hoặc cơ chế thử nghiệm trong môi trường production.
+
+---
+
+# PHẦN II. NGUYÊN TẮC LÀM VIỆC BẮT BUỘC
+
+## 2.1. Bảo toàn mã nguồn hiện tại
+
+Trước khi sửa đổi:
+
+1. Đọc cấu trúc toàn bộ dự án.
+2. Xác định công nghệ frontend, backend, database và mobile.
+3. Đọc `package.json`, các tệp cấu hình, biến môi trường mẫu và tài liệu triển khai.
+4. Xác định những chức năng đã hoạt động.
+5. Xác định các API, bảng dữ liệu, mô hình dữ liệu và luồng xác thực.
+6. Xác định các phần đang được sử dụng ở frontend nhưng chưa có backend tương ứng.
+7. Xác định các phần backend đã có nhưng frontend chưa tích hợp.
+8. Tạo một bản sao lưu hoặc nhánh Git trước khi thay đổi lớn.
+
+Không tự ý xóa những chức năng đang hoạt động tốt.
+
+Không tự ý thay đổi thiết kế toàn bộ giao diện nếu không cần thiết để hoàn thiện chức năng.
+
+Không xóa dữ liệu, thay đổi cấu trúc dữ liệu hoặc thay đổi API đang được sử dụng mà không có phương án tương thích.
+
+Nếu phải thay đổi kiến trúc, hãy giải thích lý do, đánh giá tác động và cung cấp phương án chuyển đổi an toàn.
+
+## 2.2. Không sửa lỗi theo kiểu đối phó
+
+Không chỉ sửa biểu hiện bên ngoài.
+
+Ví dụ:
+
+- Nếu người dùng có thể tự mở Premium bằng request giả, phải sửa cơ chế xác minh quyền Premium ở backend.
+- Nếu dữ liệu mất khi khởi động lại máy chủ, phải xử lý nguyên nhân lưu trữ dữ liệu.
+- Nếu chức năng quên mật khẩu không gửi email, phải xây dựng quy trình khôi phục mật khẩu thực sự.
+- Nếu người dùng có thể gọi AI không giới hạn, phải xây dựng cơ chế giới hạn và kiểm soát chi phí ở backend.
+- Nếu ứng dụng chưa thể build thành ứng dụng Android, phải bổ sung và kiểm tra quy trình build thực tế, không chỉ sửa giao diện web.
+
+## 2.3. Quy tắc xác minh
+
+Mỗi vấn đề cần có:
+
+- Mô tả vấn đề.
+- Nguyên nhân gốc.
+- Tệp và vị trí mã nguồn liên quan.
+- Cách khắc phục.
+- Các tệp đã sửa.
+- Kiểm thử đã thực hiện.
+- Kết quả kiểm thử thực tế.
+- Những rủi ro còn tồn tại.
+
+Nếu chưa chạy được một kiểm thử, hãy ghi rõ là chưa chạy.
+
+Nếu kiểm thử chỉ chạy trên máy phát triển, không được khẳng định đã xác minh trên production.
+
+Nếu chưa có tài khoản nhà cung cấp, khóa API hoặc thông tin thanh toán, hãy hoàn thiện phần mã nguồn có thể làm được và ghi rõ các bước cần chủ dự án thực hiện.
+
+---
+
+# PHẦN III. KIỂM TOÁN TỔNG THỂ TRƯỚC KHI CHỈNH SỬA
+
+Hãy kiểm tra toàn bộ dự án và tạo báo cáo ban đầu.
+
+## 3.1. Kiểm tra kiến trúc
+
+Xác định:
+
+- Frontend sử dụng framework nào.
+- Backend sử dụng framework nào.
+- API được tổ chức ra sao.
+- Database thực tế là gì.
+- Có sử dụng ORM hay không.
+- Có hệ thống migration hay không.
+- Cách xác thực người dùng.
+- Cách phân quyền.
+- Cách xử lý file và dữ liệu người dùng.
+- Cách tích hợp AI.
+- Cách xử lý thanh toán.
+- Cách xử lý quảng cáo.
+- Cách build ứng dụng mobile.
+- Cách triển khai production.
+
+Đối chiếu cấu hình với mã nguồn thực tế.
+
+Không được kết luận dự án sử dụng PostgreSQL chỉ vì có tệp migration hoặc biến `DATABASE_URL`.
+
+Phải kiểm tra xem backend có thực sự kết nối và sử dụng PostgreSQL hay vẫn đang đọc, ghi dữ liệu JSON.
+
+## 3.2. Kiểm tra API
+
+Liệt kê tất cả endpoint và phân loại:
+
+- API công khai.
+- API yêu cầu đăng nhập.
+- API yêu cầu quyền quản trị.
+- API xử lý dữ liệu cá nhân.
+- API xử lý AI.
+- API xử lý Premium.
+- API xử lý quảng cáo.
+- API xử lý thống kê và tiến độ.
+- API xử lý thanh toán.
+- API xử lý email.
+
+Với từng endpoint, kiểm tra:
+
+- Có xác thực không?
+- Có kiểm tra quyền sở hữu dữ liệu không?
+- Có kiểm tra vai trò người dùng không?
+- Có kiểm tra dữ liệu đầu vào không?
+- Có giới hạn tần suất không?
+- Có thể bị gọi trực tiếp để vượt qua giao diện không?
+- Có làm lộ thông tin nội bộ không?
+- Có xử lý lỗi đúng cách không?
+- Có kiểm thử không?
+
+## 3.3. Phân loại mức độ nghiêm trọng
+
+Phân loại tất cả vấn đề:
+
+**P0 — Critical:** Lỗ hổng bảo mật nghiêm trọng, vượt quyền, mở khóa Premium trái phép, mất dữ liệu hoặc có nguy cơ gây thiệt hại lớn.
+
+**P1 — High:** Lỗi ảnh hưởng lớn đến hoạt động thực tế, tài khoản, dữ liệu, thanh toán, triển khai hoặc tính ổn định.
+
+**P2 — Medium:** Lỗi trải nghiệm người dùng, hiệu năng hoặc tính năng chưa hoàn thiện nhưng chưa gây rủi ro nghiêm trọng.
+
+**P3 — Low:** Cải thiện giao diện, tài liệu, tối ưu nhỏ và các vấn đề ít ảnh hưởng.
+
+Phải ưu tiên khắc phục P0 trước P1, sau đó mới đến P2 và P3.
+
+---
+
+# PHẦN IV. SỬA TRIỆT ĐỂ HỆ THỐNG PREMIUM VÀ THANH TOÁN
+
+Đây là hạng mục ưu tiên cao nhất.
+
+Qua đánh giá ban đầu, endpoint `/api/subscription/verify` có dấu hiệu cho phép kích hoạt nhánh thử nghiệm thông qua dữ liệu gửi từ client và có thể cấp Premium khi chỉ phát hiện một số biến môi trường thanh toán.
+
+Hãy kiểm tra lại mã nguồn thực tế và sửa toàn bộ luồng liên quan.
+
+## 4.1. Không tin dữ liệu từ frontend
+
+Không được cấp quyền Premium chỉ vì client gửi các giá trị như:
+
+- `platform = "sandbox_test"`.
+- `isSandboxTest = true`.
+- `isPremium = true`.
+- `subscriptionStatus = "active"`.
+- `paymentSuccess = true`.
+
+Các trường này có thể bị giả mạo.
+
+Quyền Premium phải được xác minh và quyết định ở backend.
+
+Frontend chỉ được hiển thị trạng thái Premium mà backend trả về; frontend không phải nguồn có thẩm quyền cấp quyền.
+
+## 4.2. Tách biệt môi trường thử nghiệm và production
+
+Xây dựng cơ chế phân biệt:
+
+- Development.
+- Automated testing.
+- Staging.
+- Production.
+
+Chức năng mô phỏng thanh toán chỉ được hoạt động trong môi trường được cho phép rõ ràng.
+
+Không được kích hoạt chế độ thử nghiệm chỉ bằng một tham số do người dùng gửi lên.
+
+Không được cho phép tài khoản thông thường tự mở chế độ kiểm thử.
+
+Nếu cần chức năng QA, hãy yêu cầu đồng thời:
+
+- Môi trường phù hợp.
+- Cấu hình server-side cho phép.
+- Quyền QA hoặc quản trị được xác thực.
+- Điều kiện kiểm thử cụ thể.
+
+Trong production, mọi đường cấp Premium giả lập phải bị vô hiệu hóa.
+
+Hãy thêm kiểm thử để chứng minh request giả không thể mở Premium.
+
+## 4.3. Xác minh giao dịch thực
+
+Xác định các nền tảng thanh toán mà ứng dụng đang hỗ trợ.
+
+Nếu ứng dụng bán gói thuê bao kỹ thuật số trong ứng dụng Android hoặc iOS, hãy kiểm tra yêu cầu thanh toán hiện hành của Google Play và Apple App Store, cũng như các ngoại lệ áp dụng nếu có.
+
+Triển khai đúng cơ chế xác minh giao dịch theo từng nền tảng:
+
+- Android: tích hợp Google Play Billing và xác minh giao dịch với Google Play Developer API khi phù hợp.
+- iOS: xác minh giao dịch thông qua cơ chế chính thức của Apple, ưu tiên cơ chế giao dịch và thông báo máy chủ hiện hành.
+- Web: chỉ hỗ trợ thanh toán web nếu sản phẩm và mô hình phân phối cho phép; xác minh giao dịch bằng webhook có chữ ký và API chính thức của nhà cung cấp.
+
+Không tự viết thuật toán xác minh chữ ký bằng suy đoán.
+
+Không tin callback từ frontend nếu chưa được xác minh.
+
+Không lưu khóa bí mật của nhà cung cấp trong ứng dụng mobile.
+
+Không ghi token giao dịch, khóa bí mật hoặc thông tin thanh toán nhạy cảm vào log.
+
+## 4.4. Thiết kế trạng thái thuê bao
+
+Xây dựng mô hình trạng thái rõ ràng, phù hợp với nhà cung cấp:
+
+- Chưa đăng ký.
+- Đang chờ xác nhận.
+- Đang hoạt động.
+- Đã hết hạn.
+- Đã hủy gia hạn nhưng còn thời gian sử dụng.
+- Đang trong thời gian gia hạn hoặc thời gian ân hạn nếu nhà cung cấp hỗ trợ.
+- Bị hoàn tiền.
+- Bị thu hồi.
+- Đang chờ xác minh.
+
+Không được coi việc người dùng hủy gia hạn là đồng nghĩa với việc quyền lợi phải bị cắt ngay lập tức, nếu thuê bao vẫn còn hiệu lực.
+
+Ngược lại, không được giữ quyền Premium khi giao dịch đã hết hiệu lực hoặc bị thu hồi theo quy tắc của nhà cung cấp.
+
+## 4.5. Chống gian lận giao dịch
+
+Phải xử lý:
+
+- Gửi lại cùng một giao dịch nhiều lần.
+- Gửi giao dịch thuộc tài khoản khác.
+- Giao dịch giả.
+- Giao dịch hết hạn.
+- Giao dịch đã hoàn tiền.
+- Giao dịch đã bị thu hồi.
+- Callback lặp lại.
+- Callback sai chữ ký.
+- Request đồng thời gây cập nhật trạng thái không nhất quán.
+
+Sử dụng tính bất biến và idempotency phù hợp để cùng một giao dịch không tạo ra nhiều quyền lợi trùng lặp.
+
+Thiết kế cơ chế đồng bộ trạng thái từ thông báo máy chủ chính thức khi nền tảng hỗ trợ.
+
+## 4.6. Hoàn thiện trải nghiệm Premium
+
+Frontend phải hiển thị:
+
+- Gói đang sử dụng.
+- Trạng thái thuê bao.
+- Ngày hết hạn hoặc ngày gia hạn nếu có thông tin.
+- Trạng thái xác minh giao dịch.
+- Hướng dẫn khôi phục giao dịch khi phù hợp.
+- Hướng dẫn quản lý hoặc hủy gia hạn theo nền tảng.
+- Thông báo lỗi rõ ràng khi giao dịch thất bại.
+
+Không hiển thị thành công trước khi backend xác minh được giao dịch.
+
+Không làm mất quyền lợi của người dùng hợp lệ khi ứng dụng tạm thời mất kết nối.
+
+Hãy có cơ chế đồng bộ lại trạng thái sau khi đăng nhập hoặc khôi phục giao dịch.
+
+---
+
+# PHẦN V. SỬA HỆ THỐNG QUẢNG CÁO THƯỞNG
+
+Kiểm tra endpoint `/api/ads/rewarded-complete` và tất cả luồng liên quan.
+
+## 5.1. Không tin request hoàn thành từ client
+
+Không được cấp phần thưởng chỉ vì frontend gửi request báo quảng cáo đã xem xong.
+
+Hãy xác định nhà cung cấp quảng cáo đang sử dụng và khả năng xác minh phía máy chủ.
+
+Nếu sử dụng rewarded ads, hãy triển khai cơ chế xác minh server-side của nhà cung cấp khi có hỗ trợ.
+
+Ví dụ, nếu dùng Google AdMob, hãy đánh giá và triển khai Server-Side Verification theo tài liệu chính thức.
+
+Phải xác minh các thông tin cần thiết như:
+
+- Tính hợp lệ của thông báo.
+- Chữ ký hoặc cơ chế xác thực theo tài liệu nhà cung cấp.
+- Mã giao dịch hoặc mã sự kiện.
+- Người dùng nhận thưởng.
+- Loại phần thưởng.
+- Điều kiện phát thưởng.
+
+Không tự suy đoán định dạng chữ ký.
+
+Không coi một trường `rewarded = true` do frontend gửi lên là bằng chứng hợp lệ.
+
+## 5.2. Chống nhận thưởng nhiều lần
+
+Triển khai cơ chế:
+
+- Chống gửi lại cùng sự kiện.
+- Chống phát thưởng trùng lặp.
+- Kiểm tra giới hạn nhận thưởng.
+- Kiểm tra điều kiện tài khoản.
+- Lưu lịch sử phát thưởng.
+- Ghi nhận lỗi xác minh.
+- Hỗ trợ đối soát khi có tranh chấp.
+
+Nếu chưa thể tích hợp nhà cung cấp quảng cáo, hãy xây dựng giao diện adapter và ghi rõ trạng thái chưa thể phát hành tính năng thưởng thực tế.
+
+Không được giữ cơ chế giả lập dễ bị khai thác trong production.
+
+---
+
+# PHẦN VI. HOÀN THIỆN HỆ THỐNG ĐĂNG KÝ, ĐĂNG NHẬP VÀ KHÔI PHỤC MẬT KHẨU
+
+Kiểm tra tất cả endpoint liên quan đến tài khoản.
+
+## 6.1. Đăng ký tài khoản
+
+Đảm bảo:
+
+- Kiểm tra dữ liệu đầu vào ở backend.
+- Kiểm tra định dạng email.
+- Chuẩn hóa email.
+- Không cho phép đăng ký trùng theo quy tắc xác định danh tính.
+- Mật khẩu được băm bằng thuật toán chuyên dụng như Argon2id hoặc giải pháp phù hợp đã được kiểm chứng.
+- Không lưu mật khẩu dạng văn bản thuần.
+- Không trả mật khẩu hoặc hash mật khẩu về frontend.
+- Có giới hạn tốc độ đăng ký.
+- Có xác minh email nếu mô hình sản phẩm yêu cầu.
+- Có thông báo lỗi hữu ích nhưng không tiết lộ thông tin nhạy cảm.
+
+## 6.2. Đăng nhập
+
+Kiểm tra:
+
+- Xác thực mật khẩu an toàn.
+- Chống brute force.
+- Giới hạn request.
+- Xử lý tài khoản bị khóa hoặc vô hiệu hóa.
+- Thời hạn phiên đăng nhập.
+- Thu hồi phiên khi đăng xuất.
+- Chính sách đổi mật khẩu.
+- Không ghi token hoặc mật khẩu vào log.
+
+Nếu dùng JWT, kiểm tra:
+
+- Chữ ký.
+- Thuật toán được cho phép.
+- Thời hạn.
+- `issuer` và `audience` nếu phù hợp.
+- Cơ chế làm mới token.
+- Cơ chế thu hồi hoặc vô hiệu hóa phiên.
+- Nơi lưu token ở web và mobile.
+
+Không chỉ kiểm tra token có tồn tại; phải xác minh token hợp lệ và chưa hết hạn.
+
+## 6.3. Quên mật khẩu
+
+Endpoint `/api/auth/reset-password` cần được kiểm tra đặc biệt.
+
+Nếu hiện tại chỉ trả về thông báo thành công mà không thực hiện quy trình gửi email và xác minh token, hãy hoàn thiện.
+
+Quy trình tối thiểu:
+
+1. Người dùng nhập email.
+2. Backend trả về thông báo chung, tránh tiết lộ email có tài khoản hay không.
+3. Nếu tài khoản hợp lệ, tạo token ngẫu nhiên an toàn.
+4. Lưu hash của token thay vì token nguyên bản nếu phù hợp với thiết kế.
+5. Token có thời hạn ngắn.
+6. Gửi email thông qua dịch vụ email được cấu hình.
+7. Người dùng mở liên kết và đặt mật khẩu mới.
+8. Backend xác minh token.
+9. Token chỉ được sử dụng một lần.
+10. Thu hồi các phiên cũ nếu chính sách bảo mật yêu cầu.
+11. Không để token hoặc liên kết khôi phục xuất hiện trong log.
+
+Nếu chưa có dịch vụ email, hãy tạo adapter cấu hình được và hướng dẫn cách kết nối dịch vụ thực tế.
+
+Không được giả vờ gửi email khi chưa gửi.
+
+## 6.4. Tài khoản quản trị
+
+Kiểm tra cơ chế khởi tạo admin, đặc biệt khi mật khẩu ban đầu được tạo ngẫu nhiên nhưng không có cơ chế cung cấp an toàn.
+
+Thiết kế quy trình bootstrap admin rõ ràng:
+
+- Chỉ thực hiện khi cần thiết.
+- Có điều kiện môi trường an toàn.
+- Không tạo tài khoản quản trị mặc định với mật khẩu công khai.
+- Không ghi mật khẩu admin vào log.
+- Có hướng dẫn thiết lập mật khẩu ban đầu.
+- Có cơ chế đổi mật khẩu.
+- Có phân quyền riêng cho quản trị.
+- Có thể thu hồi quyền truy cập.
+- Không cho phép người dùng tự nâng quyền bằng request.
+
+Không tạo thêm tài khoản quản trị ngoài ý muốn khi máy chủ khởi động lại.
+
+---
+
+# PHẦN VII. HOÀN THIỆN DATABASE VÀ BẢO TOÀN DỮ LIỆU
+
+Qua đánh giá ban đầu, dự án có dấu hiệu vẫn dùng các tệp JSON như `data/database.json` và `data/database.backup.json` trong khi có tệp migration SQL.
+
+Hãy xác minh và xử lý đúng nguyên nhân.
+
+## 7.1. Xác định database thực tế
+
+Kiểm tra:
+
+- Backend khởi tạo database như thế nào.
+- Dữ liệu người dùng được đọc và ghi ở đâu.
+- `DATABASE_URL` có được sử dụng thật hay không.
+- Các migration có được thực thi không.
+- Có sự khác biệt giữa development và production không.
+- Có nhiều nguồn dữ liệu gây lệch trạng thái không.
+
+Không được giữ một cấu hình PostgreSQL trên tài liệu nhưng thực tế vẫn ghi dữ liệu vào JSON mà không cảnh báo.
+
+## 7.2. Chuyển sang database production phù hợp
+
+Nếu dự án dự kiến có nhiều người dùng và hoạt động thương mại, hãy ưu tiên database quan hệ production như PostgreSQL, trừ khi có lý do kiến trúc rõ ràng để chọn phương án khác.
+
+Trước khi chuyển đổi:
+
+1. Đọc toàn bộ cấu trúc dữ liệu hiện có.
+2. Thiết kế schema tương ứng.
+3. Thiết kế khóa chính và khóa ngoại.
+4. Thiết kế unique constraint.
+5. Thiết kế index.
+6. Thiết kế migration có thể kiểm soát.
+7. Xây dựng công cụ nhập dữ liệu từ JSON nếu dữ liệu hiện tại cần được giữ lại.
+8. Kiểm tra dữ liệu trước và sau khi nhập.
+9. Có phương án rollback.
+10. Không xóa nguồn dữ liệu cũ cho đến khi xác minh thành công.
+
+Nếu không thể chuyển đổi an toàn trong một lần, hãy triển khai theo từng giai đoạn.
+
+Không tự động xóa dữ liệu production.
+
+## 7.3. Tính nhất quán dữ liệu
+
+Không để nhiều request đồng thời ghi đè dữ liệu của nhau.
+
+Sử dụng transaction cho các thao tác liên quan nhiều bản ghi.
+
+Thiết kế ràng buộc dữ liệu tại database, không chỉ dựa vào frontend.
+
+Đảm bảo các thao tác cập nhật Premium, lịch sử thanh toán, điểm thưởng và thống kê có tính nhất quán.
+
+Nếu buộc phải duy trì JSON trong một môi trường thử nghiệm, hãy xử lý ghi file an toàn, khóa đồng bộ khi cần, ghi nguyên tử và phục hồi khi lỗi. Không coi giải pháp này là mặc nhiên đủ cho môi trường production có nhiều tiến trình.
+
+## 7.4. Sao lưu và khôi phục
+
+Xây dựng quy trình:
+
+- Sao lưu định kỳ.
+- Lưu bản sao ngoài máy chủ chính.
+- Bảo vệ quyền truy cập bản sao lưu.
+- Xác minh tính toàn vẹn.
+- Kiểm tra khôi phục định kỳ.
+- Ghi nhận kết quả khôi phục.
+- Quy định thời gian lưu trữ.
+- Có hướng dẫn xử lý sự cố mất dữ liệu.
+
+Không được tuyên bố có backup an toàn chỉ vì tồn tại tệp `database.backup.json`.
+
+---
+
+# PHẦN VIII. BẢO VỆ DỮ LIỆU CÁ NHÂN VÀ BẢO MẬT API
+
+AN TÂM có thể lưu dữ liệu tâm trạng, nhật ký cá nhân và các thông tin nhạy cảm về đời sống tinh thần của người dùng.
+
+Hãy xử lý những dữ liệu này như dữ liệu riêng tư cần được bảo vệ nghiêm túc.
+
+## 8.1. Kiểm soát truy cập
+
+Đảm bảo:
+
+- Người dùng chỉ đọc được dữ liệu thuộc tài khoản mình.
+- Người dùng chỉ sửa được dữ liệu thuộc tài khoản mình.
+- Người dùng không thể đoán ID rồi truy cập dữ liệu người khác.
+- API quản trị có phân quyền riêng.
+- Các thao tác nhạy cảm được xác minh quyền ở backend.
+- Không dựa vào việc ẩn nút trên giao diện để bảo vệ API.
+
+Kiểm tra mọi API liên quan đến nhật ký, tâm trạng, lịch sử thiền, thống kê, AI và thông tin tài khoản.
+
+## 8.2. Kiểm tra đầu vào
+
+Áp dụng xác thực schema cho dữ liệu gửi lên.
+
+Kiểm tra:
+
+- Kiểu dữ liệu.
+- Độ dài.
+- Giới hạn số lượng.
+- Giá trị hợp lệ.
+- Kiểu ID.
+- Kích thước request.
+- Định dạng ngày giờ.
+- Các trường không được phép cập nhật.
+
+Không cho phép người dùng tự sửa các trường nhạy cảm như vai trò, quyền Premium hoặc trạng thái thanh toán bằng API cập nhật hồ sơ thông thường.
+
+## 8.3. Chống lạm dụng API
+
+Thiết lập giới hạn phù hợp cho:
+
+- Đăng ký.
+- Đăng nhập.
+- Khôi phục mật khẩu.
+- Gửi email.
+- Chat AI.
+- Giải thích kinh văn.
+- Phát thưởng quảng cáo.
+- Xác minh giao dịch.
+- Tìm kiếm và truy vấn dữ liệu.
+
+Nếu triển khai nhiều tiến trình hoặc nhiều máy chủ, không sử dụng bộ đếm rate limit chỉ tồn tại trong bộ nhớ của một tiến trình mà không đánh giá hệ quả.
+
+Ưu tiên cơ chế dùng chung khi kiến trúc yêu cầu.
+
+## 8.4. Bảo mật vận hành
+
+Kiểm tra và thiết lập khi phù hợp:
+
+- HTTPS.
+- CORS.
+- Security headers.
+- Giới hạn kích thước request.
+- Chống truy cập trái phép.
+- Quản lý secret.
+- Xử lý lỗi an toàn.
+- Phân quyền file.
+- Quản lý dependency.
+- Kiểm tra lỗ hổng dependency.
+- Chính sách log.
+- Chính sách lưu trữ dữ liệu.
+
+Không trả stack trace, biến môi trường, đường dẫn nội bộ hoặc thông tin xác thực cho client trong production.
+
+Không ghi nhật ký riêng tư của người dùng vào hệ thống phân tích nếu không thực sự cần thiết.
+
+---
+
+# PHẦN IX. HOÀN THIỆN CÁC CHỨC NĂNG AI
+
+Kiểm tra toàn bộ luồng AI, bao gồm `/api/ai/chat`, `/api/ai/explain-scripture` và các endpoint liên quan.
+
+## 9.1. Quản lý API key
+
+- API key chỉ tồn tại ở backend.
+- Không đóng gói API key vào ứng dụng mobile.
+- Không gửi API key đến frontend.
+- Không ghi key vào log.
+- Có thể thay đổi key bằng cấu hình môi trường.
+- Có cách xử lý khi nhà cung cấp AI gặp sự cố.
+
+## 9.2. Giới hạn sử dụng và chi phí
+
+Kiểm tra sự khác biệt về rate limit giữa các endpoint.
+
+Đảm bảo không có endpoint AI quan trọng nào bỏ qua giới hạn sử dụng.
+
+Xây dựng các giới hạn phù hợp:
+
+- Theo tài khoản.
+- Theo địa chỉ IP khi thích hợp.
+- Theo gói người dùng.
+- Theo thời gian.
+- Theo độ dài đầu vào.
+- Theo lượng token.
+- Theo ngân sách hoặc hạn mức nhà cung cấp.
+
+Không chỉ giới hạn ở frontend.
+
+Không cho phép người dùng gọi API liên tục để gây chi phí không kiểm soát.
+
+Có cơ chế dừng hoặc hạn chế sử dụng khi đạt ngưỡng chi phí.
+
+Không sử dụng một con số giới hạn tùy ý cho mọi trường hợp; hãy đưa ra cấu hình có thể thay đổi và giải thích lựa chọn.
+
+## 9.3. Xử lý lỗi AI
+
+Nếu AI không phản hồi:
+
+- Hiển thị thông báo phù hợp.
+- Cho phép thử lại.
+- Không làm mất nội dung người dùng vừa nhập.
+- Không ghi nhận phản hồi lỗi như một câu trả lời thành công.
+- Không tự tạo nguồn trích dẫn giả.
+- Không hiển thị trích dẫn khiến người dùng hiểu nhầm rằng nội dung đã được xác minh.
+
+Thiết lập timeout, retry có giới hạn và xử lý lỗi theo loại.
+
+Không retry vô hạn.
+
+## 9.4. Chất lượng nội dung Phật học và thiền
+
+AN TÂM cần có định hướng nội dung nhất quán, nhẹ nhàng và có trách nhiệm.
+
+Hãy thiết kế hệ thống AI để:
+
+- Trả lời rõ ràng, dễ hiểu.
+- Không khẳng định nội dung bịa đặt là lời Phật dạy.
+- Phân biệt trích dẫn kinh văn với phần giải thích của AI.
+- Ghi nguồn chính xác khi có thể xác minh.
+- Không tạo số chương, số phẩm hoặc tên kinh giả.
+- Nêu rõ khi không xác định được nguồn.
+- Không đưa ra khẳng định y tế hoặc tâm lý vượt quá khả năng.
+- Khuyến khích người dùng tìm hỗ trợ chuyên môn khi vấn đề vượt ngoài phạm vi ứng dụng.
+- Không tự nhận là chuyên gia y tế hoặc người có thẩm quyền tôn giáo.
+
+Nếu sử dụng RAG hoặc kho dữ liệu nội bộ, hãy kiểm tra:
+
+- Nguồn tài liệu.
+- Chất lượng dữ liệu.
+- Quy trình chia đoạn.
+- Truy xuất tài liệu.
+- Độ chính xác của trích dẫn.
+- Cách xử lý khi không tìm được tài liệu phù hợp.
+- Quyền sử dụng nội dung.
+
+## 9.5. Bảo vệ dữ liệu gửi cho AI
+
+Không mặc định gửi toàn bộ nhật ký cá nhân, lịch sử tâm trạng hoặc hồ sơ người dùng đến nhà cung cấp AI.
+
+Chỉ gửi dữ liệu cần thiết cho tác vụ.
+
+Nếu có tính năng cá nhân hóa dựa trên dữ liệu riêng tư, hãy xây dựng sự minh bạch, lựa chọn tham gia phù hợp và cơ chế kiểm soát dữ liệu.
+
+Không dùng dữ liệu riêng tư cho mục đích khác nếu chưa có căn cứ và cơ chế phù hợp.
+
+---
+
+# PHẦN X. HOÀN THIỆN TIẾN ĐỘ THIỀN, TÂM TRẠNG VÀ NHẬT KÝ
+
+Kiểm tra các chức năng:
+
+- Ghi nhận phiên thiền.
+- Tính thời lượng.
+- Thống kê tiến độ.
+- Chuỗi ngày thực hành.
+- Nhật ký cá nhân.
+- Theo dõi tâm trạng.
+- Mục tiêu thực hành.
+- Nhắc nhở.
+- Đồng bộ giữa các thiết bị.
+
+## 10.1. Kiểm tra dữ liệu phiên thiền
+
+Nếu `/api/user/complete-session` nhận số phút từ frontend, không được mặc định tin mọi giá trị client gửi lên.
+
+Xác định dữ liệu nào cần được xác thực.
+
+Tối thiểu phải:
+
+- Kiểm tra giá trị hợp lệ.
+- Chặn giá trị âm hoặc quá lớn.
+- Chống gửi lặp để cộng tiến độ nhiều lần.
+- Xử lý request trùng lặp.
+- Xác định cách xử lý khi ứng dụng bị đóng giữa phiên.
+- Không cho phép sửa thống kê người khác.
+- Đảm bảo dữ liệu hiển thị nhất quán giữa các thiết bị.
+
+Nếu cần độ chính xác cao, hãy thiết kế phiên thực hành có thời điểm bắt đầu và kết thúc được backend xác minh phù hợp.
+
+Không tuyên bố có thể chống mọi hành vi gian lận trên thiết bị do người dùng kiểm soát; hãy đánh giá mức độ rủi ro và lựa chọn biện pháp phù hợp.
+
+## 10.2. Nhật ký cá nhân
+
+Đảm bảo:
+
+- Người dùng tạo, sửa và xóa nhật ký của chính mình.
+- Nội dung không xuất hiện trong log hệ thống ngoài nhu cầu cần thiết.
+- Không bị lộ qua API.
+- Có xử lý lỗi khi lưu.
+- Có thông báo khi dữ liệu chưa được đồng bộ.
+- Có chính sách lưu trữ và xóa dữ liệu rõ ràng.
+
+## 10.3. Tâm trạng
+
+Nếu lưu lịch sử tâm trạng, phải:
+
+- Kiểm soát quyền truy cập.
+- Không chia sẻ dữ liệu này công khai.
+- Không tự suy diễn thành chẩn đoán bệnh.
+- Có thể xóa dữ liệu theo chính sách.
+- Không gửi sang bên thứ ba khi không cần thiết.
+
+---
+
+# PHẦN XI. HOÀN THIỆN ỨNG DỤNG ANDROID VÀ IOS
+
+Dự án có `capacitor.config.ts`, nhưng cần xác minh xem đã có đầy đủ cấu hình và dự án native hay chưa.
+
+Không được kết luận đã sẵn sàng phát hành chỉ vì có tệp cấu hình Capacitor.
+
+## 11.1. Kiểm tra môi trường build
+
+Kiểm tra:
+
+- Phiên bản Node.js.
+- Package manager.
+- Dependencies.
+- Scripts.
+- Phiên bản Capacitor.
+- Cấu hình web build.
+- Cấu hình Android.
+- Cấu hình iOS.
+- Các plugin cần thiết.
+- Quy trình đồng bộ tài nguyên.
+- Cấu hình signing.
+- Quyền ứng dụng.
+- Cấu hình deep link nếu sử dụng.
+- Cấu hình thông báo đẩy nếu sử dụng.
+
+Kiểm tra `package.json` có script `start` hay không.
+
+Nếu tài liệu triển khai yêu cầu `npm start` nhưng script chưa tồn tại, hãy sửa tài liệu hoặc bổ sung script phù hợp. Không được để tài liệu và mã nguồn mâu thuẫn.
+
+## 11.2. Hoàn thiện Capacitor
+
+Nếu dự án chưa có thư mục Android/iOS và môi trường cho phép, hãy bổ sung dự án native theo đúng phiên bản Capacitor đang dùng.
+
+Không tự ý nâng cấp hàng loạt dependencies khi chưa đánh giá tương thích.
+
+Xây dựng quy trình có thể tái lập:
+
+1. Cài dependencies.
+2. Build frontend.
+3. Đồng bộ Capacitor.
+4. Build Android.
+5. Build iOS trong môi trường macOS phù hợp.
+6. Kiểm tra cấu hình release.
+7. Kiểm tra tài nguyên và quyền ứng dụng.
+
+Không được tuyên bố đã build iOS nếu không có môi trường phù hợp để thực hiện và xác minh.
+
+## 11.3. Kiểm thử trên thiết bị thật
+
+Lập danh sách kiểm thử:
+
+- Mở ứng dụng lần đầu.
+- Đăng ký.
+- Đăng nhập.
+- Đăng xuất.
+- Quên mật khẩu.
+- Khôi phục phiên đăng nhập.
+- Mất kết nối Internet.
+- Kết nối Internet trở lại.
+- Phát âm thanh.
+- Tạm dừng và tiếp tục thiền.
+- Khóa màn hình.
+- Chuyển ứng dụng.
+- Nhận thông báo nếu có.
+- Mở liên kết sâu nếu có.
+- Mua Premium.
+- Khôi phục giao dịch.
+- Quảng cáo thưởng.
+- Ghi nhật ký.
+- Xóa tài khoản.
+- Cập nhật ứng dụng.
+
+Kiểm tra trên các kích thước màn hình và phiên bản hệ điều hành được hỗ trợ.
+
+Nếu chưa có thiết bị thật, hãy chạy các kiểm thử có thể thực hiện bằng emulator và ghi rõ những hạng mục chưa xác minh trên thiết bị thật.
+
+---
+
+# PHẦN XII. HOÀN THIỆN GIAO DIỆN VÀ TRẢI NGHIỆM NGƯỜI DÙNG
+
+Giữ tinh thần thiết kế của AN TÂM: an tĩnh, tối giản, ấm áp, hiện đại và dễ sử dụng.
+
+Không biến ứng dụng thành một giao diện quá nhiều màu sắc, nút bấm hoặc thông tin gây phân tâm.
+
+## 12.1. Kiểm tra toàn bộ màn hình
+
+Đánh giá:
+
+- Màn hình khởi động.
+- Đăng nhập.
+- Đăng ký.
+- Trang chủ.
+- Thiền.
+- Âm thanh.
+- Nội dung Phật học.
+- Chat AI.
+- Nhật ký.
+- Theo dõi tâm trạng.
+- Tiến độ.
+- Premium.
+- Hồ sơ.
+- Cài đặt.
+- Chính sách riêng tư.
+- Điều khoản sử dụng.
+- Màn hình quản trị nếu có.
+
+## 12.2. Nguyên tắc UX
+
+- Nút chính phải dễ nhận biết.
+- Điều hướng phải nhất quán.
+- Nội dung không bị cắt trên màn hình nhỏ.
+- Văn bản dễ đọc.
+- Có trạng thái loading.
+- Có trạng thái rỗng.
+- Có thông báo lỗi.
+- Có xác nhận cho thao tác nguy hiểm.
+- Không để nút bấm không hoạt động.
+- Không để trang trống mà không giải thích.
+- Không hiển thị dữ liệu giả như dữ liệu thật.
+- Có hỗ trợ tiếp cận cơ bản.
+- Hạn chế chuyển động không cần thiết.
+- Kiểm tra tương phản và kích thước vùng chạm.
+
+Không chỉ chụp ảnh giao diện để báo cáo. Hãy kiểm tra các tương tác thực tế.
+
+## 12.3. Tối ưu hiệu năng
+
+Kiểm tra:
+
+- Thời gian mở ứng dụng.
+- Kích thước bundle.
+- Tốc độ tải trang.
+- Các request dư thừa.
+- Hình ảnh và âm thanh.
+- Bộ nhớ.
+- Render không cần thiết.
+- Tải dữ liệu lớn.
+- Lỗi khi chuyển màn hình liên tục.
+
+Không tối ưu theo suy đoán; ưu tiên những điểm có bằng chứng gây chậm hoặc ảnh hưởng trải nghiệm.
+
+---
+
+# PHẦN XIII. THIẾT KẾ VÀ KIỂM TRA HỆ THỐNG KIỂM THỬ
+
+Hãy xây dựng bộ kiểm thử có thể chạy lại.
+
+## 13.1. Kiểm thử tự động
+
+Bổ sung hoặc hoàn thiện các nhóm:
+
+- Unit tests.
+- API integration tests.
+- Authentication tests.
+- Authorization tests.
+- Premium verification tests.
+- Rewarded ads tests.
+- Database tests.
+- AI rate limit tests.
+- Error handling tests.
+- Build tests.
+
+Chọn công cụ tương thích với stack hiện tại, không cài nhiều framework trùng lặp nếu không cần thiết.
+
+## 13.2. Các trường hợp bảo mật bắt buộc
+
+Phải có kiểm thử chứng minh:
+
+1. Người chưa đăng nhập không thể truy cập API riêng tư.
+2. Người dùng A không đọc được nhật ký của người dùng B.
+3. Người dùng A không sửa được dữ liệu của người dùng B.
+4. Người dùng thường không thể gọi API quản trị.
+5. Request tự đặt `isPremium = true` không cấp Premium.
+6. Request sử dụng `platform = "sandbox_test"` không thể kích hoạt Premium trong production.
+7. Thiếu cấu hình thanh toán không tự động cấp Premium.
+8. Giao dịch giả không được xác nhận.
+9. Một giao dịch không thể tạo quyền lợi nhiều lần.
+10. Request quảng cáo thưởng giả không được cấp thưởng.
+11. Một sự kiện quảng cáo không thể được nhận thưởng nhiều lần.
+12. Request khôi phục mật khẩu không hợp lệ không đổi được mật khẩu.
+13. Token hết hạn không được chấp nhận.
+14. Người dùng không thể tự thay đổi vai trò hoặc quyền hạn.
+15. AI API không thể bị gọi không giới hạn.
+16. Giá trị thời lượng thiền bất hợp lý không được ghi nhận.
+17. Dữ liệu nhạy cảm không xuất hiện trong response không cần thiết.
+18. Lỗi backend không làm lộ stack trace trong production.
+
+Các kiểm thử phải chạy trên môi trường thử nghiệm, không được sử dụng giao dịch thật hoặc dữ liệu production theo cách gây tác động không mong muốn.
+
+## 13.3. Báo cáo kiểm thử trung thực
+
+Phân biệt rõ:
+
+- PASS: Đã chạy và đạt.
+- FAIL: Đã chạy và không đạt.
+- BLOCKED: Bị chặn bởi môi trường hoặc thông tin còn thiếu.
+- NOT RUN: Chưa thực hiện.
+
+Không đánh dấu PASS chỉ vì mã nguồn có vẻ đúng.
+
+Không tự tạo kết quả kiểm thử.
+
+---
+
+# PHẦN XIV. CI/CD, DEPLOYMENT VÀ GIÁM SÁT
+
+## 14.1. Quy trình triển khai
+
+Tạo hoặc hoàn thiện hướng dẫn triển khai gồm:
+
+- Cài dependencies.
+- Cấu hình môi trường.
+- Build.
+- Chạy migration.
+- Khởi động backend.
+- Phục vụ frontend.
+- Kiểm tra health endpoint.
+- Kiểm tra kết nối database.
+- Kiểm tra log.
+- Rollback khi cần.
+
+Không đưa secret thật vào tài liệu hoặc kho Git.
+
+Tạo `.env.example` chỉ chứa tên biến và giá trị mẫu không nhạy cảm.
+
+## 14.2. Kiểm tra health
+
+Nếu phù hợp, tạo endpoint health check để kiểm tra:
+
+- Ứng dụng đang hoạt động.
+- Database có thể kết nối.
+- Các dependency thiết yếu.
+- Trạng thái cơ bản của hệ thống.
+
+Không để health endpoint công khai trả về thông tin cấu hình nhạy cảm.
+
+## 14.3. Logging và monitoring
+
+Thiết lập log có cấu trúc, dễ tra cứu.
+
+Theo dõi các nhóm sự kiện:
+
+- Lỗi API.
+- Lỗi database.
+- Lỗi xác thực.
+- Lỗi giao dịch.
+- Lỗi xác minh quảng cáo.
+- Lỗi nhà cung cấp AI.
+- Tình trạng hệ thống.
+- Các dấu hiệu bất thường.
+
+Không ghi mật khẩu, token xác thực, API key, nội dung nhật ký riêng tư hoặc dữ liệu nhạy cảm không cần thiết.
+
+Nếu có công cụ theo dõi lỗi, hãy tích hợp thông qua cấu hình môi trường và tài liệu hướng dẫn.
+
+## 14.4. Quy trình cập nhật
+
+Thiết kế quy trình cập nhật phiên bản sao cho:
+
+- Migration được kiểm soát.
+- Có phương án rollback.
+- Không làm mất dữ liệu.
+- Có kiểm thử trước triển khai.
+- Có bước xác minh sau triển khai.
+- Có cách tắt tạm thời tính năng gặp sự cố nếu cần.
+
+---
+
+# PHẦN XV. CHÍNH SÁCH, QUYỀN RIÊNG TƯ VÀ XÓA TÀI KHOẢN
+
+Hãy kiểm tra những yêu cầu pháp lý và chính sách nền tảng có liên quan đến thị trường phát hành dự kiến.
+
+Không khẳng định đã tuân thủ pháp luật chỉ vì đã tạo một trang chính sách mẫu.
+
+## 15.1. Chính sách quyền riêng tư
+
+Chuẩn bị tài liệu mô tả chính xác:
+
+- Dữ liệu được thu thập.
+- Mục đích sử dụng.
+- Dữ liệu được lưu ở đâu.
+- Dữ liệu được gửi cho bên thứ ba nào.
+- Thời gian lưu trữ.
+- Cách yêu cầu truy cập hoặc xóa dữ liệu.
+- Cách liên hệ bộ phận hỗ trợ.
+- Cách xử lý dữ liệu nhật ký và tâm trạng.
+- Cách sử dụng AI và dữ liệu gửi đến nhà cung cấp AI.
+
+Nội dung phải khớp với hành vi thực tế của ứng dụng.
+
+Không tuyên bố không thu thập dữ liệu nếu hệ thống thực tế có lưu dữ liệu.
+
+## 15.2. Xóa tài khoản
+
+Nếu ứng dụng có tạo tài khoản, hãy kiểm tra yêu cầu hiện hành của Google Play và Apple App Store đối với việc xóa tài khoản.
+
+Triển khai quy trình phù hợp:
+
+- Người dùng xác thực trước khi yêu cầu xóa.
+- Có xác nhận hành động.
+- Xóa hoặc vô hiệu hóa tài khoản theo chính sách.
+- Xử lý nhật ký và dữ liệu cá nhân liên quan.
+- Xử lý dữ liệu cần giữ lại theo nghĩa vụ pháp lý hoặc nghiệp vụ hợp lệ.
+- Thu hồi phiên đăng nhập.
+- Xử lý trạng thái thuê bao đúng theo quy định của nhà cung cấp.
+- Không hứa xóa ngay lập tức nếu có giai đoạn lưu trữ bắt buộc.
+- Ghi nhận kết quả xử lý an toàn.
+
+Nếu chưa thể xóa tự động, hãy ghi rõ phần còn thiếu và không giả vờ hoàn thành.
+
+## 15.3. Điều khoản sử dụng
+
+Chuẩn bị điều khoản sử dụng phù hợp với chức năng thật của AN TÂM, bao gồm khi cần:
+
+- Tài khoản.
+- Nội dung.
+- AI.
+- Thuê bao.
+- Thanh toán.
+- Hoàn tiền.
+- Hành vi bị cấm.
+- Giới hạn trách nhiệm phù hợp.
+- Liên hệ hỗ trợ.
+
+Tài liệu pháp lý cần được người có chuyên môn rà soát khi cần thiết trước khi phát hành.
+
+---
+
+# PHẦN XVI. CÁC TÍNH NĂNG GIÁ TRỊ GIA TĂNG CHO AN TÂM
+
+Chỉ thực hiện các tính năng mới sau khi những vấn đề P0 và P1 đã được xử lý và xác minh.
+
+Không thêm tính năng mới làm trì hoãn việc khắc phục bảo mật.
+
+Hãy đánh giá khả năng phát triển các tính năng sau.
+
+## 16.1. Lộ trình thực hành 7, 21 và 30 ngày
+
+Người dùng có thể chọn một mục tiêu:
+
+- Giảm căng thẳng trong sinh hoạt hằng ngày.
+- Tập trung vào hơi thở.
+- Hình thành thói quen thiền.
+- Thực hành chánh niệm.
+- Dành thời gian tĩnh lặng.
+- Tìm hiểu giáo lý Phật học cơ bản.
+
+Mỗi lộ trình có:
+
+- Mục tiêu rõ ràng.
+- Bài thực hành theo ngày.
+- Thời lượng phù hợp.
+- Tiến độ.
+- Nhắc nhở tùy chọn.
+- Tổng kết.
+- Khả năng tạm dừng hoặc tiếp tục.
+
+Không dùng thông báo gây áp lực hoặc khiến người dùng cảm thấy có lỗi khi bỏ lỡ một ngày.
+
+## 16.2. Trợ lý AI đồng hành
+
+Xem xét xây dựng trợ lý AI có thể gợi ý nội dung thực hành dựa trên lựa chọn của người dùng.
+
+Nguyên tắc:
+
+- Có sự đồng ý phù hợp trước khi sử dụng dữ liệu cá nhân.
+- Người dùng có thể sử dụng ứng dụng mà không cần chia sẻ nhật ký.
+- Không đưa ra chẩn đoán sức khỏe.
+- Không tạo sự lệ thuộc cảm xúc.
+- Không tự nhận là con người hoặc bậc thầy tâm linh.
+- Không bịa lời Phật dạy.
+- Có giới hạn sử dụng rõ ràng.
+- Có cơ chế kiểm soát chi phí.
+
+## 16.3. Âm thanh thiền
+
+Kiểm tra và cải thiện:
+
+- Phát, tạm dừng và tiếp tục.
+- Bộ đếm thời gian.
+- Hẹn giờ kết thúc.
+- Chuyển âm thanh.
+- Tiếp tục phát trong trường hợp được hệ điều hành cho phép.
+- Xử lý cuộc gọi hoặc âm thanh khác.
+- Trạng thái khi mất mạng.
+- Chất lượng và quyền sử dụng nội dung âm thanh.
+
+## 16.4. Cá nhân hóa có trách nhiệm
+
+Có thể đề xuất bài thực hành dựa trên mục tiêu do người dùng chọn.
+
+Không cần thu thập nhiều dữ liệu hơn mức cần thiết.
+
+Không suy luận quá mức về tình trạng tâm lý của người dùng.
+
+Mọi đề xuất cá nhân hóa cần có cách giải thích dễ hiểu và lựa chọn tắt nếu phù hợp.
+
+---
+
+# PHẦN XVII. KẾ HOẠCH THỰC HIỆN THEO GIAI ĐOẠN
+
+Hãy thực hiện theo thứ tự dưới đây.
+
+## GIAI ĐOẠN 1 — BẢO MẬT VÀ NGĂN RỦI RO NGHIÊM TRỌNG
+
+Ưu tiên:
+
+1. Khóa cơ chế cấp Premium giả.
+2. Tách biệt sandbox và production.
+3. Xác minh giao dịch đúng cách.
+4. Ngăn gian lận quảng cáo thưởng.
+5. Kiểm tra phân quyền API.
+6. Kiểm tra bảo vệ dữ liệu người dùng.
+7. Khắc phục những lỗi xác thực nghiêm trọng.
+8. Bảo vệ thông tin bí mật.
+
+Sau khi hoàn thành, chạy các kiểm thử bảo mật liên quan.
+
+Không tiếp tục triển khai công khai khi còn lỗ hổng P0 chưa được xử lý.
+
+## GIAI ĐOẠN 2 — TÍNH TOÀN VẸN DỮ LIỆU
+
+1. Xác định database thực tế.
+2. Xử lý sự không nhất quán giữa JSON và migration SQL.
+3. Hoàn thiện database production.
+4. Xây dựng migration.
+5. Xây dựng quy trình sao lưu và phục hồi.
+6. Hoàn thiện reset password.
+7. Hoàn thiện bootstrap admin.
+8. Kiểm tra dữ liệu nhật ký và tâm trạng.
+
+Chạy kiểm thử dữ liệu và xác minh tính nhất quán.
+
+## GIAI ĐOẠN 3 — HOÀN THIỆN BACKEND
+
+1. Chuẩn hóa API.
+2. Chuẩn hóa kiểm tra dữ liệu đầu vào.
+3. Hoàn thiện rate limiting.
+4. Hoàn thiện xử lý lỗi.
+5. Hoàn thiện AI.
+6. Hoàn thiện tiến độ thiền.
+7. Hoàn thiện logging.
+8. Hoàn thiện health check.
+
+## GIAI ĐOẠN 4 — HOÀN THIỆN FRONTEND VÀ MOBILE
+
+1. Kiểm tra toàn bộ màn hình.
+2. Sửa lỗi điều hướng.
+3. Sửa lỗi giao diện.
+4. Hoàn thiện trạng thái loading, rỗng và lỗi.
+5. Kiểm tra tích hợp API.
+6. Hoàn thiện Capacitor.
+7. Thiết lập quy trình build Android.
+8. Thiết lập quy trình build iOS trong môi trường phù hợp.
+
+## GIAI ĐOẠN 5 — KIỂM THỬ VÀ PHÁT HÀNH
+
+1. Chạy lint.
+2. Chạy type check.
+3. Chạy build.
+4. Chạy unit tests.
+5. Chạy integration tests.
+6. Chạy các kiểm thử bảo mật.
+7. Kiểm thử giao dịch trong môi trường sandbox chính thức.
+8. Kiểm thử trên thiết bị hoặc emulator.
+9. Kiểm tra cấu hình production.
+10. Hoàn thiện tài liệu.
+11. Tạo checklist phát hành.
+12. Báo cáo các hạng mục chưa hoàn thành.
+
+Không bỏ qua giai đoạn kiểm thử chỉ để rút ngắn thời gian.
+
+---
+
+# PHẦN XVIII. QUY TẮC KHI LÀM VIỆC VỚI CÔNG CỤ AI LẬP TRÌNH
+
+Bạn cần thực hiện công việc theo nguyên tắc sau:
+
+### Quy tắc 1
+
+Đọc mã nguồn trước khi thay đổi.
+
+Không suy đoán tên file, hàm hoặc cấu trúc dữ liệu khi chưa kiểm tra.
+
+### Quy tắc 2
+
+Mỗi lần sửa cần có mục tiêu rõ ràng.
+
+Ưu tiên sửa từng nhóm vấn đề để dễ kiểm tra và rollback.
+
+### Quy tắc 3
+
+Không viết lại toàn bộ dự án chỉ vì muốn sử dụng kiến trúc khác.
+
+Chỉ thay đổi kiến trúc khi có lý do kỹ thuật rõ ràng.
+
+### Quy tắc 4
+
+Không xóa chức năng đang hoạt động để làm cho kiểm thử vượt qua.
+
+### Quy tắc 5
+
+Không dùng mock, dữ liệu giả hoặc tài khoản giả để báo cáo rằng chức năng production đã hoàn thiện.
+
+Mock chỉ được sử dụng trong các bài kiểm thử được cô lập.
+
+### Quy tắc 6
+
+Không bỏ qua lỗi TypeScript, lint hoặc build bằng cách tắt quy tắc một cách tùy tiện.
+
+Nếu có lỗi cũ không liên quan, hãy ghi rõ và xử lý trong kế hoạch phù hợp.
+
+### Quy tắc 7
+
+Không cài dependency chỉ vì có vẻ tiện lợi.
+
+Kiểm tra mức độ duy trì, tương thích và rủi ro bảo mật trước khi thêm thư viện.
+
+### Quy tắc 8
+
+Không nâng cấp tất cả dependencies cùng lúc khi chưa có lý do.
+
+Nếu phải nâng cấp, hãy kiểm tra tương thích và chạy lại các bài kiểm thử.
+
+### Quy tắc 9
+
+Không tự ý sử dụng thông tin xác thực hoặc dịch vụ trả phí.
+
+Nếu cần khóa API, tài khoản nhà cung cấp hoặc cấu hình thanh toán, hãy ghi rõ yêu cầu và chờ thông tin cần thiết.
+
+### Quy tắc 10
+
+Không thực hiện thao tác phá hủy dữ liệu production.
+
+Các thao tác migration, xóa dữ liệu hoặc thay đổi cấu trúc quan trọng phải có phương án sao lưu và xác nhận phù hợp.
+
+### Quy tắc 11
+
+Không tuyên bố PASS khi chưa có bằng chứng kiểm thử.
+
+### Quy tắc 12
+
+Sau mỗi giai đoạn, phải tóm tắt:
+
+- Đã sửa gì.
+- Tệp nào đã thay đổi.
+- Lệnh nào đã chạy.
+- Kiểm thử nào đã chạy.
+- Kết quả thật.
+- Việc gì còn thiếu.
+- Rủi ro còn lại.
+
+### Quy tắc 13
+
+Nếu có thể thực hiện công việc trực tiếp, hãy tiếp tục sửa mã nguồn thay vì chỉ đưa ra hướng dẫn để người dùng tự sửa.
+
+Nếu môi trường không cho phép thực hiện một phần công việc, hãy nêu chính xác giới hạn đó.
+
+---
+
+# PHẦN XIX. ĐẦU RA BẮT BUỘC
+
+Sau khi hoàn thành công việc, hãy cung cấp đầy đủ các kết quả sau.
+
+## 19.1. Báo cáo tổng thể
+
+Bảng báo cáo phải có:
+
+| Hạng mục | Trạng thái ban đầu | Việc đã thực hiện | Kết quả kiểm thử | Trạng thái cuối |
+|---|---|---|---|---|
+
+Trạng thái chỉ được sử dụng khi có bằng chứng tương ứng.
+
+## 19.2. Danh sách tệp đã thay đổi
+
+Với mỗi tệp:
+
+- Đường dẫn.
+- Mục đích.
+- Những thay đổi chính.
+- Lý do thay đổi.
+- Ảnh hưởng đến chức năng khác.
+
+## 19.3. Kết quả kiểm thử
+
+Báo cáo:
+
+- Lệnh đã chạy.
+- Số bài kiểm thử thành công.
+- Số bài thất bại.
+- Số bài bị chặn.
+- Số bài chưa chạy.
+- Lỗi còn tồn tại.
+- Những phần chưa thể xác minh.
+
+Nếu một lệnh không chạy được, phải ghi rõ nguyên nhân.
+
+## 19.4. Tài liệu triển khai
+
+Tạo hoặc cập nhật các tài liệu cần thiết:
+
+- `README.md`.
+- `.env.example`.
+- Hướng dẫn cài đặt.
+- Hướng dẫn phát triển.
+- Hướng dẫn triển khai production.
+- Hướng dẫn migration database.
+- Hướng dẫn sao lưu và phục hồi.
+- Hướng dẫn cấu hình thanh toán.
+- Hướng dẫn cấu hình quảng cáo.
+- Hướng dẫn cấu hình AI.
+- Hướng dẫn build Android.
+- Hướng dẫn build iOS.
+- Hướng dẫn kiểm thử.
+- Checklist phát hành.
+
+Chỉ tạo tài liệu thực sự phù hợp với cấu trúc dự án.
+
+Không đưa secret thật vào các tài liệu.
+
+## 19.5. Danh sách việc chủ dự án phải thực hiện
+
+Phân biệt rõ:
+
+**Nhóm A — AI đã hoàn thành và kiểm chứng.**
+
+**Nhóm B — AI đã hoàn thành mã nguồn nhưng cần tài khoản hoặc cấu hình bên ngoài để xác minh.**
+
+**Nhóm C — Cần chủ dự án cung cấp thông tin hoặc thực hiện thao tác thủ công.**
+
+Ví dụ:
+
+- Tạo hoặc cấu hình tài khoản nhà cung cấp thanh toán.
+- Cấu hình email.
+- Cung cấp thông tin ứng dụng trong Google Play Console.
+- Cấu hình Apple Developer khi cần.
+- Cấu hình dịch vụ AI.
+- Cấu hình database production.
+- Cấu hình tên miền và HTTPS.
+- Xác minh chính sách quyền riêng tư.
+- Thực hiện kiểm thử trên thiết bị thật.
+
+Không đánh đồng việc viết mã với việc hoàn tất cấu hình dịch vụ thực tế.
+
+## 19.6. Kết luận phát hành
+
+Cuối cùng, hãy đưa ra một kết luận theo một trong các mức:
+
+- **NO-GO:** Còn lỗ hổng nghiêm trọng hoặc chưa thể bảo đảm an toàn.
+- **CONDITIONAL GO:** Các vấn đề chính đã được xử lý nhưng vẫn còn điều kiện bắt buộc trước khi phát hành.
+- **GO FOR RELEASE CANDIDATE:** Đã hoàn thành các kiểm tra trong phạm vi có thể xác minh và sẵn sàng bước vào vòng kiểm thử/phát hành cuối cùng.
+
+Chỉ được kết luận phù hợp với bằng chứng thực tế.
+
+Không được tự kết luận ứng dụng đã sẵn sàng phát hành công khai nếu chưa xác minh các điều kiện cần thiết.
+
+---
+
+# PHẦN XX. BẮT ĐẦU THỰC HIỆN
+
+Bây giờ hãy bắt đầu làm việc với mã nguồn AN TÂM hiện có.
+
+**Bước 1:** Kiểm tra cấu trúc và công nghệ của dự án.
+
+**Bước 2:** Xác nhận các vấn đề nghiêm trọng trong mã nguồn thực tế.
+
+**Bước 3:** Tạo danh sách công việc theo mức độ ưu tiên.
+
+**Bước 4:** Bắt đầu khắc phục các vấn đề P0, đặc biệt là cơ chế cấp Premium, xác minh giao dịch và quảng cáo thưởng.
+
+**Bước 5:** Tiếp tục các giai đoạn còn lại theo kế hoạch.
+
+**Bước 6:** Sau mỗi nhóm sửa đổi, chạy kiểm thử liên quan và ghi lại kết quả.
+
+**Bước 7:** Hoàn thiện tài liệu, quy trình build và checklist phát hành.
+
+Không dừng lại sau khi chỉ tạo báo cáo ban đầu.
+
+Hãy thực hiện tối đa công việc có thể hoàn thành trong môi trường hiện tại.
+
+Nếu không thể hoàn tất toàn bộ trong một lượt, hãy ưu tiên các hạng mục có rủi ro cao nhất, lưu lại tiến độ, nêu rõ phần còn lại và tiếp tục theo từng giai đoạn mà không làm mất các thay đổi đã hoàn thành.
+
+Mục tiêu cuối cùng là đưa AN TÂM từ mã nguồn hiện tại tiến gần nhất có thể đến một sản phẩm thực tế **an toàn, ổn định, dễ bảo trì, có thể kiểm thử và có quy trình phát hành rõ ràng**.

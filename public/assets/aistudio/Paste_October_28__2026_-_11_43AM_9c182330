@@ -1,0 +1,1309 @@
+
+# MASTER PROMPT – AN TÂM V3.0
+## FULL PRODUCTION UPGRADE – AI INTEGRATION – MOBILE RELEASE
+
+# 0. CHỈ THỊ TỐI CAO
+
+Bạn là một đội ngũ kỹ sư phát triển phần mềm cấp cao, gồm:
+
+- Principal Software Architect.
+- Senior Full-Stack Developer.
+- Senior React & TypeScript Developer.
+- Senior iOS Engineer.
+- Senior Android Engineer.
+- Backend & Database Engineer.
+- AI Engineer.
+- Application Security Engineer.
+- UX/UI Designer.
+- QA Automation Engineer.
+- DevOps Engineer.
+- App Store Release Specialist.
+
+Nhiệm vụ của bạn là **TIẾP TỤC PHÁT TRIỂN, SỬA LỖI VÀ HOÀN THIỆN ỨNG DỤNG AN TÂM HIỆN TẠI**.
+
+Đây là dự án phần mềm thực tế, hướng đến phát hành thương mại trên Apple App Store và Google Play.
+
+**TUYỆT ĐỐI KHÔNG ĐƯỢC:**
+
+1. Tạo một ứng dụng demo mới thay thế ứng dụng hiện tại.
+2. Tự ý xóa mã nguồn, giao diện hoặc chức năng đang hoạt động.
+3. Tạo nút bấm không có chức năng.
+4. Tạo giao diện giả để đánh lừa người dùng rằng chức năng đã hoàn thành.
+5. Hardcode dữ liệu người dùng, tài khoản, số liệu thống kê hoặc trạng thái Premium.
+6. Sử dụng `Math.random()` để tạo số liệu hoạt động thực tế.
+7. Tạo dữ liệu mẫu rồi trình bày như dữ liệu production.
+8. Giả lập đăng nhập thành công mà không xác thực.
+9. Giả lập thanh toán thành công.
+10. Tự động cấp quyền quản trị.
+11. Tự động cấp Premium khi chưa có quyền truy cập hợp lệ.
+12. Tạo API không có xác thực và phân quyền.
+13. Để lộ API key trong frontend.
+14. Bỏ qua lỗi TypeScript hoặc lỗi build.
+15. Tuyên bố chức năng hoạt động nếu chưa được kiểm thử.
+16. Tuyên bố ứng dụng đã sẵn sàng App Store khi chưa có bản build và kiểm thử thực tế.
+17. Viết báo cáo dài thay cho việc sửa code.
+18. Chỉ đưa ra hướng dẫn chung chung mà không thực hiện thay đổi trong dự án khi môi trường cho phép.
+
+**NGUYÊN TẮC BẮT BUỘC:**
+
+MỌI CHỨC NĂNG PHẢI CÓ LOGIC THỰC, KẾT NỐI DỮ LIỆU THỰC, XỬ LÝ LỖI VÀ CÓ THỂ KIỂM CHỨNG.
+
+Nếu một tính năng phụ thuộc vào API key, dịch vụ bên ngoài, tài khoản Apple Developer, Google Play Console hoặc cấu hình chưa được cung cấp, phải:
+
+- Xây dựng phần mã nguồn có thể triển khai.
+- Xác định chính xác phần còn thiếu.
+- Không sử dụng dữ liệu giả để che giấu.
+- Hiển thị trạng thái chưa cấu hình phù hợp.
+- Hướng dẫn cấu hình an toàn.
+- Đánh dấu BLOCKED cho đến khi kiểm thử thành công.
+
+Không được biến một tính năng chưa hoạt động thành một tính năng giả chỉ để giao diện trông hoàn chỉnh.
+
+---
+
+# PHẦN I. KIỂM TRA VÀ KHÔI PHỤC DỰ ÁN HIỆN TẠI
+
+## 1.1. Kiểm tra toàn bộ mã nguồn
+
+Trước khi chỉnh sửa, hãy kiểm tra:
+
+- `package.json`
+- `vite.config.ts`
+- `capacitor.config.ts`
+- `tsconfig.json`
+- `src/main.tsx`
+- `src/App.tsx`
+- `src/index.css`
+- `src/components/`
+- `src/context/`
+- `src/hooks/`
+- `src/services/`
+- `src/pages/`
+- `server.ts`
+- Database configuration.
+- Authentication.
+- AI integration.
+- Audio engine.
+- Admin dashboard.
+- Native configuration.
+- Public assets.
+
+Nếu đường dẫn thực tế khác danh sách trên, phải dựa theo cấu trúc dự án đang có.
+
+Không tự tạo cấu trúc song song gây trùng lặp.
+
+## 1.2. Những vấn đề đã được phát hiện cần xác minh và xử lý
+
+Bản mã nguồn được kiểm tra trước đó có các vấn đề sau:
+
+### Lỗi 1: Các file rỗng
+
+Một số file được phát hiện có dung lượng 0 byte:
+
+- `src/main.tsx`
+- `src/index.css`
+- `src/context/AuthContext.tsx`
+- `src/context/AudioContext.tsx`
+- `src/components/ai/AIAssistantModal.tsx`
+- `src/components/audio/MiniPlayer.tsx`
+- `src/components/audio/FullPlayerModal.tsx`
+- `src/components/navigation/TabBar.tsx`
+
+Yêu cầu:
+
+1. Kiểm tra lại từng file trong dự án hiện tại.
+2. Xác định file thực sự bị thiếu nội dung hay chỉ do quá trình xuất dự án.
+3. Khôi phục từ mã nguồn hợp lệ nếu có.
+4. Nếu không có bản gốc, triển khai module tương thích với kiến trúc hiện tại.
+5. Không phá vỡ API của các component đang sử dụng.
+6. Kiểm tra tất cả import/export.
+7. Chạy TypeScript check.
+8. Chạy production build.
+
+Không đánh dấu hoàn thành khi ứng dụng chưa build thành công.
+
+### Lỗi 2: Authentication không an toàn
+
+Trong phiên bản được kiểm tra, API đăng nhập có dấu hiệu chỉ dựa vào email mà không xác minh mật khẩu.
+
+Ngoài ra, email chứa từ `admin` có thể được cấp quyền quản trị.
+
+Yêu cầu:
+
+- Xóa hoàn toàn logic cấp quyền dựa trên nội dung email.
+- Không tự tạo tài khoản trong luồng đăng nhập thông thường.
+- Không cho đăng nhập nếu thông tin xác thực không hợp lệ.
+- Tích hợp hệ thống authentication thực.
+- Ưu tiên Supabase Auth nếu phù hợp.
+- Hỗ trợ Google Login.
+- Hỗ trợ Apple Login khi cần.
+- Hỗ trợ email/password.
+- Hỗ trợ Guest Mode.
+- Hỗ trợ xác minh email.
+- Hỗ trợ khôi phục mật khẩu.
+- Hỗ trợ đăng xuất.
+- Hỗ trợ xóa tài khoản.
+
+Phân quyền phải được xác minh phía server.
+
+Không tin tưởng role do frontend gửi lên.
+
+### Lỗi 3: Premium được kích hoạt không cần thanh toán
+
+Kiểm tra API:
+
+`/api/subscription/upgrade`
+
+Nếu API đang trực tiếp đặt:
+
+`isPremium = true`
+
+mà không có bằng chứng thanh toán hoặc quyền truy cập hợp lệ, phải loại bỏ cơ chế này.
+
+Thay thế bằng:
+
+- Purchase Verification.
+- Server-side Entitlement Management.
+- Subscription Status.
+- Restore Purchases.
+- Purchase Revocation Handling.
+- Refund Handling.
+
+Chỉ kích hoạt Premium khi hệ thống xác nhận quyền truy cập hợp lệ.
+
+### Lỗi 4: API dữ liệu cá nhân thiếu phân quyền
+
+Kiểm tra các API:
+
+- Nhật ký.
+- Hồ sơ.
+- Lịch sử nghe.
+- Tiến độ thiền.
+- Xuất dữ liệu.
+- Xóa tài khoản.
+- Yêu thích.
+- AI conversation history.
+
+Không sử dụng `userId` từ request như bằng chứng xác thực.
+
+User ID phải được xác định từ phiên đăng nhập hoặc token đã xác minh.
+
+Mọi truy vấn phải giới hạn theo chủ sở hữu dữ liệu.
+
+### Lỗi 5: Database chưa phù hợp production
+
+Nếu ứng dụng đang sử dụng file JSON hoặc bộ nhớ server để lưu dữ liệu người dùng, hãy chuyển sang database thực.
+
+Ưu tiên PostgreSQL thông qua Supabase.
+
+Yêu cầu:
+
+- Database migrations.
+- Row Level Security.
+- Foreign Keys.
+- Indexes.
+- Unique Constraints.
+- Transaction Handling.
+- Backup Strategy.
+- Data Retention.
+- Audit Logs.
+
+Không được xóa dữ liệu hiện có nếu chưa có phương án migration và backup.
+
+### Lỗi 6: Capacitor chưa hoàn chỉnh
+
+Kiểm tra:
+
+- Capacitor dependencies.
+- Native project configuration.
+- Android platform.
+- iOS platform.
+- Native plugins.
+- App permissions.
+- Background audio.
+- Push notifications.
+- Haptic feedback.
+
+Không coi file `capacitor.config.ts` là bằng chứng ứng dụng đã sẵn sàng mobile.
+
+### Lỗi 7: AI chưa hoàn chỉnh
+
+Kiểm tra:
+
+- Gemini API integration.
+- Model name.
+- API authentication.
+- AI service.
+- Chat interface.
+- Error handling.
+- Rate limiting.
+- Token usage.
+- Safety filtering.
+
+Không hardcode tên mô hình chưa được API hỗ trợ.
+
+Phải có cơ chế cấu hình model và xử lý khi model không khả dụng.
+
+---
+
+# PHẦN II. KIẾN TRÚC PRODUCTION
+
+## 2.1. Frontend
+
+Ưu tiên giữ công nghệ hiện tại nếu phù hợp.
+
+Đề xuất:
+
+- React.
+- TypeScript.
+- Vite.
+- Tailwind CSS.
+- React Router.
+- TanStack Query.
+- Zustand hoặc Context API khi phù hợp.
+- Zod cho validation.
+
+Không cài thêm thư viện chỉ vì chúng phổ biến.
+
+Chỉ thêm dependency khi có nhu cầu kỹ thuật thực tế.
+
+## 2.2. Backend
+
+Ưu tiên:
+
+- Supabase.
+- PostgreSQL.
+- Supabase Auth.
+- Supabase Storage.
+- Edge Functions hoặc backend Node.js phù hợp.
+
+Các API phải có:
+
+- Authentication.
+- Authorization.
+- Validation.
+- Error Handling.
+- Rate Limiting.
+- Logging.
+- Security Controls.
+
+## 2.3. Kiến trúc dữ liệu
+
+Thiết kế các bảng phù hợp với dự án:
+
+- profiles
+- user_preferences
+- user_roles
+- content_categories
+- meditation_content
+- buddhist_content
+- audio_content
+- playlists
+- playlist_items
+- favorites
+- listening_history
+- meditation_sessions
+- breathing_sessions
+- journal_entries
+- mood_checkins
+- mindfulness_journeys
+- journey_steps
+- journey_progress
+- notification_preferences
+- device_tokens
+- subscriptions
+- entitlements
+- ai_conversations
+- ai_messages
+- ai_usage
+- knowledge_sources
+- knowledge_chunks
+- content_reports
+- admin_audit_logs
+
+Không tạo bảng trùng lặp nếu schema hiện tại đã có cấu trúc phù hợp.
+
+## 2.4. Bảo mật dữ liệu
+
+Bắt buộc triển khai:
+
+- Row Level Security.
+- Secure Token Storage.
+- Server-side Authorization.
+- TLS.
+- Input Validation.
+- API Rate Limiting.
+- Secrets Management.
+- Secure File Upload.
+- Account Deletion.
+- Data Export.
+- Privacy Controls.
+
+Không để service-role key hoặc Gemini API key trong client bundle.
+
+---
+
+# PHẦN III. HOÀN THIỆN GIAO DIỆN HIỆN TẠI
+
+Không được thiết kế lại toàn bộ ứng dụng nếu không cần thiết.
+
+Ưu tiên giữ lại:
+
+- Logo AN TÂM.
+- Nhận diện thương hiệu.
+- Giao diện trang chủ.
+- Hệ thống màu sắc.
+- Navigation.
+- Các màn hình đã hoàn thiện.
+- Các component đang hoạt động.
+
+Chỉ cải tiến những phần:
+
+- Chưa nhất quán.
+- Khó sử dụng.
+- Thiếu responsive.
+- Thiếu accessibility.
+- Có lỗi hiển thị.
+- Chưa phù hợp với màn hình điện thoại.
+
+## 3.1. Trang chủ
+
+Hoàn thiện:
+
+- Lời chào theo thời gian.
+- Câu chúc bình an.
+- Kiểm tra cảm xúc.
+- Thiền nhanh.
+- Nội dung đề xuất.
+- Tiếp tục nghe.
+- Hành trình cá nhân.
+- Lối tắt đến AI.
+
+Các dữ liệu cá nhân phải được lấy từ database.
+
+Không hardcode số phút thiền hoặc số ngày thực hành.
+
+## 3.2. Điều hướng
+
+Kiểm tra tất cả:
+
+- Bottom Navigation.
+- Header.
+- Back Navigation.
+- Deep Links.
+- Modal.
+- Search.
+- Profile.
+- Settings.
+
+Không được để nút bấm không phản hồi.
+
+Nếu tính năng chưa sẵn sàng, không hiển thị như một chức năng đã hoạt động.
+
+---
+
+# PHẦN IV. XÂY DỰNG AN TÂM AI HOÀN CHỈNH
+
+Đây là tính năng chiến lược cần phát triển nghiêm túc.
+
+Tên tính năng:
+
+**AN TÂM AI – TRỢ LÝ PHẬT PHÁP & CHÁNH NIỆM**
+
+Mục tiêu:
+
+Không tạo chatbot thông thường chỉ trả lời bằng văn bản.
+
+Phải xây dựng AI có khả năng hiểu câu hỏi, truy xuất kiến thức được kiểm duyệt, đề xuất nội dung thật và kết nối với các chức năng của ứng dụng.
+
+## 4.1. Giao diện AI
+
+Tạo một khu vực AI dễ truy cập từ trang chủ.
+
+Thiết kế gồm:
+
+- Tiêu đề AN TÂM AI.
+- Lời chào nhẹ nhàng.
+- Khung nhập câu hỏi.
+- Nút gửi.
+- Nút micro khi được hỗ trợ.
+- Lịch sử hội thoại.
+- Câu hỏi gợi ý.
+- Trạng thái AI đang trả lời.
+- Nút sao chép.
+- Nút lưu.
+- Nút xóa hội thoại.
+- Nút báo cáo câu trả lời.
+
+Các chủ đề chính:
+
+1. Hỏi đáp Phật pháp.
+2. Giải thích kinh Phật.
+3. Tâm sự và chánh niệm.
+4. Gợi ý thiền định.
+5. Hướng dẫn sử dụng ứng dụng.
+
+## 4.2. AI hỏi đáp Phật pháp
+
+Người dùng có thể hỏi:
+
+- Nhân quả là gì?
+- Vô thường là gì?
+- Tứ Diệu Đế là gì?
+- Bát Chánh Đạo là gì?
+- Chánh niệm là gì?
+- Làm sao thực hành từ bi?
+- Ý nghĩa của Bát Nhã Tâm Kinh?
+- Làm sao học thiền từ đầu?
+
+AI phải:
+
+- Trả lời bằng tiếng Việt tự nhiên.
+- Có cấu trúc dễ đọc.
+- Không giáo điều.
+- Không bịa lời Phật dạy.
+- Không bịa tên kinh.
+- Không bịa nguồn.
+- Phân biệt giải thích và trích dẫn.
+- Thừa nhận khi không đủ thông tin.
+
+## 4.3. RAG – TRUY XUẤT KIẾN THỨC THỰC
+
+Xây dựng hệ thống Retrieval-Augmented Generation.
+
+Kiến trúc:
+
+User Question
+
+↓
+
+Backend AI Gateway
+
+↓
+
+Knowledge Retrieval
+
+↓
+
+Relevant Verified Sources
+
+↓
+
+Gemini Model
+
+↓
+
+Grounded Answer
+
+↓
+
+Source References
+
+↓
+
+Related Content Actions
+
+Nguồn dữ liệu lấy từ:
+
+- Kinh Phật đã được cấp quyền sử dụng.
+- Bản dịch được kiểm duyệt.
+- Pháp thoại hợp pháp.
+- Nội dung Phật giáo do quản trị viên xác minh.
+- Thư viện kiến thức của AN TÂM.
+
+Yêu cầu:
+
+- Lưu nguồn gốc tài liệu.
+- Chia tài liệu thành các đoạn phù hợp.
+- Tạo embeddings.
+- Lưu vector index.
+- Truy xuất theo ngữ nghĩa.
+- Kiểm tra quyền truy cập tài liệu.
+- Trả về nguồn tham khảo.
+
+Có thể sử dụng PostgreSQL kết hợp pgvector nếu phù hợp.
+
+Không sử dụng những tài liệu không tồn tại.
+
+Không tự tạo nguồn giả để làm đầy hệ thống.
+
+Nếu knowledge base chưa có nội dung hợp lệ, phải hiển thị trạng thái thiếu nguồn và hướng dẫn quản trị viên bổ sung.
+
+Không tự tuyên bố RAG đã hoạt động khi chưa kiểm tra kết quả truy xuất thực tế.
+
+## 4.4. AI giải thích kinh Phật
+
+Trong màn hình đọc kinh, bổ sung nút:
+
+**"Giải thích bằng AI"**
+
+Người dùng chọn đoạn văn bản.
+
+Hệ thống gửi:
+
+- Document ID.
+- Passage ID.
+- Nội dung đoạn được chọn.
+- Thông tin nguồn.
+- Chế độ giải thích.
+
+Các chế độ:
+
+- Dễ hiểu.
+- Chuyên sâu.
+- Liên hệ đời sống.
+
+AI phải dựa trên nội dung có nguồn.
+
+Nếu có nhiều cách giải thích theo các truyền thống khác nhau, phải trình bày thận trọng.
+
+Không trình bày phần AI diễn giải như nguyên văn kinh.
+
+## 4.5. AI đề xuất bài thiền
+
+Người dùng chia sẻ nhu cầu:
+
+"Tôi muốn thư giãn."
+
+AI truy vấn thư viện nội dung thật.
+
+Kết quả có thể gồm:
+
+- Bài thiền phù hợp.
+- Bài tập thở.
+- Âm thanh thư giãn.
+- Hành trình chánh niệm.
+
+Mỗi đề xuất phải chứa ID nội dung hợp lệ.
+
+Khi nhấn nút:
+
+- Mở đúng màn hình.
+- Tải đúng nội dung.
+- Bắt đầu đúng hoạt động.
+
+Không được tạo nút "Bắt đầu" nhưng không có logic thực.
+
+Không được tạo ID nội dung không tồn tại.
+
+## 4.6. AI đồng hành cảm xúc
+
+AI có thể hỗ trợ người dùng trò chuyện về:
+
+- Căng thẳng.
+- Lo lắng thường ngày.
+- Mệt mỏi.
+- Khó ngủ.
+- Áp lực công việc.
+- Cảm giác buồn phiền.
+
+AI phải phản hồi nhẹ nhàng, tôn trọng.
+
+Không chẩn đoán bệnh.
+
+Không đưa ra phác đồ điều trị.
+
+Không khuyến khích ngừng thuốc.
+
+Không tạo sự phụ thuộc tình cảm vào AI.
+
+Nếu phát hiện nguy cơ tự gây hại hoặc khủng hoảng, phải sử dụng quy trình phản hồi an toàn, khuyến khích tìm hỗ trợ trực tiếp phù hợp.
+
+## 4.7. AI giọng nói
+
+Bổ sung kiến trúc hỗ trợ:
+
+- Speech-to-Text.
+- AI Processing.
+- Text-to-Speech.
+
+Ưu tiên tiếng Việt.
+
+Các chức năng:
+
+- Nhấn micro để nói.
+- Hiển thị văn bản nhận dạng.
+- Cho phép chỉnh sửa câu hỏi.
+- Gửi câu hỏi.
+- Nghe câu trả lời.
+- Dừng phát.
+- Điều chỉnh tốc độ.
+
+Phải xin quyền micro đúng thời điểm.
+
+Không tự động ghi âm.
+
+Không lưu bản ghi âm nếu chưa có sự đồng ý phù hợp.
+
+Nếu dịch vụ chưa được cấu hình, phải thông báo rõ.
+
+## 4.8. Kiểm soát chi phí AI
+
+Bắt buộc có:
+
+- Token Usage Tracking.
+- Rate Limiting.
+- Per-user Quotas.
+- Request Timeout.
+- Retry Policy.
+- Cost Monitoring.
+- Abuse Prevention.
+- Model Configuration.
+- Error Handling.
+
+Không cho phép client gọi Gemini API trực tiếp bằng secret key.
+
+Không dùng bộ đếm quota chỉ lưu trên frontend.
+
+## 4.9. Kiểm thử AI
+
+Tạo bộ kiểm thử gồm:
+
+- Câu hỏi Phật giáo cơ bản.
+- Câu hỏi chuyên sâu.
+- Câu hỏi thiếu nguồn.
+- Câu hỏi có nhiều cách giải thích.
+- Câu hỏi ngoài phạm vi.
+- Câu hỏi có nội dung nguy cơ.
+- Lỗi API.
+- Hết quota.
+- Mất kết nối.
+- Model không khả dụng.
+
+Kiểm tra rằng AI không tạo nguồn tham khảo giả.
+
+---
+
+# PHẦN V. AUDIO ENGINE PRODUCTION
+
+Xây dựng hệ thống âm thanh thực tế.
+
+Không sử dụng audio player chỉ hoạt động khi màn hình ứng dụng đang mở.
+
+## 5.1. Chức năng
+
+- Play.
+- Pause.
+- Seek.
+- Next.
+- Previous.
+- Repeat.
+- Playlist.
+- Favorites.
+- Playback Speed.
+- Sleep Timer.
+- Resume Playback.
+- Background Playback.
+- Offline Playback.
+
+## 5.2. Background Audio
+
+iOS:
+
+- AVAudioSession.
+- Background Audio Capability.
+- Lock Screen Controls.
+- Remote Commands.
+
+Android:
+
+- MediaSession.
+- Foreground Media Service.
+- Media Notifications.
+- Headset Controls.
+
+Xử lý:
+
+- Cuộc gọi đến.
+- Mất kết nối Bluetooth.
+- Rút tai nghe.
+- Audio interruption.
+- Ứng dụng chuyển nền.
+- Khóa màn hình.
+
+## 5.3. Kiểm thử
+
+Không đánh dấu hoàn thành nếu chỉ kiểm tra trên trình duyệt.
+
+Phải kiểm thử trên thiết bị hoặc môi trường native phù hợp.
+
+---
+
+# PHẦN VI. THƯ VIỆN PHẬT PHÁP VÀ NỘI DUNG
+
+Hoàn thiện:
+
+- Danh mục.
+- Tìm kiếm.
+- Lọc.
+- Sắp xếp.
+- Đọc kinh.
+- Nghe kinh.
+- Lưu yêu thích.
+- Lịch sử.
+- Tiếp tục nghe.
+- Tải offline.
+- AI giải thích.
+- Nội dung liên quan.
+
+Mỗi nội dung phải có:
+
+- ID.
+- Title.
+- Description.
+- Category.
+- Source.
+- Author/Translator nếu có.
+- License.
+- Language.
+- Audio URL.
+- Cover Image.
+- Duration.
+- Publication Status.
+
+Không tự tạo nội dung kinh Phật giả.
+
+Không tự tạo bản thu âm giả.
+
+Nếu chưa có nội dung thật, phải xây dựng CMS để quản trị viên thêm nội dung hợp pháp.
+
+---
+
+# PHẦN VII. BREATHING ENGINE
+
+Hoàn thiện công cụ tập thở thực.
+
+Yêu cầu:
+
+- Animation đồng bộ thời gian.
+- Hít vào.
+- Thở ra.
+- Giữ hơi tùy chọn.
+- Bộ đếm thời gian.
+- Tạm dừng.
+- Tiếp tục.
+- Kết thúc.
+- Haptic Feedback.
+- Âm thanh hướng dẫn.
+- Lưu lịch sử.
+
+Không sử dụng timer dễ bị sai lệch khi ứng dụng chuyển nền.
+
+Cần có cơ chế tính thời gian dựa trên mốc thời gian thực tế.
+
+Không sử dụng các bài giữ hơi dài làm mặc định.
+
+---
+
+# PHẦN VIII. NHẬT KÝ VÀ TIẾN ĐỘ
+
+Hoàn thiện:
+
+- Tạo nhật ký.
+- Chỉnh sửa.
+- Xóa.
+- Tìm kiếm.
+- Theo dõi cảm xúc.
+- Lưu tiến độ thiền.
+- Thống kê thời gian.
+- Đồng bộ tài khoản.
+- Xuất dữ liệu.
+
+Dữ liệu phải được lưu vào database.
+
+Không hardcode số ngày thiền.
+
+Không hardcode số phút thực hành.
+
+Không cho phép người dùng đọc nhật ký của người khác.
+
+---
+
+# PHẦN IX. OFFLINE MODE
+
+Triển khai Download Manager thực.
+
+Chức năng:
+
+- Download.
+- Pause.
+- Resume.
+- Retry.
+- Delete.
+- File Integrity Check.
+- Storage Management.
+- Offline Library.
+- Offline Playback.
+
+Không đánh dấu một file là đã tải nếu file chưa được lưu thành công.
+
+Không sử dụng URL online rồi gọi đó là offline playback.
+
+---
+
+# PHẦN X. PUSH NOTIFICATIONS
+
+Tích hợp:
+
+- Firebase Cloud Messaging.
+- APNs trên iOS.
+- Local Notifications.
+
+Các loại:
+
+- Nhắc thiền.
+- Nhắc tập thở.
+- Chuông chánh niệm.
+- Chúc bình an buổi sáng.
+- Nhắc hành trình.
+- Nội dung mới.
+
+Yêu cầu:
+
+- Notification Permission.
+- Device Token Management.
+- Timezone Handling.
+- Quiet Hours.
+- Notification Preferences.
+- Deep Linking.
+
+Không gửi thông báo khi người dùng đã tắt quyền hoặc không đồng ý.
+
+---
+
+# PHẦN XI. PREMIUM VÀ THANH TOÁN
+
+Không sử dụng cơ chế nâng cấp Premium giả.
+
+Xây dựng:
+
+- Free Plan.
+- Monthly Premium.
+- Yearly Premium.
+- StoreKit.
+- Google Play Billing.
+- Restore Purchases.
+- Server-side Verification.
+- Entitlement Management.
+- Refund Handling.
+- Subscription Expiration.
+
+Nếu chưa có tài khoản Apple Developer hoặc Google Play Console, phải:
+
+1. Hoàn thiện kiến trúc thanh toán.
+2. Chuẩn bị cấu hình.
+3. Chuẩn bị sandbox testing.
+4. Đánh dấu phần chưa thể kiểm thử là BLOCKED.
+
+Không tự kích hoạt Premium.
+
+Không sử dụng thanh toán giả để tạo cảm giác hoàn thành.
+
+---
+
+# PHẦN XII. ADMIN DASHBOARD THỰC
+
+Xây dựng hệ thống quản trị có authentication và authorization.
+
+Chức năng:
+
+- Quản lý người dùng.
+- Quản lý nội dung.
+- Upload audio.
+- Upload ảnh.
+- Quản lý kinh Phật.
+- Quản lý pháp thoại.
+- Quản lý bài thiền.
+- Quản lý nguồn kiến thức AI.
+- Quản lý Premium.
+- Quản lý thông báo.
+- Xem analytics.
+- Quản lý báo cáo vi phạm.
+- Xem audit logs.
+
+## Analytics
+
+Không sử dụng số liệu giả.
+
+Các chỉ số phải được tính từ dữ liệu thực:
+
+- Daily Active Users.
+- Monthly Active Users.
+- D7 Retention.
+- D30 Retention.
+- Meditation Sessions.
+- Audio Listening Time.
+- AI Requests.
+- Premium Users.
+- Subscription Revenue khi có dữ liệu hợp lệ.
+
+Nếu chưa có dữ liệu, hiển thị:
+
+"Chưa có dữ liệu."
+
+Không tạo số liệu ngẫu nhiên.
+
+---
+
+# PHẦN XIII. ĐÓNG GÓI MOBILE IOS & ANDROID
+
+Mục tiêu:
+
+Tạo ứng dụng mobile thực tế từ dự án AN TÂM.
+
+## 13.1. Capacitor
+
+Kiểm tra và hoàn thiện:
+
+- Capacitor Core.
+- Capacitor CLI.
+- Android Platform.
+- iOS Platform.
+- Native Plugins.
+- Build Scripts.
+- Environment Configuration.
+
+Không tự ý chuyển sang React Native nếu Capacitor đáp ứng yêu cầu.
+
+Nếu cần thay đổi kiến trúc, phải giải thích lý do.
+
+## 13.2. Android
+
+Chuẩn bị:
+
+- Application ID.
+- App Name.
+- Adaptive Icon.
+- Splash Screen.
+- Notification Channels.
+- Foreground Media Service.
+- Google Login.
+- Google Play Billing.
+- Runtime Permissions.
+- Android App Bundle.
+- Release Signing.
+
+## 13.3. iOS
+
+Chuẩn bị:
+
+- Bundle Identifier.
+- App Icon.
+- Launch Screen.
+- Background Audio.
+- Push Notifications.
+- Sign in with Apple khi áp dụng.
+- StoreKit.
+- Privacy Manifest.
+- App Store Metadata.
+- Release Signing.
+
+## 13.4. Native Haptics
+
+Tích hợp haptic thực trên thiết bị hỗ trợ.
+
+Không dựa hoàn toàn vào Web Vibration API.
+
+## 13.5. Dark Mode
+
+Hỗ trợ:
+
+- Light.
+- Dark.
+- System.
+
+Đảm bảo màu sắc và nội dung hiển thị rõ trong cả ba chế độ.
+
+---
+
+# PHẦN XIV. KIỂM THỬ BẮT BUỘC
+
+Không chỉ chạy `npm run build` rồi tuyên bố hoàn thành.
+
+Cần kiểm thử:
+
+## Authentication
+
+- Đăng ký.
+- Đăng nhập.
+- Sai mật khẩu.
+- Email không tồn tại.
+- Đăng xuất.
+- Token hết hạn.
+- Truy cập trái phép.
+- Xóa tài khoản.
+
+## Database
+
+- Create.
+- Read.
+- Update.
+- Delete.
+- Row Level Security.
+- Unauthorized Access.
+- Data Consistency.
+
+## AI
+
+- API thật.
+- Câu trả lời thật.
+- Nguồn tham khảo thật.
+- Quota.
+- Rate Limit.
+- Timeout.
+- Safety.
+
+## Audio
+
+- Play.
+- Pause.
+- Seek.
+- Background.
+- Lock Screen.
+- Bluetooth.
+- Offline.
+- Sleep Timer.
+
+## Mobile
+
+- Android Build.
+- iOS Build.
+- App Permissions.
+- App Lifecycle.
+- Navigation.
+- Deep Links.
+- Push Notifications.
+
+## Premium
+
+- Sandbox Purchase.
+- Restore Purchase.
+- Subscription Expiration.
+- Refund.
+- Unauthorized Upgrade Attempt.
+
+Không đánh dấu PASS nếu chưa chạy kiểm thử.
+
+---
+
+# PHẦN XV. TIÊU CHÍ HOÀN THÀNH
+
+Mỗi tính năng phải có:
+
+1. Giao diện hoạt động.
+2. Business logic.
+3. Backend integration nếu cần.
+4. Database integration nếu cần.
+5. Error handling.
+6. Loading state.
+7. Empty state.
+8. Security validation.
+9. Test cases.
+10. Kết quả kiểm thử.
+
+Phân loại:
+
+**PASS:** Đã kiểm thử thành công.
+
+**FAIL:** Đã kiểm thử nhưng có lỗi.
+
+**PARTIAL:** Mới hoàn thành một phần.
+
+**BLOCKED:** Thiếu điều kiện bên ngoài.
+
+**NOT TESTED:** Chưa kiểm thử.
+
+Không được tự chuyển BLOCKED thành PASS.
+
+---
+
+# PHẦN XVI. QUY TRÌNH THỰC HIỆN
+
+Bắt buộc làm theo thứ tự ưu tiên.
+
+## GIAI ĐOẠN 1 – CỨU VÀ HOÀN THIỆN MÃ NGUỒN
+
+- Kiểm tra file rỗng.
+- Khôi phục module.
+- Sửa import.
+- Sửa TypeScript.
+- Sửa build.
+- Khôi phục giao diện.
+- Kiểm tra navigation.
+
+**Điều kiện hoàn thành:**
+
+Ứng dụng phải build và chạy được.
+
+## GIAI ĐOẠN 2 – BẢO MẬT VÀ BACKEND
+
+- Sửa authentication.
+- Sửa authorization.
+- Xóa quyền admin giả.
+- Xóa Premium giả.
+- Tích hợp database.
+- Tạo migrations.
+- Cấu hình RLS.
+- Kiểm thử truy cập dữ liệu.
+
+**Điều kiện hoàn thành:**
+
+Không còn các lỗ hổng nghiêm trọng đã được xác định.
+
+## GIAI ĐOẠN 3 – CHỨC NĂNG CỐT LÕI
+
+- Audio.
+- Thiền.
+- Tập thở.
+- Kinh Phật.
+- Nhật ký.
+- Yêu thích.
+- Lịch sử.
+- Offline.
+
+**Điều kiện hoàn thành:**
+
+Các luồng chính hoạt động với dữ liệu thực.
+
+## GIAI ĐOẠN 4 – AN TÂM AI
+
+- AI Interface.
+- Gemini Integration.
+- Backend AI Gateway.
+- Knowledge Base.
+- RAG.
+- AI Buddhist Q&A.
+- AI Scripture Explanation.
+- AI Recommendations.
+- AI Safety.
+- AI Usage Tracking.
+
+**Điều kiện hoàn thành:**
+
+AI trả lời qua API thật, có xử lý lỗi và nguồn tham khảo có thể kiểm chứng.
+
+## GIAI ĐOẠN 5 – PREMIUM VÀ ADMIN
+
+- Admin Dashboard.
+- Content Management.
+- Premium Architecture.
+- Purchase Verification.
+- Analytics.
+
+**Điều kiện hoàn thành:**
+
+Các chức năng đã cấu hình có thể kiểm thử bằng dữ liệu và dịch vụ thực.
+
+## GIAI ĐOẠN 6 – MOBILE
+
+- Capacitor.
+- Native Audio.
+- Native Notifications.
+- Native Haptics.
+- Android.
+- iOS.
+- Release Configuration.
+
+**Điều kiện hoàn thành:**
+
+Có bản build native hợp lệ và báo cáo kiểm thử tương ứng.
+
+## GIAI ĐOẠN 7 – RELEASE AUDIT
+
+Kiểm tra:
+
+- Security.
+- Performance.
+- Accessibility.
+- Privacy.
+- App Store Compliance.
+- Google Play Compliance.
+- Crash Reporting.
+- Error Monitoring.
+
+Chỉ đánh dấu RELEASE READY nếu toàn bộ điều kiện phát hành quan trọng đã đạt.
+
+---
+
+# PHẦN XVII. BÁO CÁO SAU MỖI GIAI ĐOẠN
+
+Sau mỗi giai đoạn, xuất bảng:
+
+| Hạng mục | Trạng thái | File liên quan | Bằng chứng |
+|---|---|---|---|
+| Chức năng | PASS/FAIL/PARTIAL/BLOCKED | Đường dẫn file | Kết quả kiểm thử |
+
+Báo cáo phải nêu:
+
+1. Những file đã chỉnh sửa.
+2. Những file đã tạo.
+3. Những lỗi đã sửa.
+4. Những chức năng đã hoàn thành.
+5. Những chức năng chưa hoàn thành.
+6. Những API chưa cấu hình.
+7. Những kiểm thử đã chạy.
+8. Những kiểm thử chưa chạy.
+9. Các rủi ro còn tồn tại.
+10. Bước tiếp theo.
+
+Không được tự tạo kết quả kiểm thử.
+
+Nếu không thể chạy lệnh, phải ghi rõ:
+
+"NOT TESTED – Môi trường hiện tại không hỗ trợ thực thi kiểm thử này."
+
+---
+
+# PHẦN XVIII. CHỈ THỊ CUỐI CÙNG – BẮT ĐẦU LẬP TRÌNH
+
+BÂY GIỜ HÃY BẮT ĐẦU THỰC HIỆN.
+
+Không tạo lại AN TÂM từ đầu.
+
+Không thay thế dự án bằng một bản demo.
+
+Không chỉ viết kế hoạch.
+
+Hãy thực hiện:
+
+**BƯỚC 1:** Kiểm tra toàn bộ mã nguồn hiện tại.
+
+**BƯỚC 2:** Xác nhận các lỗi đã nêu và tìm thêm lỗi thực tế.
+
+**BƯỚC 3:** Sao lưu các file trước khi sửa.
+
+**BƯỚC 4:** Sửa những lỗi ngăn ứng dụng build và chạy.
+
+**BƯỚC 5:** Sửa các lỗ hổng authentication, authorization và Premium.
+
+**BƯỚC 6:** Hoàn thiện backend và database.
+
+**BƯỚC 7:** Hoàn thiện các chức năng cốt lõi.
+
+**BƯỚC 8:** Tích hợp AN TÂM AI với RAG và nguồn kiến thức thực.
+
+**BƯỚC 9:** Hoàn thiện native mobile.
+
+**BƯỚC 10:** Kiểm thử và lập báo cáo sẵn sàng phát hành.
+
+Sau khi hoàn thành một bước, tiếp tục bước kế tiếp nếu môi trường cho phép và không có rủi ro phá hủy dữ liệu hoặc yêu cầu xác nhận quan trọng.
+
+Nếu gặp vấn đề thiếu tài khoản, chứng chỉ hoặc API key, không được giả lập để vượt qua.
+
+Hãy hoàn thiện những phần có thể làm, sau đó báo cáo chính xác phần bị chặn.
+
+**ƯU TIÊN CAO NHẤT:**
+
+1. Giữ nguyên những chức năng đang hoạt động.
+2. Sửa lỗi nghiêm trọng.
+3. Đảm bảo bảo mật.
+4. Hoàn thiện chức năng thực.
+5. Tích hợp AI chất lượng.
+6. Tối ưu trải nghiệm.
+7. Chuẩn bị phát hành mobile.
+
+**KHÔNG ĐÁNH ĐỔI CHẤT LƯỢNG, BẢO MẬT VÀ TÍNH CHÍNH XÁC ĐỂ TẠO CẢM GIÁC ỨNG DỤNG ĐÃ HOÀN THÀNH.**
+
+ỨNG DỤNG AN TÂM PHẢI ĐƯỢC PHÁT TRIỂN NHƯ MỘT SẢN PHẨM THƯƠNG MẠI THỰC SỰ.
+
+HÃY BẮT ĐẦU KIỂM TRA VÀ SỬA MÃ NGUỒN NGAY BÂY GIỜ.

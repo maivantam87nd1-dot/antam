@@ -1,0 +1,1287 @@
+{
+  "users": [
+    {
+      "id": "admin-system-id",
+      "email": "admin@antam.app",
+      "name": "Quản trị viên An Tâm",
+      "role": "super_admin",
+      "isPremium": true,
+      "passwordHash": "64eddd160b5dfcf37f73089bb06834d0b36c3bb6028dfee4a1061164c2e34210b31c0e50cfc7dd99eb3d93e0bf8f69ba615947280e49998afc926e5687b3caad",
+      "salt": "d555695be18f77ca0a3f22fb0b74a56a",
+      "streakDays": 14,
+      "totalMeditationMinutes": 320,
+      "totalSessions": 28,
+      "lastPracticeDate": "2026-10-28",
+      "createdAt": "2026-10-28T07:07:42.061Z"
+    },
+    {
+      "id": "user-1793171281981",
+      "email": "testuser@antam.app",
+      "name": "An Tâm Đạo Tràng",
+      "role": "user",
+      "isPremium": true,
+      "passwordHash": "221e19a30f523f4c431977b93376bc9630c4002ac6b13c64633a10558a88cd60bd2419b9ce8dcf5088d02808b667be004c37f7247284c87f20f4508d32473d34",
+      "salt": "7b49d5c48b97800fefa222a018240105",
+      "isGuest": false,
+      "streakDays": 1,
+      "totalMeditationMinutes": 0,
+      "totalSessions": 0,
+      "createdAt": "2026-10-28T07:08:01.982Z"
+    },
+    {
+      "id": "user-1793176692625",
+      "email": "test_qa_1793176692377@antam.app",
+      "name": "Tên Đã Cập Nhật",
+      "role": "user",
+      "isPremium": false,
+      "passwordHash": "22d241608b3704701af406be85ac93f0b5f101e3febe3fb9d6af661a95b3238379df33e1f1ac8bd758afe203872f05fa7bdcb7864c2c65439e1f96d4dc561c60",
+      "salt": "0bc7e6205edd53f9dae87444349eb4de",
+      "isGuest": false,
+      "streakDays": 2,
+      "totalMeditationMinutes": 15,
+      "totalSessions": 1,
+      "createdAt": "2026-10-28T08:38:12.625Z",
+      "lastSessionTimestamp": 1793176692817,
+      "lastPracticeDate": "2026-10-28"
+    },
+    {
+      "id": "user-1793180089897",
+      "email": "test_qa_1793180089698@antam.app",
+      "name": "Tên Đã Cập Nhật",
+      "role": "user",
+      "isPremium": false,
+      "passwordHash": "eccad4856fec3002064e9be89212f665ce4f66854782c96fe7dcd19d980e7ab0f164bc2f408cca35696c4a0a7bc18f85eb156969475770442585da85be446938",
+      "salt": "c0ade5cee085cdd18b2156350c965233",
+      "isGuest": false,
+      "streakDays": 2,
+      "totalMeditationMinutes": 15,
+      "totalSessions": 1,
+      "createdAt": "2026-10-28T09:34:49.897Z",
+      "lastSessionTimestamp": 1793180090079,
+      "lastPracticeDate": "2026-10-28"
+    },
+    {
+      "id": "user-1793180341939",
+      "email": "test_qa_1793180341754@antam.app",
+      "name": "Tên Đã Cập Nhật",
+      "role": "user",
+      "isPremium": false,
+      "passwordHash": "ab8aa3d169bd9a8e0f957e381a0fb584c4d132d8deeaf5d7b2b399f2649a55a4e50416922f118d61cbf6c48aae2a3ec312221fc89fb96eb7307993e56ea360a5",
+      "salt": "4931c10556599de648c39fa8585e4ca8",
+      "isGuest": false,
+      "streakDays": 2,
+      "totalMeditationMinutes": 15,
+      "totalSessions": 1,
+      "createdAt": "2026-10-28T09:39:01.939Z",
+      "lastSessionTimestamp": 1793180342107,
+      "lastPracticeDate": "2026-10-28"
+    },
+    {
+      "id": "user-1793181167357",
+      "email": "test_qa_1793181167207@antam.app",
+      "name": "Tên Đã Cập Nhật",
+      "role": "user",
+      "isPremium": false,
+      "passwordHash": "91de0188b5c84dad8d2ab21d913266cff7eb89a30b219295a87f61f0df3fae64d43bb6b205558da229e1e700b66c3e2688626494503ff8f59513e06b314e0dfb",
+      "salt": "9e46b5e1d4b4932406c182cd7a0a8a93",
+      "isGuest": false,
+      "streakDays": 2,
+      "totalMeditationMinutes": 15,
+      "totalSessions": 1,
+      "createdAt": "2026-10-28T09:52:47.357Z",
+      "lastSessionTimestamp": 1793181167503,
+      "lastPracticeDate": "2026-10-28"
+    },
+    {
+      "id": "user-1793237892910",
+      "email": "test_qa_1793237892730@antam.app",
+      "name": "Tên Đã Cập Nhật",
+      "role": "user",
+      "isPremium": false,
+      "passwordHash": "d0c3b4977be1afdb9d578171b768b8c0f2f9793a2104d3d02bcd956608c519bb7fa3ff4d937b4b9c0e28d9f8d20b4d03fc0e1c50d093bebc776f4d54e7f28dd0",
+      "salt": "b7c9d3981dc54656f93d5842e4becaaf",
+      "isGuest": false,
+      "streakDays": 2,
+      "totalMeditationMinutes": 15,
+      "totalSessions": 1,
+      "createdAt": "2026-10-29T01:38:12.910Z",
+      "lastSessionTimestamp": 1793237893044,
+      "lastPracticeDate": "2026-10-29"
+    },
+    {
+      "id": "user-1793238043776",
+      "email": "test_qa_1793238043599@antam.app",
+      "name": "Tên Đã Cập Nhật",
+      "role": "user",
+      "isPremium": false,
+      "passwordHash": "ae08c4b009f866fc68d6eb048e02a15802e1c7f6b1b02d0065deae1d2386504a1e1b1d2319ac35cac10497776f883da4f8802c0436e1762d93cfad52b819303e",
+      "salt": "0c4722977d312fba05a3a07115bd8894",
+      "isGuest": false,
+      "streakDays": 2,
+      "totalMeditationMinutes": 15,
+      "totalSessions": 1,
+      "createdAt": "2026-10-29T01:40:43.776Z",
+      "lastSessionTimestamp": 1793238043929,
+      "lastPracticeDate": "2026-10-29"
+    },
+    {
+      "id": "user-1793241959944",
+      "email": "test_qa_1793241959768@antam.app",
+      "name": "Tên Đã Cập Nhật",
+      "role": "user",
+      "isPremium": false,
+      "passwordHash": "f6cbc0e879a4499e73ef8da80e5f5980f2d1d4c39e6b04f2d1cdf80a23396434d8b5eebf324000c858a1f612437551c870ccbb9981187ed4e2872b6d394dc77d",
+      "salt": "526ec4c4defe52f47c4be4fed98ada58",
+      "isGuest": false,
+      "streakDays": 2,
+      "totalMeditationMinutes": 25,
+      "totalSessions": 2,
+      "createdAt": "2026-10-29T02:45:59.945Z",
+      "lastSessionTimestamp": 1793241960109,
+      "lastPracticeDate": "2026-10-29"
+    },
+    {
+      "id": "user-1793241991286",
+      "email": "test_qa_1793241991149@antam.app",
+      "name": "Tên Đã Cập Nhật",
+      "role": "user",
+      "isPremium": false,
+      "passwordHash": "36c21a2758ca5dd138e481788c387dbf307c30b42ebfe81f553377af033bd0c421fb127d03c7acd75d646daa265ed1bb3891fb9e8e99ba1ea92b1ca491165ce5",
+      "salt": "f3359481cf07a9c4338c3016811e900c",
+      "isGuest": false,
+      "streakDays": 2,
+      "totalMeditationMinutes": 25,
+      "totalSessions": 2,
+      "createdAt": "2026-10-29T02:46:31.286Z",
+      "lastSessionTimestamp": 1793241991446,
+      "lastPracticeDate": "2026-10-29"
+    }
+  ],
+  "sessions": [
+    {
+      "token": "3472bf91366e6a1c30b302645addda3ae217ac65cd0bc33da7ad703eeff55a18",
+      "userId": "user-1793241991286",
+      "createdAt": "2026-10-29T02:46:31.286Z",
+      "expiresAt": "2026-11-28T02:46:31.286Z"
+    }
+  ],
+  "entitlements": [
+    {
+      "id": "ent-sandbox-1793171320973-d7f394ba",
+      "userId": "user-1793171281981",
+      "planId": "yearly",
+      "status": "trial",
+      "expiresAt": "2027-10-28T07:08:40.973Z",
+      "receiptToken": "SANDBOX_AUDITED_1793171320973",
+      "platform": "sandbox_test",
+      "verifiedAt": "2026-10-28T07:08:40.973Z"
+    }
+  ],
+  "passwordResets": [
+    {
+      "id": "reset-1793241991395",
+      "email": "test_qa_1793241991149@antam.app",
+      "tokenHash": "ef9cc1e83c0d9e8bda59c92a68a09a41609fefdc725827049cebdcaf532a9b2c",
+      "expiresAt": "2026-10-29T03:01:31.395Z",
+      "used": false,
+      "createdAt": "2026-10-29T02:46:31.395Z"
+    },
+    {
+      "id": "reset-1793241960073",
+      "email": "test_qa_1793241959768@antam.app",
+      "tokenHash": "6cf5b69f1ddad1fd520974da1bb0689a3b962c829c998e78c32ac10cb56fb3a1",
+      "expiresAt": "2026-10-29T03:01:00.073Z",
+      "used": false,
+      "createdAt": "2026-10-29T02:46:00.073Z"
+    },
+    {
+      "id": "reset-1793238043898",
+      "email": "test_qa_1793238043599@antam.app",
+      "tokenHash": "fad3d273b566491c04e5017ca8c890740d61a78a853df0be77ce10387d00946e",
+      "expiresAt": "2026-10-29T01:55:43.897Z",
+      "used": false,
+      "createdAt": "2026-10-29T01:40:43.898Z"
+    },
+    {
+      "id": "reset-1793237893018",
+      "email": "test_qa_1793237892730@antam.app",
+      "tokenHash": "0a60d1b8c6d634c73443c8062de7ee6392964a3ca45e79fe20410f19bdf42718",
+      "expiresAt": "2026-10-29T01:53:13.018Z",
+      "used": false,
+      "createdAt": "2026-10-29T01:38:13.018Z"
+    },
+    {
+      "id": "reset-1793181167477",
+      "email": "test_qa_1793181167207@antam.app",
+      "tokenHash": "5f352d7249a4c19c968c4ab679fba066ffa23b326da7e9c74c97bcf6b1bae05e",
+      "expiresAt": "2026-10-28T10:07:47.477Z",
+      "used": false,
+      "createdAt": "2026-10-28T09:52:47.477Z"
+    },
+    {
+      "id": "reset-1793180342073",
+      "email": "test_qa_1793180341754@antam.app",
+      "tokenHash": "2e181cc6e0016c37d38ed07cddc4ca5f8663e69c52b86c3bc5bf6c30a86370a6",
+      "expiresAt": "2026-10-28T09:54:02.073Z",
+      "used": false,
+      "createdAt": "2026-10-28T09:39:02.073Z"
+    },
+    {
+      "id": "reset-1793180090046",
+      "email": "test_qa_1793180089698@antam.app",
+      "tokenHash": "5315ed9c32b74b4926306a30a78b003455ff688d02f4e53b639d8f15a92e458c",
+      "expiresAt": "2026-10-28T09:49:50.046Z",
+      "used": false,
+      "createdAt": "2026-10-28T09:34:50.046Z"
+    },
+    {
+      "id": "reset-1793176692770",
+      "email": "test_qa_1793176692377@antam.app",
+      "tokenHash": "96f07849b42bbd63b6bb05faf586a1d9e0f881d06dc6c53d1d10deb24f253a1c",
+      "expiresAt": "2026-10-28T08:53:12.770Z",
+      "used": false,
+      "createdAt": "2026-10-28T08:38:12.770Z"
+    }
+  ],
+  "adSessions": {
+    "e453fdbe184d9e1166f941091e66eccc": {
+      "nonce": "e453fdbe184d9e1166f941091e66eccc",
+      "userId": "user-1793176692625",
+      "createdAt": 1793176692788,
+      "expiresAt": 1793176992788,
+      "used": true
+    },
+    "12b58afbf096e059099dc921d66e0710": {
+      "nonce": "12b58afbf096e059099dc921d66e0710",
+      "userId": "user-1793180089897",
+      "createdAt": 1793180090060,
+      "expiresAt": 1793180390060,
+      "used": true
+    },
+    "200533303c94a6c9fdc9c2f19048915a": {
+      "nonce": "200533303c94a6c9fdc9c2f19048915a",
+      "userId": "user-1793180341939",
+      "createdAt": 1793180342088,
+      "expiresAt": 1793180642088,
+      "used": true
+    },
+    "1e961453ba72162b2aed1783c0968824": {
+      "nonce": "1e961453ba72162b2aed1783c0968824",
+      "userId": "user-1793180684650",
+      "createdAt": 1793180684685,
+      "expiresAt": 1793180984685,
+      "used": true
+    },
+    "79ca7caec2b07eeb061a50ecfa7f7b5f": {
+      "nonce": "79ca7caec2b07eeb061a50ecfa7f7b5f",
+      "userId": "user-1793181060383",
+      "createdAt": 1793181085437,
+      "expiresAt": 1793181385437,
+      "used": true
+    },
+    "d2a9b8b940f2b563c37eb0ec871a5036": {
+      "nonce": "d2a9b8b940f2b563c37eb0ec871a5036",
+      "userId": "user-1793181150992",
+      "createdAt": 1793181156762,
+      "expiresAt": 1793181456762,
+      "used": true
+    },
+    "b22ab95b16844e5ac2f8b984594fc9bb": {
+      "nonce": "b22ab95b16844e5ac2f8b984594fc9bb",
+      "userId": "user-1793181167357",
+      "createdAt": 1793181167489,
+      "expiresAt": 1793181467489,
+      "used": true
+    },
+    "e17fee3663a125b8651d718abc5661de": {
+      "nonce": "e17fee3663a125b8651d718abc5661de",
+      "userId": "user-1793237892910",
+      "createdAt": 1793237893030,
+      "expiresAt": 1793238193030,
+      "used": true
+    },
+    "6ca1ecd43b02afc28abf58cb6224a196": {
+      "nonce": "6ca1ecd43b02afc28abf58cb6224a196",
+      "userId": "user-1793238043776",
+      "createdAt": 1793238043910,
+      "expiresAt": 1793238343910,
+      "used": true
+    },
+    "7c1fa2c1cc02820f34889513c496c7b0": {
+      "nonce": "7c1fa2c1cc02820f34889513c496c7b0",
+      "userId": "user-1793241959944",
+      "createdAt": 1793241960086,
+      "expiresAt": 1793242260086,
+      "used": true
+    },
+    "89332ff526f2a1a5b96ced556db22e07": {
+      "nonce": "89332ff526f2a1a5b96ced556db22e07",
+      "userId": "user-1793241991286",
+      "createdAt": 1793241991404,
+      "expiresAt": 1793242291404,
+      "used": true
+    }
+  },
+  "journals": [
+    {
+      "id": "j-offline-1793241991480-b1cc",
+      "userId": "user-1793241991286",
+      "title": "Nhật ký ngoại tuyến",
+      "content": "Viết khi đi máy bay không có internet, tâm rất an tịnh.",
+      "gratitudeItems": [
+        "Hơi thở",
+        "Sự yên tĩnh"
+      ],
+      "mood": "peaceful",
+      "tags": [
+        "offline_sync"
+      ],
+      "createdAt": "2026-10-29T02:46:31.480Z",
+      "updatedAt": "2026-10-29T02:46:31.480Z"
+    },
+    {
+      "id": "j-voice-1793241991463",
+      "userId": "user-1793241991286",
+      "title": "Lời tâm sự sau giờ làm việc",
+      "content": "Hôm nay công việc có chút căng thẳng nhưng nhờ 1 phút dừng lại thở chánh niệm, lòng mình đã dịu lại.",
+      "gratitudeItems": [],
+      "mood": "peaceful",
+      "emotionIntensity": 4,
+      "prePostStatus": "after_meditation",
+      "voiceDurationSeconds": 45,
+      "tags": [
+        "voice_journal"
+      ],
+      "createdAt": "2026-10-29T02:46:31.463Z",
+      "updatedAt": "2026-10-29T02:46:31.463Z"
+    },
+    {
+      "id": "j-offline-1793241960147-a3b9",
+      "userId": "user-1793241959944",
+      "title": "Nhật ký ngoại tuyến",
+      "content": "Viết khi đi máy bay không có internet, tâm rất an tịnh.",
+      "gratitudeItems": [
+        "Hơi thở",
+        "Sự yên tĩnh"
+      ],
+      "mood": "peaceful",
+      "tags": [
+        "offline_sync"
+      ],
+      "createdAt": "2026-10-29T02:46:00.148Z",
+      "updatedAt": "2026-10-29T02:46:00.148Z"
+    },
+    {
+      "id": "j-voice-1793241960127",
+      "userId": "user-1793241959944",
+      "title": "Lời tâm sự sau giờ làm việc",
+      "content": "Hôm nay công việc có chút căng thẳng nhưng nhờ 1 phút dừng lại thở chánh niệm, lòng mình đã dịu lại.",
+      "gratitudeItems": [],
+      "mood": "peaceful",
+      "emotionIntensity": 4,
+      "prePostStatus": "after_meditation",
+      "voiceDurationSeconds": 45,
+      "tags": [
+        "voice_journal"
+      ],
+      "createdAt": "2026-10-29T02:46:00.127Z",
+      "updatedAt": "2026-10-29T02:46:00.127Z"
+    },
+    {
+      "id": "j-voice-1793238043962",
+      "userId": "user-1793238043776",
+      "title": "Lời tâm sự sau giờ làm việc",
+      "content": "Hôm nay công việc có chút căng thẳng nhưng nhờ 1 phút dừng lại thở chánh niệm, lòng mình đã dịu lại.",
+      "gratitudeItems": [],
+      "mood": "peaceful",
+      "emotionIntensity": 4,
+      "prePostStatus": "after_meditation",
+      "voiceDurationSeconds": 45,
+      "tags": [
+        "voice_journal"
+      ],
+      "createdAt": "2026-10-29T01:40:43.962Z",
+      "updatedAt": "2026-10-29T01:40:43.962Z"
+    },
+    {
+      "id": "j-voice-1793237893060",
+      "userId": "user-1793237892910",
+      "title": "Lời tâm sự sau giờ làm việc",
+      "content": "Hôm nay công việc có chút căng thẳng nhưng nhờ 1 phút dừng lại thở chánh niệm, lòng mình đã dịu lại.",
+      "gratitudeItems": [],
+      "mood": "peaceful",
+      "emotionIntensity": 4,
+      "prePostStatus": "after_meditation",
+      "voiceDurationSeconds": 45,
+      "tags": [
+        "voice_journal"
+      ],
+      "createdAt": "2026-10-29T01:38:13.060Z",
+      "updatedAt": "2026-10-29T01:38:13.060Z"
+    }
+  ],
+  "moodLogs": [],
+  "favorites": {},
+  "userProgress": {},
+  "aiUsage": {},
+  "affiliateClicks": [
+    {
+      "id": "aff-1793180684678-8f3304",
+      "offerId": "mala-agarwood",
+      "userId": "anonymous_guest",
+      "sourceScreen": "affiliate_store_view",
+      "timestamp": "2026-10-28T09:44:44.678Z"
+    }
+  ],
+  "adEvents": [
+    {
+      "id": "ad-1793171359150-19b28f",
+      "eventType": "REWARDED_COMPLETED",
+      "adUnitId": "test_ad_unit",
+      "userId": "user-1793171281981",
+      "timestamp": "2026-10-28T07:09:19.151Z"
+    },
+    {
+      "id": "ad-sess-1793176692788",
+      "eventType": "SESSION_STARTED",
+      "adUnitId": "rewarded_daily_pass_v4",
+      "userId": "user-1793176692625",
+      "timestamp": "2026-10-28T08:38:12.788Z",
+      "details": "Bắt đầu phiên xem quảng cáo với nonce: e453fdbe..."
+    },
+    {
+      "id": "ad-1793176692795-64a9e6",
+      "eventType": "REWARDED_COMPLETED",
+      "adUnitId": "rewarded_daily_pass_v4",
+      "userId": "user-1793176692625",
+      "timestamp": "2026-10-28T08:38:12.795Z"
+    },
+    {
+      "id": "ad-sess-1793180090060",
+      "eventType": "SESSION_STARTED",
+      "adUnitId": "rewarded_daily_pass_v4",
+      "userId": "user-1793180089897",
+      "timestamp": "2026-10-28T09:34:50.060Z",
+      "details": "Bắt đầu phiên xem quảng cáo với nonce: 12b58afb..."
+    },
+    {
+      "id": "ad-1793180090065-8b6f90",
+      "eventType": "REWARDED_COMPLETED",
+      "adUnitId": "rewarded_daily_pass_v4",
+      "userId": "user-1793180089897",
+      "timestamp": "2026-10-28T09:34:50.066Z"
+    },
+    {
+      "id": "ad-sess-1793180342088",
+      "eventType": "SESSION_STARTED",
+      "adUnitId": "rewarded_daily_pass_v4",
+      "userId": "user-1793180341939",
+      "timestamp": "2026-10-28T09:39:02.088Z",
+      "details": "Bắt đầu phiên xem quảng cáo với nonce: 20053330..."
+    },
+    {
+      "id": "ad-1793180342093-6a9975",
+      "eventType": "REWARDED_COMPLETED",
+      "adUnitId": "rewarded_daily_pass_v4",
+      "userId": "user-1793180341939",
+      "timestamp": "2026-10-28T09:39:02.093Z"
+    },
+    {
+      "id": "ad-sess-1793180684685",
+      "eventType": "SESSION_STARTED",
+      "adUnitId": "rewarded_daily_pass_v4",
+      "userId": "user-1793180684650",
+      "timestamp": "2026-10-28T09:44:44.685Z",
+      "details": "Bắt đầu phiên xem quảng cáo với nonce: 1e961453..."
+    },
+    {
+      "id": "ad-1793180684687-f3ede1",
+      "eventType": "REWARDED_COMPLETED",
+      "adUnitId": "rewarded_daily_pass_v4",
+      "userId": "user-1793180684650",
+      "timestamp": "2026-10-28T09:44:44.687Z"
+    },
+    {
+      "id": "ad-sess-1793181085437",
+      "eventType": "SESSION_STARTED",
+      "adUnitId": "rewarded_daily_pass_v4",
+      "userId": "user-1793181060383",
+      "timestamp": "2026-10-28T09:51:25.437Z",
+      "details": "Bắt đầu phiên xem quảng cáo với nonce: 79ca7cae..."
+    },
+    {
+      "id": "ad-1793181085440-436258",
+      "eventType": "REWARDED_COMPLETED",
+      "adUnitId": "rewarded_daily_pass_v4",
+      "userId": "user-1793181060383",
+      "timestamp": "2026-10-28T09:51:25.440Z"
+    },
+    {
+      "id": "ad-sess-1793181156762",
+      "eventType": "SESSION_STARTED",
+      "adUnitId": "rewarded_daily_pass_v4",
+      "userId": "user-1793181150992",
+      "timestamp": "2026-10-28T09:52:36.762Z",
+      "details": "Bắt đầu phiên xem quảng cáo với nonce: d2a9b8b9..."
+    },
+    {
+      "id": "ad-1793181156765-6a8455",
+      "eventType": "REWARDED_COMPLETED",
+      "adUnitId": "rewarded_daily_pass_v4",
+      "userId": "user-1793181150992",
+      "timestamp": "2026-10-28T09:52:36.765Z"
+    },
+    {
+      "id": "ad-sess-1793181167489",
+      "eventType": "SESSION_STARTED",
+      "adUnitId": "rewarded_daily_pass_v4",
+      "userId": "user-1793181167357",
+      "timestamp": "2026-10-28T09:52:47.489Z",
+      "details": "Bắt đầu phiên xem quảng cáo với nonce: b22ab95b..."
+    },
+    {
+      "id": "ad-1793181167493-7ce89d",
+      "eventType": "REWARDED_COMPLETED",
+      "adUnitId": "rewarded_daily_pass_v4",
+      "userId": "user-1793181167357",
+      "timestamp": "2026-10-28T09:52:47.493Z"
+    },
+    {
+      "id": "ad-sess-1793237893030",
+      "eventType": "SESSION_STARTED",
+      "adUnitId": "rewarded_daily_pass_v4",
+      "userId": "user-1793237892910",
+      "timestamp": "2026-10-29T01:38:13.030Z",
+      "details": "Bắt đầu phiên xem quảng cáo với nonce: e17fee36..."
+    },
+    {
+      "id": "ad-1793237893035-0a8702",
+      "eventType": "REWARDED_COMPLETED",
+      "adUnitId": "rewarded_daily_pass_v4",
+      "userId": "user-1793237892910",
+      "timestamp": "2026-10-29T01:38:13.035Z"
+    },
+    {
+      "id": "ad-sess-1793238043910",
+      "eventType": "SESSION_STARTED",
+      "adUnitId": "rewarded_daily_pass_v4",
+      "userId": "user-1793238043776",
+      "timestamp": "2026-10-29T01:40:43.910Z",
+      "details": "Bắt đầu phiên xem quảng cáo với nonce: 6ca1ecd4..."
+    },
+    {
+      "id": "ad-1793238043914-e48daa",
+      "eventType": "REWARDED_COMPLETED",
+      "adUnitId": "rewarded_daily_pass_v4",
+      "userId": "user-1793238043776",
+      "timestamp": "2026-10-29T01:40:43.914Z"
+    },
+    {
+      "id": "ad-sess-1793241960086",
+      "eventType": "SESSION_STARTED",
+      "adUnitId": "rewarded_daily_pass_v4",
+      "userId": "user-1793241959944",
+      "timestamp": "2026-10-29T02:46:00.086Z",
+      "details": "Bắt đầu phiên xem quảng cáo với nonce: 7c1fa2c1..."
+    },
+    {
+      "id": "ad-1793241960091-9efc10",
+      "eventType": "REWARDED_COMPLETED",
+      "adUnitId": "rewarded_daily_pass_v4",
+      "userId": "user-1793241959944",
+      "timestamp": "2026-10-29T02:46:00.091Z"
+    },
+    {
+      "id": "ad-sess-1793241991404",
+      "eventType": "SESSION_STARTED",
+      "adUnitId": "rewarded_daily_pass_v4",
+      "userId": "user-1793241991286",
+      "timestamp": "2026-10-29T02:46:31.405Z",
+      "details": "Bắt đầu phiên xem quảng cáo với nonce: 89332ff5..."
+    },
+    {
+      "id": "ad-1793241991436-8949cd",
+      "eventType": "REWARDED_COMPLETED",
+      "adUnitId": "rewarded_daily_pass_v4",
+      "userId": "user-1793241991286",
+      "timestamp": "2026-10-29T02:46:31.436Z"
+    }
+  ],
+  "userRewards": {
+    "user-1793171281981": {
+      "rewardType": "bonus_meditation",
+      "expiresAt": "2026-10-29T07:09:19.151Z"
+    },
+    "user-1793176692625": {
+      "rewardType": "bonus_meditation",
+      "expiresAt": "2026-10-29T08:38:12.795Z"
+    },
+    "user-1793180089897": {
+      "rewardType": "bonus_meditation",
+      "expiresAt": "2026-10-29T09:34:50.066Z"
+    },
+    "user-1793180341939": {
+      "rewardType": "bonus_meditation",
+      "expiresAt": "2026-10-29T09:39:02.093Z"
+    },
+    "user-1793180684650": {
+      "rewardType": "temporary_premium_24h",
+      "expiresAt": "2026-10-29T09:44:44.687Z"
+    },
+    "user-1793181060383": {
+      "rewardType": "temporary_premium_24h",
+      "expiresAt": "2026-10-29T09:51:25.440Z"
+    },
+    "user-1793181150992": {
+      "rewardType": "temporary_premium_24h",
+      "expiresAt": "2026-10-29T09:52:36.765Z"
+    },
+    "user-1793181167357": {
+      "rewardType": "bonus_meditation",
+      "expiresAt": "2026-10-29T09:52:47.493Z"
+    },
+    "user-1793237892910": {
+      "rewardType": "bonus_meditation",
+      "expiresAt": "2026-10-30T01:38:13.035Z"
+    },
+    "user-1793238043776": {
+      "rewardType": "bonus_meditation",
+      "expiresAt": "2026-10-30T01:40:43.914Z"
+    },
+    "user-1793241959944": {
+      "rewardType": "bonus_meditation",
+      "expiresAt": "2026-10-30T02:46:00.091Z"
+    },
+    "user-1793241991286": {
+      "rewardType": "bonus_meditation",
+      "expiresAt": "2026-10-30T02:46:31.436Z"
+    }
+  },
+  "soundPresets": [
+    {
+      "id": "preset-1793241991457",
+      "userId": "user-1793241991286",
+      "name": "Đêm Trăng Chùa Cổ",
+      "volumes": {
+        "rain": 0.4,
+        "temple_bell": 0.6,
+        "bamboo_wind": 0.3
+      },
+      "shareCode": "ANTAM-A211V",
+      "isPublic": false,
+      "createdAt": "2026-10-29T02:46:31.457Z"
+    },
+    {
+      "id": "preset-1793241960120",
+      "userId": "user-1793241959944",
+      "name": "Đêm Trăng Chùa Cổ",
+      "volumes": {
+        "rain": 0.4,
+        "temple_bell": 0.6,
+        "bamboo_wind": 0.3
+      },
+      "shareCode": "ANTAM-59OWX",
+      "isPublic": false,
+      "createdAt": "2026-10-29T02:46:00.120Z"
+    },
+    {
+      "id": "preset-1793238043954",
+      "userId": "user-1793238043776",
+      "name": "Đêm Trăng Chùa Cổ",
+      "volumes": {
+        "rain": 0.4,
+        "temple_bell": 0.6,
+        "bamboo_wind": 0.3
+      },
+      "shareCode": "ANTAM-HD8NY",
+      "isPublic": false,
+      "createdAt": "2026-10-29T01:40:43.954Z"
+    },
+    {
+      "id": "preset-1793237893054",
+      "userId": "user-1793237892910",
+      "name": "Đêm Trăng Chùa Cổ",
+      "volumes": {
+        "rain": 0.4,
+        "temple_bell": 0.6,
+        "bamboo_wind": 0.3
+      },
+      "shareCode": "ANTAM-BO9F1",
+      "isPublic": false,
+      "createdAt": "2026-10-29T01:38:13.054Z"
+    },
+    {
+      "id": "preset-dawn-sanctuary",
+      "userId": "system",
+      "name": "Thiền Đường Bình Minh",
+      "volumes": {
+        "rain": 0.3,
+        "stream": 0.4,
+        "singing_bowl": 0.5,
+        "theta_drone": 0.2
+      },
+      "shareCode": "ANTAM-DAWN",
+      "isPublic": true,
+      "createdAt": "2026-10-29T01:37:38.984Z"
+    }
+  ],
+  "communityWishes": [
+    {
+      "id": "wish-1793241991475",
+      "authorName": "Người bạn ẩn danh",
+      "isAnonymous": true,
+      "topic": "compassion",
+      "content": "Chúc tất cả bạn bè đồng tu một ngày thật nhiều năng lượng từ bi và bình an.",
+      "createdAt": "2026-10-29T02:46:31.475Z",
+      "reportCount": 0,
+      "lotusCount": 1
+    },
+    {
+      "id": "wish-1793241991454",
+      "authorName": "Tên Đã Cập Nhật",
+      "isAnonymous": false,
+      "topic": "peace",
+      "content": "Nguyện cho bạn luôn vững chãi và an trú trong từng hơi thở nhiệm mầu.",
+      "createdAt": "2026-10-29T02:46:31.454Z",
+      "reportCount": 0,
+      "lotusCount": 0
+    },
+    {
+      "id": "wish-1793241960143",
+      "authorName": "Người bạn ẩn danh",
+      "isAnonymous": true,
+      "topic": "compassion",
+      "content": "Chúc tất cả bạn bè đồng tu một ngày thật nhiều năng lượng từ bi và bình an.",
+      "createdAt": "2026-10-29T02:46:00.143Z",
+      "reportCount": 0,
+      "lotusCount": 1
+    },
+    {
+      "id": "wish-1793241960117",
+      "authorName": "Tên Đã Cập Nhật",
+      "isAnonymous": false,
+      "topic": "peace",
+      "content": "Nguyện cho bạn luôn vững chãi và an trú trong từng hơi thở nhiệm mầu.",
+      "createdAt": "2026-10-29T02:46:00.117Z",
+      "reportCount": 0,
+      "lotusCount": 0
+    },
+    {
+      "id": "wish-1793238043950",
+      "authorName": "Tên Đã Cập Nhật",
+      "isAnonymous": false,
+      "topic": "peace",
+      "content": "Nguyện cho bạn luôn vững chãi và an trú trong từng hơi thở nhiệm mầu.",
+      "createdAt": "2026-10-29T01:40:43.950Z",
+      "reportCount": 0,
+      "lotusCount": 8
+    },
+    {
+      "id": "wish-1793237893052",
+      "authorName": "Tên Đã Cập Nhật",
+      "isAnonymous": false,
+      "topic": "peace",
+      "content": "Nguyện cho bạn luôn vững chãi và an trú trong từng hơi thở nhiệm mầu.",
+      "createdAt": "2026-10-29T01:38:13.052Z",
+      "reportCount": 0,
+      "lotusCount": 8
+    },
+    {
+      "id": "wish-1",
+      "authorName": "Tâm An",
+      "isAnonymous": false,
+      "topic": "peace",
+      "content": "Nguyện chúc bạn có một ngày làm việc hanh thông, bước đi vững chãi và tâm hồn luôn tràn ngập sự bình an.",
+      "createdAt": "2026-10-29T01:37:38.984Z",
+      "reportCount": 0,
+      "lotusCount": 8
+    },
+    {
+      "id": "wish-2",
+      "authorName": "Bạn Đồng Tu",
+      "isAnonymous": true,
+      "topic": "gratitude",
+      "content": "Cảm ơn cuộc đời đã cho ta thêm một ngày nữa để thở, để mỉm cười và để yêu thương muôn loài.",
+      "createdAt": "2026-10-29T01:37:38.984Z",
+      "reportCount": 0,
+      "lotusCount": 8
+    },
+    {
+      "id": "wish-3",
+      "authorName": "Chân Như",
+      "isAnonymous": false,
+      "topic": "courage",
+      "content": "Dù phía trước có muôn vàn giông bão, hãy nhớ rằng bạn luôn có một nơi nương tựa vững chãi nhất: chính hơi thở của mình.",
+      "createdAt": "2026-10-29T01:37:38.984Z",
+      "reportCount": 0,
+      "lotusCount": 8
+    },
+    {
+      "id": "wish-4",
+      "authorName": "Vô Ưu",
+      "isAnonymous": true,
+      "topic": "forgiveness",
+      "content": "Buông xả những giận hờn không phải vì người khác, mà chính là món quà từ bi lớn nhất bạn dành tặng cho trái tim mình.",
+      "createdAt": "2026-10-29T01:37:38.984Z",
+      "reportCount": 0,
+      "lotusCount": 8
+    },
+    {
+      "id": "wish-5",
+      "authorName": "Tuệ Giác",
+      "isAnonymous": false,
+      "topic": "patience",
+      "content": "Như hoa sen cần bùn lầy để nở hoa thơm ngát, những thử thách hôm nay sẽ là chất liệu nuôi dưỡng sự kiên nhẫn của bạn ngày mai.",
+      "createdAt": "2026-10-29T01:37:38.984Z",
+      "reportCount": 0,
+      "lotusCount": 8
+    },
+    {
+      "id": "wish-6",
+      "authorName": "Từ Tâm",
+      "isAnonymous": false,
+      "topic": "compassion",
+      "content": "Nguyện cho tất cả chúng sinh khắp muôn phương đều được an lành, không sợ hãi và thoát khỏi mọi khổ đau.",
+      "createdAt": "2026-10-29T01:37:38.984Z",
+      "reportCount": 0,
+      "lotusCount": 8
+    }
+  ],
+  "aiFeedback": [
+    {
+      "id": "fb-1793241991467",
+      "userId": "user-1793241991286",
+      "rating": "helpful",
+      "feedback": "Câu trả lời trích dẫn kinh điển rất chính xác và từ bi.",
+      "timestamp": "2026-10-29T02:46:31.467Z"
+    },
+    {
+      "id": "fb-1793241960133",
+      "userId": "user-1793241959944",
+      "rating": "helpful",
+      "feedback": "Câu trả lời trích dẫn kinh điển rất chính xác và từ bi.",
+      "timestamp": "2026-10-29T02:46:00.133Z"
+    },
+    {
+      "id": "fb-1793238043966",
+      "userId": "user-1793238043776",
+      "rating": "helpful",
+      "feedback": "Câu trả lời trích dẫn kinh điển rất chính xác và từ bi.",
+      "timestamp": "2026-10-29T01:40:43.966Z"
+    },
+    {
+      "id": "fb-1793237893063",
+      "userId": "user-1793237892910",
+      "rating": "helpful",
+      "feedback": "Câu trả lời trích dẫn kinh điển rất chính xác và từ bi.",
+      "timestamp": "2026-10-29T01:38:13.063Z"
+    }
+  ],
+  "mindfulnessBells": {
+    "user-1793237892910": {
+      "enabled": true,
+      "intervalMinutes": 45,
+      "startTime": "08:30",
+      "endTime": "17:30",
+      "workdaysOnly": true,
+      "sound": "temple_bell",
+      "dnd": true
+    },
+    "user-1793238043776": {
+      "enabled": true,
+      "intervalMinutes": 45,
+      "startTime": "08:30",
+      "endTime": "17:30",
+      "workdaysOnly": true,
+      "sound": "temple_bell",
+      "dnd": true
+    },
+    "user-1793241959944": {
+      "enabled": true,
+      "intervalMinutes": 45,
+      "startTime": "08:30",
+      "endTime": "17:30",
+      "workdaysOnly": true,
+      "sound": "temple_bell",
+      "dnd": true
+    },
+    "user-1793241991286": {
+      "enabled": true,
+      "intervalMinutes": 45,
+      "startTime": "08:30",
+      "endTime": "17:30",
+      "workdaysOnly": true,
+      "sound": "temple_bell",
+      "dnd": true
+    }
+  },
+  "zenGardens": {
+    "user-1793241959944": {
+      "plants": [
+        {
+          "id": "plant-1793241960135",
+          "species": "lotus",
+          "name": "Sen Hồng Tịnh Độ",
+          "stage": "bud",
+          "currentPoints": 75,
+          "totalWaterPoints": 75,
+          "flowersBloomed": 0,
+          "plantedAt": "2026-10-29T02:46:00.135Z",
+          "lastWateredAt": "2026-10-29T02:46:00.146Z"
+        }
+      ],
+      "activePlantId": "plant-1793241960135",
+      "waterDrops": 26,
+      "totalMindfulMinutesInvested": 30,
+      "totalLotusesBloomed": 0,
+      "badges": [
+        {
+          "id": "badge-seed",
+          "title": "Mầm Thiện Khởi Sanh",
+          "description": "Gieo hạt giống chánh niệm đầu tiên",
+          "icon": "🌱",
+          "unlockedAt": "2026-10-29T02:46:00.135Z"
+        },
+        {
+          "id": "badge-lotus-bloom",
+          "title": "Đóa Sen Ngát Hương",
+          "description": "Nuôi dưỡng trọn vẹn đóa sen đầu tiên nở rộ",
+          "icon": "🪷"
+        },
+        {
+          "id": "badge-bodhi",
+          "title": "Bóng Mát Bồ Đề",
+          "description": "Trồng và chăm sóc cây Bồ Đề giác ngộ",
+          "icon": "🌳"
+        },
+        {
+          "id": "badge-devotion",
+          "title": "Tâm Bất Biến",
+          "description": "Tích lũy 100 giọt nước chánh niệm từ thiền định",
+          "icon": "💧"
+        }
+      ]
+    },
+    "user-1793241991286": {
+      "plants": [
+        {
+          "id": "plant-1793241991469",
+          "species": "lotus",
+          "name": "Sen Hồng Tịnh Độ",
+          "stage": "bud",
+          "currentPoints": 75,
+          "totalWaterPoints": 75,
+          "flowersBloomed": 0,
+          "plantedAt": "2026-10-29T02:46:31.469Z",
+          "lastWateredAt": "2026-10-29T02:46:31.479Z"
+        }
+      ],
+      "activePlantId": "plant-1793241991469",
+      "waterDrops": 26,
+      "totalMindfulMinutesInvested": 30,
+      "totalLotusesBloomed": 0,
+      "badges": [
+        {
+          "id": "badge-seed",
+          "title": "Mầm Thiện Khởi Sanh",
+          "description": "Gieo hạt giống chánh niệm đầu tiên",
+          "icon": "🌱",
+          "unlockedAt": "2026-10-29T02:46:31.469Z"
+        },
+        {
+          "id": "badge-lotus-bloom",
+          "title": "Đóa Sen Ngát Hương",
+          "description": "Nuôi dưỡng trọn vẹn đóa sen đầu tiên nở rộ",
+          "icon": "🪷"
+        },
+        {
+          "id": "badge-bodhi",
+          "title": "Bóng Mát Bồ Đề",
+          "description": "Trồng và chăm sóc cây Bồ Đề giác ngộ",
+          "icon": "🌳"
+        },
+        {
+          "id": "badge-devotion",
+          "title": "Tâm Bất Biến",
+          "description": "Tích lũy 100 giọt nước chánh niệm từ thiền định",
+          "icon": "💧"
+        }
+      ]
+    }
+  },
+  "auditLogs": [
+    {
+      "id": "audit-1793241991399",
+      "action": "UNAUTHORIZED_SANDBOX_ATTEMPT_BLOCKED",
+      "adminEmail": "test_qa_1793241991149@antam.app",
+      "timestamp": "2026-10-29T02:46:31.399Z",
+      "details": "Chặn nỗ lực tự kích hoạt sandbox Premium trái phép từ user user-1793241991286"
+    },
+    {
+      "id": "audit-1793241991396",
+      "action": "EMAIL_DISPATCHED",
+      "adminEmail": "system@antam.internal",
+      "timestamp": "2026-10-29T02:46:31.396Z",
+      "details": "Đã gửi email khôi phục mật khẩu tới test_qa_1793241991149@antam.app"
+    },
+    {
+      "id": "audit-1793241991390",
+      "action": "PASSWORD_CHANGED",
+      "adminEmail": "test_qa_1793241991149@antam.app",
+      "timestamp": "2026-10-29T02:46:31.390Z",
+      "details": "Người dùng test_qa_1793241991149@antam.app đổi mật khẩu thành công."
+    },
+    {
+      "id": "audit-1793241991286",
+      "action": "USER_REGISTERED",
+      "adminEmail": "test_qa_1793241991149@antam.app",
+      "timestamp": "2026-10-29T02:46:31.286Z",
+      "details": "Người dùng mới đăng ký tài khoản: test_qa_1793241991149@antam.app"
+    },
+    {
+      "id": "audit-1793241960079",
+      "action": "UNAUTHORIZED_SANDBOX_ATTEMPT_BLOCKED",
+      "adminEmail": "test_qa_1793241959768@antam.app",
+      "timestamp": "2026-10-29T02:46:00.079Z",
+      "details": "Chặn nỗ lực tự kích hoạt sandbox Premium trái phép từ user user-1793241959944"
+    },
+    {
+      "id": "audit-1793241960074",
+      "action": "EMAIL_DISPATCHED",
+      "adminEmail": "system@antam.internal",
+      "timestamp": "2026-10-29T02:46:00.074Z",
+      "details": "Đã gửi email khôi phục mật khẩu tới test_qa_1793241959768@antam.app"
+    },
+    {
+      "id": "audit-1793241960068",
+      "action": "PASSWORD_CHANGED",
+      "adminEmail": "test_qa_1793241959768@antam.app",
+      "timestamp": "2026-10-29T02:46:00.068Z",
+      "details": "Người dùng test_qa_1793241959768@antam.app đổi mật khẩu thành công."
+    },
+    {
+      "id": "audit-1793241959945",
+      "action": "USER_REGISTERED",
+      "adminEmail": "test_qa_1793241959768@antam.app",
+      "timestamp": "2026-10-29T02:45:59.945Z",
+      "details": "Người dùng mới đăng ký tài khoản: test_qa_1793241959768@antam.app"
+    },
+    {
+      "id": "audit-1793238043903",
+      "action": "UNAUTHORIZED_SANDBOX_ATTEMPT_BLOCKED",
+      "adminEmail": "test_qa_1793238043599@antam.app",
+      "timestamp": "2026-10-29T01:40:43.903Z",
+      "details": "Chặn nỗ lực tự kích hoạt sandbox Premium trái phép từ user user-1793238043776"
+    },
+    {
+      "id": "audit-1793238043898",
+      "action": "EMAIL_DISPATCHED",
+      "adminEmail": "system@antam.internal",
+      "timestamp": "2026-10-29T01:40:43.898Z",
+      "details": "Đã gửi email khôi phục mật khẩu tới test_qa_1793238043599@antam.app"
+    },
+    {
+      "id": "audit-1793238043892",
+      "action": "PASSWORD_CHANGED",
+      "adminEmail": "test_qa_1793238043599@antam.app",
+      "timestamp": "2026-10-29T01:40:43.892Z",
+      "details": "Người dùng test_qa_1793238043599@antam.app đổi mật khẩu thành công."
+    },
+    {
+      "id": "audit-1793238043776",
+      "action": "USER_REGISTERED",
+      "adminEmail": "test_qa_1793238043599@antam.app",
+      "timestamp": "2026-10-29T01:40:43.776Z",
+      "details": "Người dùng mới đăng ký tài khoản: test_qa_1793238043599@antam.app"
+    },
+    {
+      "id": "audit-1793237893023",
+      "action": "UNAUTHORIZED_SANDBOX_ATTEMPT_BLOCKED",
+      "adminEmail": "test_qa_1793237892730@antam.app",
+      "timestamp": "2026-10-29T01:38:13.023Z",
+      "details": "Chặn nỗ lực tự kích hoạt sandbox Premium trái phép từ user user-1793237892910"
+    },
+    {
+      "id": "audit-1793237893018",
+      "action": "EMAIL_DISPATCHED",
+      "adminEmail": "system@antam.internal",
+      "timestamp": "2026-10-29T01:38:13.018Z",
+      "details": "Đã gửi email khôi phục mật khẩu tới test_qa_1793237892730@antam.app"
+    },
+    {
+      "id": "audit-1793237893013",
+      "action": "PASSWORD_CHANGED",
+      "adminEmail": "test_qa_1793237892730@antam.app",
+      "timestamp": "2026-10-29T01:38:13.013Z",
+      "details": "Người dùng test_qa_1793237892730@antam.app đổi mật khẩu thành công."
+    },
+    {
+      "id": "audit-1793237892910",
+      "action": "USER_REGISTERED",
+      "adminEmail": "test_qa_1793237892730@antam.app",
+      "timestamp": "2026-10-29T01:38:12.910Z",
+      "details": "Người dùng mới đăng ký tài khoản: test_qa_1793237892730@antam.app"
+    },
+    {
+      "id": "audit-1793181167482",
+      "action": "UNAUTHORIZED_SANDBOX_ATTEMPT_BLOCKED",
+      "adminEmail": "test_qa_1793181167207@antam.app",
+      "timestamp": "2026-10-28T09:52:47.482Z",
+      "details": "Chặn nỗ lực tự kích hoạt sandbox Premium trái phép từ user user-1793181167357"
+    },
+    {
+      "id": "audit-1793181167478",
+      "action": "EMAIL_DISPATCHED",
+      "adminEmail": "system@antam.internal",
+      "timestamp": "2026-10-28T09:52:47.478Z",
+      "details": "Đã gửi email khôi phục mật khẩu tới test_qa_1793181167207@antam.app"
+    },
+    {
+      "id": "audit-1793181167471",
+      "action": "PASSWORD_CHANGED",
+      "adminEmail": "test_qa_1793181167207@antam.app",
+      "timestamp": "2026-10-28T09:52:47.471Z",
+      "details": "Người dùng test_qa_1793181167207@antam.app đổi mật khẩu thành công."
+    },
+    {
+      "id": "audit-1793181167357",
+      "action": "USER_REGISTERED",
+      "adminEmail": "test_qa_1793181167207@antam.app",
+      "timestamp": "2026-10-28T09:52:47.357Z",
+      "details": "Người dùng mới đăng ký tài khoản: test_qa_1793181167207@antam.app"
+    },
+    {
+      "id": "audit-1793181150992",
+      "action": "USER_REGISTERED",
+      "adminEmail": "audit_final_1793181150918@test.com",
+      "timestamp": "2026-10-28T09:52:30.992Z",
+      "details": "Người dùng mới đăng ký tài khoản: audit_final_1793181150918@test.com"
+    },
+    {
+      "id": "audit-1793181060383",
+      "action": "USER_REGISTERED",
+      "adminEmail": "audit_deep_1793181060311@test.com",
+      "timestamp": "2026-10-28T09:51:00.383Z",
+      "details": "Người dùng mới đăng ký tài khoản: audit_deep_1793181060311@test.com"
+    },
+    {
+      "id": "audit-1793180684651",
+      "action": "USER_REGISTERED",
+      "adminEmail": "audit_1793180684569@test.com",
+      "timestamp": "2026-10-28T09:44:44.651Z",
+      "details": "Người dùng mới đăng ký tài khoản: audit_1793180684569@test.com"
+    },
+    {
+      "id": "audit-1793180342079",
+      "action": "UNAUTHORIZED_SANDBOX_ATTEMPT_BLOCKED",
+      "adminEmail": "test_qa_1793180341754@antam.app",
+      "timestamp": "2026-10-28T09:39:02.079Z",
+      "details": "Chặn nỗ lực tự kích hoạt sandbox Premium trái phép từ user user-1793180341939"
+    },
+    {
+      "id": "audit-1793180342074",
+      "action": "EMAIL_DISPATCHED",
+      "adminEmail": "system@antam.internal",
+      "timestamp": "2026-10-28T09:39:02.074Z",
+      "details": "Đã gửi email khôi phục mật khẩu tới test_qa_1793180341754@antam.app"
+    },
+    {
+      "id": "audit-1793180342067",
+      "action": "PASSWORD_CHANGED",
+      "adminEmail": "test_qa_1793180341754@antam.app",
+      "timestamp": "2026-10-28T09:39:02.067Z",
+      "details": "Người dùng test_qa_1793180341754@antam.app đổi mật khẩu thành công."
+    },
+    {
+      "id": "audit-1793180341940",
+      "action": "USER_REGISTERED",
+      "adminEmail": "test_qa_1793180341754@antam.app",
+      "timestamp": "2026-10-28T09:39:01.940Z",
+      "details": "Người dùng mới đăng ký tài khoản: test_qa_1793180341754@antam.app"
+    },
+    {
+      "id": "audit-1793180090052",
+      "action": "UNAUTHORIZED_SANDBOX_ATTEMPT_BLOCKED",
+      "adminEmail": "test_qa_1793180089698@antam.app",
+      "timestamp": "2026-10-28T09:34:50.052Z",
+      "details": "Chặn nỗ lực tự kích hoạt sandbox Premium trái phép từ user user-1793180089897"
+    },
+    {
+      "id": "audit-1793180090047",
+      "action": "EMAIL_DISPATCHED",
+      "adminEmail": "system@antam.internal",
+      "timestamp": "2026-10-28T09:34:50.047Z",
+      "details": "Đã gửi email khôi phục mật khẩu tới test_qa_1793180089698@antam.app"
+    },
+    {
+      "id": "audit-1793180090038",
+      "action": "PASSWORD_CHANGED",
+      "adminEmail": "test_qa_1793180089698@antam.app",
+      "timestamp": "2026-10-28T09:34:50.038Z",
+      "details": "Người dùng test_qa_1793180089698@antam.app đổi mật khẩu thành công."
+    },
+    {
+      "id": "audit-1793180089898",
+      "action": "USER_REGISTERED",
+      "adminEmail": "test_qa_1793180089698@antam.app",
+      "timestamp": "2026-10-28T09:34:49.898Z",
+      "details": "Người dùng mới đăng ký tài khoản: test_qa_1793180089698@antam.app"
+    },
+    {
+      "id": "audit-1793176692778",
+      "action": "UNAUTHORIZED_SANDBOX_ATTEMPT_BLOCKED",
+      "adminEmail": "test_qa_1793176692377@antam.app",
+      "timestamp": "2026-10-28T08:38:12.778Z",
+      "details": "Chặn nỗ lực tự kích hoạt sandbox Premium trái phép từ user user-1793176692625"
+    },
+    {
+      "id": "audit-1793176692771",
+      "action": "EMAIL_DISPATCHED",
+      "adminEmail": "system@antam.internal",
+      "timestamp": "2026-10-28T08:38:12.771Z",
+      "details": "Đã gửi email khôi phục mật khẩu tới test_qa_1793176692377@antam.app"
+    },
+    {
+      "id": "audit-1793176692763",
+      "action": "PASSWORD_CHANGED",
+      "adminEmail": "test_qa_1793176692377@antam.app",
+      "timestamp": "2026-10-28T08:38:12.763Z",
+      "details": "Người dùng test_qa_1793176692377@antam.app đổi mật khẩu thành công."
+    },
+    {
+      "id": "audit-1793176692625",
+      "action": "USER_REGISTERED",
+      "adminEmail": "test_qa_1793176692377@antam.app",
+      "timestamp": "2026-10-28T08:38:12.625Z",
+      "details": "Người dùng mới đăng ký tài khoản: test_qa_1793176692377@antam.app"
+    },
+    {
+      "id": "audit-1793171320973",
+      "action": "SUBSCRIPTION_SANDBOX_TEST",
+      "adminEmail": "testuser@antam.app",
+      "timestamp": "2026-10-28T07:08:40.973Z",
+      "details": "[SANDBOX TEST] Kích hoạt gói yearly kiểm thử QA. Hiệu lực đến 2027-10-28T07:08:40.973Z"
+    },
+    {
+      "id": "audit-1793171308106",
+      "action": "PASSWORD_CHANGED",
+      "adminEmail": "testuser@antam.app",
+      "timestamp": "2026-10-28T07:08:28.106Z",
+      "details": "Người dùng testuser@antam.app đổi mật khẩu thành công."
+    },
+    {
+      "id": "audit-1793171281982",
+      "action": "USER_REGISTERED",
+      "adminEmail": "testuser@antam.app",
+      "timestamp": "2026-10-28T07:08:01.982Z",
+      "details": "Người dùng mới đăng ký tài khoản: testuser@antam.app"
+    },
+    {
+      "id": "log-init",
+      "action": "SYSTEM_STARTUP",
+      "adminEmail": "system@antam.internal",
+      "timestamp": "2026-10-28T07:07:42.061Z",
+      "details": "Khởi tạo hệ thống AN TÂM v4.0 - Bảo mật Hardening & Quản trị RLS"
+    }
+  ]
+}

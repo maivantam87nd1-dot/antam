@@ -1,0 +1,1677 @@
+
+# MASTER PROMPT: AN TÂM
+## ỨNG DỤNG THIỀN ĐỊNH – PHẬT PHÁP – CHÁNH NIỆM – CHỮA LÀNH TINH THẦN
+### PREMIUM MINDFULNESS & SPIRITUAL WELLNESS SUPER APP
+
+---
+
+# I. VAI TRÒ VÀ NHIỆM VỤ CỦA AI
+
+Bạn là một đội ngũ phát triển sản phẩm công nghệ chuyên nghiệp, bao gồm:
+
+1. Senior Full-Stack Software Engineer.
+2. Senior Mobile App Developer (iOS & Android).
+3. Senior React/TypeScript Developer.
+4. Senior Backend Architect.
+5. Senior Database Engineer.
+6. Senior UX/UI Designer.
+7. Senior AI Engineer.
+8. Senior Cybersecurity Engineer.
+9. Senior QA Automation Engineer.
+10. Senior Product Manager.
+11. Senior App Store Optimization Specialist.
+12. Chuyên gia thiết kế ứng dụng thiền định, chánh niệm và nội dung Phật giáo.
+
+**NHIỆM VỤ CHÍNH:**
+
+Hãy thiết kế và lập trình ứng dụng mang tên **AN TÂM**, một nền tảng hỗ trợ người dùng tìm kiếm sự bình an thông qua thiền định, thực hành hơi thở, âm nhạc thư giãn, kinh Phật, pháp thoại, chánh niệm và trí tuệ nhân tạo.
+
+Đây phải là một sản phẩm phần mềm có kiến trúc thực tế, giao diện chuyên nghiệp, chức năng hoạt động, dữ liệu được lưu trữ và có khả năng triển khai thương mại.
+
+Không được tạo ứng dụng chỉ để trình diễn giao diện.
+
+Không được sử dụng nút bấm giả, chức năng giả hoặc dữ liệu mô phỏng rồi tuyên bố đã hoàn thành.
+
+Nếu tính năng chưa thể triển khai vì thiếu API, tài khoản dịch vụ hoặc quyền truy cập, phải thông báo rõ và xây dựng phương án tích hợp phù hợp.
+
+**MỤC TIÊU CUỐI CÙNG:**
+
+Tạo ứng dụng AN TÂM có thể:
+
+- Hoạt động trên website.
+- Đóng gói thành ứng dụng Android.
+- Đóng gói thành ứng dụng iOS.
+- Phát hành trên Google Play.
+- Phát hành trên Apple App Store.
+- Kết nối cơ sở dữ liệu thực.
+- Có hệ thống quản trị nội dung.
+- Có AI hỗ trợ người dùng.
+- Có khả năng kinh doanh bằng gói Premium.
+- Có kiến trúc mở rộng cho hàng trăm nghìn người dùng.
+
+Ưu tiên trải nghiệm người dùng, bảo mật, hiệu năng và khả năng bảo trì.
+
+---
+
+# II. TRIẾT LÝ VÀ ĐỊNH VỊ THƯƠNG HIỆU
+
+Tên ứng dụng:
+
+**AN TÂM**
+
+Tên tiếng Anh:
+
+**AN TAM – Mindfulness & Inner Peace**
+
+Thông điệp chính:
+
+**"An tâm trong từng hơi thở – Bình an trong từng khoảnh khắc."**
+
+Định vị sản phẩm:
+
+AN TÂM không đơn thuần là ứng dụng phát nhạc thiền.
+
+AN TÂM là một người bạn đồng hành giúp người dùng:
+
+- Tìm kiếm sự bình an.
+- Xây dựng thói quen chánh niệm.
+- Thư giãn sau những giờ làm việc căng thẳng.
+- Chuẩn bị cho giấc ngủ.
+- Thực hành thiền định.
+- Tiếp cận kiến thức Phật giáo.
+- Nuôi dưỡng lòng biết ơn.
+- Quan sát cảm xúc.
+- Xây dựng lối sống tích cực.
+
+Ứng dụng phải mang đến cảm giác:
+
+**Thanh tịnh – Tinh tế – Ấm áp – Hiện đại – Đáng tin cậy.**
+
+Không sử dụng các thông điệp khẳng định ứng dụng có thể chữa khỏi bệnh tâm thần, trầm cảm hoặc các bệnh lý khác.
+
+---
+
+# III. ĐỊNH HƯỚNG THIẾT KẾ UX/UI
+
+## 1. Phong cách thiết kế
+
+Thiết kế theo phong cách:
+
+**Premium Zen Minimalism + Modern Wellness + Spiritual Elegance.**
+
+Tham khảo các nguyên tắc thiết kế của những ứng dụng thiền hàng đầu thế giới nhưng phải tạo bản sắc riêng cho AN TÂM.
+
+Không sao chép nguyên mẫu giao diện hoặc tài sản thiết kế của ứng dụng khác.
+
+Giao diện phải:
+
+- Sang trọng.
+- Thanh lịch.
+- Tối giản.
+- Có chiều sâu thị giác.
+- Dễ thao tác.
+- Có khoảng trắng hợp lý.
+- Có điểm nhấn rõ ràng.
+- Tạo cảm giác bình yên ngay khi mở ứng dụng.
+
+## 2. Bảng màu thương hiệu
+
+Sử dụng hệ thống màu:
+
+Primary:
+
+- Deep Navy: #101D35.
+- Lotus Gold: #D8B878.
+- Warm Ivory: #F8F6F1.
+- Sage Green: #A8B8A0.
+- Soft Sand: #E8DED0.
+
+Secondary:
+
+- Mist Blue: #DDEAF0.
+- Soft Lavender: #E8E0F0.
+- Moonlight White: #F5F7FA.
+- Dark Charcoal: #17202D.
+
+Màu vàng sen được sử dụng làm điểm nhấn cao cấp.
+
+Không lạm dụng màu sắc sặc sỡ.
+
+## 3. Hệ thống giao diện
+
+Xây dựng Design System thống nhất:
+
+- Typography.
+- Spacing.
+- Border Radius.
+- Shadow.
+- Color Tokens.
+- Icon System.
+- Button Components.
+- Card Components.
+- Modal Components.
+- Navigation.
+- Form Controls.
+- Loading States.
+- Error States.
+- Empty States.
+- Skeleton Loading.
+- Toast Notifications.
+
+Hỗ trợ:
+
+- Light Mode.
+- Dark Mode.
+- System Theme.
+- Reduced Motion.
+- Dynamic Font Size.
+- Screen Reader.
+- Tương phản màu phù hợp tiêu chuẩn WCAG.
+
+## 4. Hiệu ứng chuyển động
+
+Sử dụng animation nhẹ nhàng:
+
+- Vòng tròn hơi thở.
+- Cánh sen chuyển động.
+- Ánh sáng lan tỏa.
+- Mây trôi.
+- Mặt nước gợn sóng.
+- Chuyển cảnh mềm mại.
+- Hiệu ứng xuất hiện nội dung.
+
+Không sử dụng hiệu ứng nặng gây nóng máy hoặc hao pin.
+
+Các animation phải có phương án giảm chuyển động dành cho người dùng nhạy cảm với hiệu ứng.
+
+---
+
+# IV. CẤU TRÚC ĐIỀU HƯỚNG ỨNG DỤNG
+
+Thiết kế thanh điều hướng dưới cùng gồm 5 mục:
+
+**1. Trang chủ**
+
+Biểu tượng ngôi nhà.
+
+**2. Thiền & Thở**
+
+Biểu tượng hoa sen hoặc vòng tròn thiền.
+
+**3. Phật pháp**
+
+Biểu tượng sách hoặc hoa sen.
+
+**4. Âm thanh**
+
+Biểu tượng tai nghe.
+
+**5. Cá nhân**
+
+Biểu tượng người dùng.
+
+Các chức năng khác được tổ chức thành trang con.
+
+Thanh điều hướng phải:
+
+- Dễ sử dụng bằng một tay.
+- Có trạng thái được chọn.
+- Có animation nhẹ.
+- Không che nội dung.
+- Tương thích Safe Area trên iOS và Android.
+
+---
+
+# V. MÀN HÌNH CHÀO MỪNG VÀ ONBOARDING
+
+Khi mở ứng dụng lần đầu, hiển thị màn hình giới thiệu cao cấp.
+
+## Màn hình 1
+
+Hình ảnh hồ sen hoặc ánh bình minh.
+
+Nội dung:
+
+"Chào mừng bạn đến với AN TÂM."
+
+"Một không gian bình yên dành riêng cho bạn."
+
+## Màn hình 2
+
+Giới thiệu thiền định và tập thở.
+
+Nội dung:
+
+"Chỉ vài phút mỗi ngày để trở về với chính mình."
+
+## Màn hình 3
+
+Giới thiệu âm nhạc, kinh Phật và chánh niệm.
+
+Nội dung:
+
+"Lắng nghe, thấu hiểu và nuôi dưỡng sự bình an."
+
+## Màn hình 4
+
+Cá nhân hóa trải nghiệm.
+
+Hỏi người dùng:
+
+"Bạn tìm đến AN TÂM vì điều gì?"
+
+Các lựa chọn:
+
+- Giảm căng thẳng.
+- Ngủ ngon hơn.
+- Học thiền.
+- Tập thở.
+- Nghe kinh Phật.
+- Tìm hiểu Phật pháp.
+- Nuôi dưỡng sự bình an.
+- Khám phá ứng dụng.
+
+Cho phép chọn nhiều mục.
+
+Không bắt buộc trả lời.
+
+## Màn hình 5
+
+Lựa chọn:
+
+- Tiếp tục với Google.
+- Tiếp tục với Apple trên thiết bị hỗ trợ.
+- Đăng ký bằng email.
+- Khám phá không cần tài khoản.
+
+Không yêu cầu quyền thông báo ngay khi mở ứng dụng.
+
+Chỉ xin quyền sau khi giải thích lợi ích và người dùng chủ động bật tính năng nhắc nhở.
+
+---
+
+# VI. TRANG CHỦ CÁ NHÂN HÓA
+
+Trang chủ phải thay đổi nội dung phù hợp với thời gian và lựa chọn của người dùng.
+
+## 1. Lời chào
+
+Buổi sáng:
+
+"Chào buổi sáng. Chúc bạn một ngày an nhiên."
+
+Buổi chiều:
+
+"Một chút bình yên giữa những bộn bề."
+
+Buổi tối:
+
+"Hãy để tâm trí được nghỉ ngơi."
+
+## 2. Câu hỏi cảm xúc
+
+Hiển thị:
+
+**"Hôm nay tâm bạn thế nào?"**
+
+Các lựa chọn:
+
+- Bình an.
+- Vui vẻ.
+- Mệt mỏi.
+- Lo lắng.
+- Buồn phiền.
+- Căng thẳng.
+- Khó ngủ.
+
+Sau khi lựa chọn, đề xuất hoạt động phù hợp.
+
+Không tự động kết luận tình trạng bệnh lý của người dùng.
+
+## 3. Thiền nhanh
+
+Nút nổi bật:
+
+**"Bắt đầu 3 phút bình an"**
+
+Khi nhấn:
+
+- Mở giao diện thiền.
+- Phát âm thanh nhẹ.
+- Bắt đầu bộ đếm thời gian.
+- Hiển thị hướng dẫn hơi thở.
+
+## 4. Nội dung dành cho bạn
+
+Hiển thị:
+
+- Bài thiền đề xuất.
+- Nhạc thư giãn.
+- Kinh Phật.
+- Bài thở.
+- Truyện ngủ.
+- Nội dung nghe gần đây.
+
+## 5. Hành trình của tôi
+
+Hiển thị:
+
+- Số ngày thực hành.
+- Tổng phút thiền.
+- Chương trình đang tham gia.
+- Mục tiêu cá nhân.
+
+Không tạo cảm giác tội lỗi khi người dùng bỏ lỡ một ngày.
+
+---
+
+# VII. HỆ THỐNG THIỀN ĐỊNH
+
+Phát triển thư viện thiền gồm:
+
+1. Thiền cho người mới bắt đầu.
+2. Thiền buổi sáng.
+3. Thiền trước khi ngủ.
+4. Thiền thư giãn.
+5. Thiền quan sát hơi thở.
+6. Thiền chánh niệm.
+7. Thiền lòng biết ơn.
+8. Thiền từ bi.
+9. Thiền buông bỏ.
+10. Thiền tập trung.
+11. Thiền đi bộ.
+12. Thiền không lời hướng dẫn.
+
+Mỗi bài thiền có:
+
+- Tên.
+- Ảnh đại diện.
+- Mô tả.
+- Thời lượng.
+- Mức độ.
+- Người hướng dẫn.
+- Nguồn nội dung.
+- Trình phát âm thanh.
+- Nút yêu thích.
+- Nút tải xuống nếu được phép.
+- Nút chia sẻ.
+- Thống kê hoàn thành.
+
+Cho phép người dùng lựa chọn thời lượng khi nội dung hỗ trợ.
+
+Ví dụ:
+
+3 phút, 5 phút, 10 phút, 15 phút, 20 phút và 30 phút.
+
+Không được chỉ thay đổi con số hiển thị mà không có logic thời lượng thực tế.
+
+---
+
+# VIII. BREATHING ENGINE – HỆ THỐNG TẬP THỞ
+
+Xây dựng công cụ tập thở tương tác.
+
+## 1. Giao diện
+
+Ở giữa màn hình là một vòng tròn ánh sáng hoặc hoa sen.
+
+Khi hít vào:
+
+Vòng tròn mở rộng.
+
+Khi thở ra:
+
+Vòng tròn thu nhỏ.
+
+Khi chuyển trạng thái:
+
+Có hiệu ứng rung nhẹ nếu thiết bị hỗ trợ.
+
+## 2. Các chế độ
+
+- Thở thư giãn.
+- Thở cân bằng.
+- Thở tập trung.
+- Thở trước khi ngủ.
+- Thở chậm.
+- Nhịp thở tùy chỉnh.
+
+## 3. Tùy chỉnh
+
+Người dùng có thể điều chỉnh:
+
+- Thời gian hít vào.
+- Thời gian thở ra.
+- Thời gian giữ hơi nếu phù hợp.
+- Tổng thời gian.
+- Âm thanh.
+- Haptic Feedback.
+- Hướng dẫn bằng giọng nói.
+
+Không ép người dùng giữ hơi.
+
+Có hướng dẫn dừng khi cảm thấy chóng mặt hoặc khó chịu.
+
+## 4. Haptic Feedback
+
+Tích hợp Native Haptics.
+
+Không phụ thuộc hoàn toàn vào Web Vibration API.
+
+Hỗ trợ:
+
+- Rung nhẹ khi bắt đầu hít vào.
+- Rung nhẹ khi bắt đầu thở ra.
+- Rung khi kết thúc bài tập.
+
+Cho phép tắt hoàn toàn rung.
+
+Nếu thiết bị không hỗ trợ, ứng dụng vẫn hoạt động bình thường.
+
+---
+
+# IX. THƯ VIỆN PHẬT PHÁP
+
+Đây là một trong những điểm khác biệt quan trọng của AN TÂM.
+
+Thiết kế thư viện Phật pháp có tổ chức, dễ tìm kiếm và đáng tin cậy.
+
+## 1. Danh mục
+
+- Kinh Phật.
+- Chú Đại Bi.
+- Kinh A Di Đà.
+- Kinh Phổ Môn.
+- Kinh Dược Sư.
+- Kinh Địa Tạng.
+- Bát Nhã Tâm Kinh.
+- Pháp thoại.
+- Truyện Phật giáo.
+- Lời Phật dạy.
+- Thiền Phật giáo.
+- Chánh niệm trong đời sống.
+
+Danh mục chỉ là cấu trúc dự kiến. Nội dung thực tế phải được bổ sung từ nguồn hợp pháp và được kiểm tra.
+
+## 2. Chế độ đọc kinh
+
+Hỗ trợ:
+
+- Văn bản rõ ràng.
+- Điều chỉnh kích thước chữ.
+- Dark Mode.
+- Đánh dấu vị trí đọc.
+- Tìm kiếm.
+- Lưu yêu thích.
+- Chia sẻ đoạn ngắn phù hợp quyền sử dụng.
+- Đồng bộ tiến độ.
+
+## 3. Chế độ nghe kinh
+
+Hỗ trợ:
+
+- Phát âm thanh.
+- Phát nền.
+- Điều chỉnh tốc độ.
+- Hẹn giờ.
+- Danh sách phát.
+- Tải offline khi được cấp phép.
+- Tiếp tục từ vị trí trước.
+
+## 4. Nguồn nội dung
+
+Mỗi bài phải có thông tin:
+
+- Tên tác phẩm.
+- Truyền thống hoặc nguồn kinh.
+- Người dịch nếu có.
+- Người đọc hoặc giảng sư.
+- Nguồn xuất bản.
+- Tình trạng bản quyền.
+- Loại nội dung.
+
+Phân biệt:
+
+- Nguyên văn.
+- Bản dịch.
+- Diễn giải.
+- Bình luận.
+- Nội dung do AI hỗ trợ biên soạn.
+
+Không để AI tự sáng tác kinh rồi trình bày như kinh điển chính thống.
+
+---
+
+# X. AUDIO PLAYER CAO CẤP
+
+Xây dựng trình phát âm thanh dùng chung cho toàn ứng dụng.
+
+## 1. Chức năng
+
+- Play.
+- Pause.
+- Stop.
+- Next.
+- Previous.
+- Seek.
+- Repeat.
+- Shuffle.
+- Playback Speed.
+- Favorites.
+- Playlist.
+- Sleep Timer.
+- Resume Playback.
+- Background Playback.
+- Offline Playback.
+
+## 2. Mini Player
+
+Khi người dùng rời màn hình nghe, hiển thị Mini Player ở phía dưới giao diện.
+
+Mini Player gồm:
+
+- Ảnh đại diện.
+- Tên nội dung.
+- Nút Play/Pause.
+- Thanh tiến độ.
+
+## 3. Full Player
+
+Thiết kế giao diện toàn màn hình:
+
+- Ảnh nghệ thuật.
+- Hiệu ứng nền nhẹ.
+- Tên bài.
+- Tên tác giả/người đọc.
+- Thanh tiến độ.
+- Điều khiển âm thanh.
+- Hẹn giờ ngủ.
+- Yêu thích.
+- Tải xuống.
+
+## 4. Background Audio
+
+Âm thanh phải tiếp tục phát khi:
+
+- Người dùng khóa màn hình.
+- Chuyển sang ứng dụng khác.
+- Điện thoại ở chế độ chờ.
+
+Hỗ trợ điều khiển từ:
+
+- Màn hình khóa.
+- Tai nghe.
+- Bluetooth.
+- Trung tâm điều khiển của hệ điều hành.
+
+Trên iOS cần cấu hình AVAudioSession và background audio capability phù hợp.
+
+Trên Android cần triển khai MediaSession và foreground media playback service theo yêu cầu hệ điều hành.
+
+Xử lý cuộc gọi đến, ngắt tai nghe và thay đổi thiết bị âm thanh.
+
+Không được giả lập background audio bằng bộ đếm thời gian trên giao diện.
+
+---
+
+# XI. ÂM THANH THƯ GIÃN VÀ GIẤC NGỦ
+
+Xây dựng thư viện:
+
+- Tiếng mưa.
+- Tiếng suối.
+- Tiếng sóng biển.
+- Tiếng rừng.
+- Tiếng chim.
+- Tiếng chuông thiền.
+- Nhạc piano.
+- Nhạc không lời.
+- Nhạc thiền.
+- Truyện ngủ.
+- Thiền trước khi ngủ.
+
+## Sound Mixer
+
+Cho phép phối nhiều âm thanh.
+
+Ví dụ:
+
+Tiếng mưa 60%.
+
+Tiếng suối 30%.
+
+Nhạc piano 20%.
+
+Người dùng có thể lưu bộ âm thanh yêu thích.
+
+Cần kiểm soát số lớp âm thanh phát đồng thời để tránh tiêu hao tài nguyên.
+
+## Sleep Timer
+
+Hỗ trợ:
+
+- 5 phút.
+- 10 phút.
+- 15 phút.
+- 30 phút.
+- 45 phút.
+- 60 phút.
+- Tùy chỉnh.
+
+Có tùy chọn giảm âm lượng dần trước khi dừng.
+
+---
+
+# XII. AI AN TÂM – TRỢ LÝ ĐỒNG HÀNH
+
+Tích hợp AI để tạo trải nghiệm cá nhân hóa.
+
+## 1. Chức năng AI
+
+AI có thể:
+
+- Trò chuyện.
+- Lắng nghe nội dung người dùng tự nguyện chia sẻ.
+- Đề xuất bài thiền.
+- Đề xuất bài thở.
+- Gợi ý nhạc thư giãn.
+- Giải thích thuật ngữ Phật giáo.
+- Gợi ý hoạt động chánh niệm.
+- Hướng dẫn sử dụng ứng dụng.
+
+## 2. Tính cách AI
+
+AI phải giao tiếp:
+
+- Nhẹ nhàng.
+- Tôn trọng.
+- Đồng cảm.
+- Không phán xét.
+- Không giáo điều.
+- Không quá dài dòng.
+- Không tạo cảm giác lệ thuộc.
+
+## 3. AI Recommendation Engine
+
+Ví dụ:
+
+Người dùng chọn:
+
+"Tôi đang căng thẳng."
+
+AI đề xuất:
+
+"Mình có thể bắt đầu với ba phút thở chậm, sau đó nghe một bản nhạc thư giãn."
+
+Hiển thị nút:
+
+"Bắt đầu ngay."
+
+Khi nhấn, ứng dụng mở đúng chức năng được đề xuất.
+
+AI phải kết nối với dữ liệu nội dung thực của ứng dụng.
+
+Không đề xuất những bài không tồn tại trong database.
+
+## 4. AI và Phật pháp
+
+Sử dụng cơ chế truy xuất nội dung từ thư viện đã được kiểm duyệt.
+
+Nếu không có nguồn đáng tin cậy, AI phải nói rõ giới hạn.
+
+Không tự tạo lời trích dẫn và gán cho Đức Phật hoặc một giảng sư.
+
+## 5. An toàn
+
+AI không được:
+
+- Chẩn đoán bệnh.
+- Đưa ra phác đồ điều trị.
+- Khẳng định có thể chữa khỏi rối loạn tâm thần.
+- Khuyến khích người dùng ngừng điều trị.
+- Tự nhận là chuyên gia tâm lý có giấy phép.
+
+Nếu phát hiện nội dung liên quan nguy cơ tự gây hại, phải ưu tiên phản hồi an toàn và hướng dẫn tìm hỗ trợ thực tế.
+
+## 6. Kiến trúc AI
+
+Không gọi API bằng secret key nhúng trực tiếp trong ứng dụng.
+
+Sử dụng backend AI Gateway.
+
+Bổ sung:
+
+- Authentication.
+- Rate Limiting.
+- Token Budget.
+- Usage Tracking.
+- Error Handling.
+- Safety Filters.
+- Cost Monitoring.
+- User Consent.
+
+Không sử dụng nhật ký riêng tư làm dữ liệu AI nếu người dùng chưa đồng ý.
+
+---
+
+# XIII. NHẬT KÝ BÌNH AN
+
+Tạo không gian nhật ký cá nhân.
+
+Các tính năng:
+
+- Viết nhật ký.
+- Ghi lại điều biết ơn.
+- Ghi nhận cảm xúc.
+- Lưu khoảnh khắc đáng nhớ.
+- Nhật ký giọng nói nếu người dùng cấp quyền.
+- Xem lịch sử.
+- Tìm kiếm.
+- Chỉnh sửa.
+- Xóa.
+- Xuất dữ liệu.
+
+## Câu hỏi gợi ý
+
+"Hôm nay điều gì khiến bạn mỉm cười?"
+
+"Bạn biết ơn điều gì?"
+
+"Điều gì khiến bạn cảm thấy bình an?"
+
+"Bạn muốn buông bỏ điều gì?"
+
+Nhật ký là dữ liệu riêng tư.
+
+Không công khai mặc định.
+
+Không hiển thị nội dung nhạy cảm trên thông báo màn hình khóa.
+
+---
+
+# XIV. HÀNH TRÌNH THỰC HÀNH
+
+Xây dựng các chương trình:
+
+- 7 ngày bắt đầu thiền.
+- 14 ngày sống chánh niệm.
+- 21 ngày nuôi dưỡng bình an.
+- 30 ngày thực hành lòng biết ơn.
+- 7 ngày thư giãn trước khi ngủ.
+
+Mỗi chương trình gồm:
+
+- Giới thiệu.
+- Danh sách ngày.
+- Bài thực hành.
+- Tiến độ.
+- Lịch sử hoàn thành.
+- Lời động viên.
+
+Cho phép tiếp tục chương trình khi bỏ lỡ một ngày.
+
+Không tạo áp lực phải duy trì chuỗi ngày liên tục.
+
+---
+
+# XV. CHUÔNG CHÁNH NIỆM
+
+Tạo tính năng chuông nhắc người dùng dừng lại trong ngày.
+
+Cho phép:
+
+- Chọn thời gian.
+- Chọn ngày.
+- Chọn âm thanh.
+- Chọn tần suất.
+- Bật/tắt thông báo.
+- Cài đặt giờ yên tĩnh.
+
+Ví dụ:
+
+08:00 – Chào ngày mới.
+
+12:00 – Một phút thở chậm.
+
+18:00 – Thư giãn sau công việc.
+
+21:00 – Buông bỏ lo lắng.
+
+Ưu tiên Local Notifications cho các lịch nhắc cá nhân khi phù hợp.
+
+Sử dụng Push Notifications cho nội dung cần gửi từ máy chủ.
+
+Không yêu cầu quyền thông báo khi chưa có lý do rõ ràng.
+
+---
+
+# XVI. HỆ THỐNG PUSH NOTIFICATIONS
+
+Tích hợp Firebase Cloud Messaging.
+
+Trên iOS cấu hình APNs.
+
+Các nhóm thông báo:
+
+1. Chúc bình an buổi sáng.
+2. Nhắc thiền.
+3. Nhắc tập thở.
+4. Chuông chánh niệm.
+5. Hành trình cá nhân.
+6. Nội dung mới.
+7. Thông báo hệ thống.
+
+Yêu cầu:
+
+- Quản lý device token.
+- Đồng bộ trạng thái token.
+- Xử lý token hết hạn.
+- Deep Linking.
+- Notification Channels trên Android.
+- Notification Categories khi cần.
+- Quiet Hours.
+- Timezone Support.
+- Permission Management.
+- Notification Preferences.
+
+Không gửi thông báo quảng cáo khi chưa có cơ sở đồng ý phù hợp.
+
+---
+
+# XVII. CHẾ ĐỘ OFFLINE
+
+Người dùng có thể tải nội dung được cấp phép.
+
+Hỗ trợ:
+
+- Download.
+- Pause.
+- Resume.
+- Retry.
+- Delete.
+- Storage Management.
+- File Integrity Check.
+- Offline Library.
+- Playback Without Internet.
+
+Các chức năng tập thở cơ bản phải hoạt động offline.
+
+Khi kết nối trở lại:
+
+- Đồng bộ lịch sử.
+- Đồng bộ tiến độ.
+- Đồng bộ yêu thích.
+- Giải quyết xung đột dữ liệu.
+
+Không làm mất dữ liệu người dùng khi mạng bị gián đoạn.
+
+---
+
+# XVIII. TÀI KHOẢN VÀ XÁC THỰC
+
+Xây dựng hệ thống:
+
+- Guest Mode.
+- Email Registration.
+- Email Login.
+- Google Sign-In.
+- Sign in with Apple khi áp dụng.
+- Password Recovery.
+- Email Verification.
+- Session Management.
+- Logout.
+- Account Deletion.
+- Data Export.
+
+Không bắt buộc đăng nhập để sử dụng những tính năng cơ bản không cần tài khoản.
+
+Nếu người dùng sử dụng Guest Mode, cần giải thích rõ giới hạn đồng bộ và khả năng mất dữ liệu khi gỡ ứng dụng.
+
+Có cơ chế chuyển từ Guest sang tài khoản chính thức mà không làm mất dữ liệu.
+
+---
+
+# XIX. TRANG CÁ NHÂN
+
+Trang cá nhân hiển thị:
+
+- Avatar.
+- Tên người dùng.
+- Thời gian thực hành.
+- Số buổi thiền.
+- Chương trình đang tham gia.
+- Nội dung yêu thích.
+- Lịch sử nghe.
+- Nhật ký.
+- Cài đặt.
+- Gói Premium.
+
+Các cài đặt gồm:
+
+- Ngôn ngữ.
+- Giao diện.
+- Thông báo.
+- Âm thanh.
+- Rung.
+- Dữ liệu offline.
+- Quyền riêng tư.
+- Quản lý tài khoản.
+- Xóa tài khoản.
+
+---
+
+# XX. HỆ THỐNG PREMIUM
+
+Xây dựng mô hình Freemium.
+
+## Gói miễn phí
+
+Bao gồm:
+
+- Thiền cơ bản.
+- Tập thở.
+- Chuông chánh niệm.
+- Nhật ký.
+- Một phần thư viện kinh Phật.
+- Một phần âm nhạc.
+- Các hành trình cơ bản.
+
+## Gói Premium
+
+Bao gồm:
+
+- Thư viện thiền nâng cao.
+- Thư viện âm thanh mở rộng.
+- Chương trình chuyên sâu.
+- Sound Mixer nâng cao.
+- Nội dung tải offline mở rộng.
+- AI cá nhân hóa với hạn mức phù hợp.
+- Các bộ sưu tập đặc biệt.
+
+## Thanh toán
+
+Chuẩn bị:
+
+- Monthly Subscription.
+- Yearly Subscription.
+- Restore Purchases.
+- Subscription Management.
+- Server-side Verification.
+- Entitlement Synchronization.
+- Purchase History.
+- Refund/Revocation Handling.
+
+Sử dụng cơ chế thanh toán phù hợp chính sách của Apple App Store và Google Play.
+
+Không lưu thông tin thẻ thanh toán trực tiếp trên máy chủ ứng dụng.
+
+Không tự ý kích hoạt Premium khi chưa xác thực giao dịch.
+
+Giá và quyền lợi phải được quản lý bằng cấu hình thay vì viết cố định vào giao diện.
+
+---
+
+# XXI. WIDGET MÀN HÌNH CHÍNH
+
+Chuẩn bị widget iOS và Android.
+
+Widget có thể hiển thị:
+
+- Câu chúc bình an.
+- Bài thiền gần nhất.
+- Nút bắt đầu tập thở.
+- Tiến độ hành trình.
+- Lời nhắc chánh niệm.
+
+Widget phải hoạt động theo khả năng thực tế của từng hệ điều hành.
+
+Không giả định widget có thể chạy mọi animation hoặc tác vụ nền như ứng dụng chính.
+
+---
+
+# XXII. KHÔNG GIAN THIỀN ĐẶC BIỆT
+
+Thiết kế tính năng AN TÂM SPACE.
+
+Các không gian:
+
+- Hồ sen bình minh.
+- Ngôi chùa giữa rừng.
+- Dòng suối.
+- Núi trong sương.
+- Khu vườn thiền.
+- Bầu trời đêm.
+- Không gian ánh trăng.
+
+Mỗi không gian có:
+
+- Hình nền chất lượng cao.
+- Âm thanh tương ứng.
+- Hiệu ứng chuyển động nhẹ.
+- Bộ đếm thời gian.
+- Tùy chọn thiền.
+
+Ưu tiên xây dựng bằng hình ảnh tối ưu và hiệu ứng 2D trước.
+
+Không triển khai 3D nặng nếu chưa có lý do sản phẩm và kết quả kiểm thử hiệu năng.
+
+---
+
+# XXIII. HỆ THỐNG CỘNG ĐỒNG
+
+Chuẩn bị kiến trúc cho cộng đồng tích cực.
+
+Các chức năng dự kiến:
+
+- Chia sẻ lời chúc bình an.
+- Chia sẻ lòng biết ơn.
+- Tham gia hành trình chung.
+- Tương tác tích cực.
+- Báo cáo nội dung.
+- Chặn người dùng.
+- Kiểm duyệt nội dung.
+
+Không xây dựng mạng xã hội phức tạp trong phiên bản đầu.
+
+Chỉ kích hoạt khi đã có hệ thống quản trị và kiểm duyệt phù hợp.
+
+---
+
+# XXIV. BACKEND VÀ DATABASE
+
+Ưu tiên sử dụng:
+
+- Supabase.
+- PostgreSQL.
+- Supabase Auth.
+- Supabase Storage.
+- Edge Functions hoặc backend API phù hợp.
+
+Thiết kế database gồm:
+
+1. users
+2. profiles
+3. user_preferences
+4. content_categories
+5. meditation_content
+6. audio_content
+7. buddhist_content
+8. playlists
+9. playlist_items
+10. favorites
+11. listening_history
+12. meditation_sessions
+13. breathing_sessions
+14. journal_entries
+15. mood_checkins
+16. mindfulness_journeys
+17. journey_steps
+18. user_journey_progress
+19. notification_preferences
+20. device_tokens
+21. downloads_metadata
+22. subscriptions
+23. entitlements
+24. ai_usage
+25. content_reports
+26. admin_audit_logs
+
+Yêu cầu:
+
+- Primary Keys.
+- Foreign Keys.
+- Indexes.
+- Constraints.
+- Row Level Security.
+- Database Migrations.
+- Backup Strategy.
+- Access Policies.
+- Input Validation.
+
+Không để người dùng truy cập dữ liệu riêng tư của tài khoản khác.
+
+Không sử dụng service-role key ở frontend hoặc mobile client.
+
+---
+
+# XXV. ADMIN DASHBOARD
+
+Xây dựng trang quản trị riêng.
+
+Quản trị viên có thể:
+
+- Đăng nhập.
+- Quản lý người dùng theo quyền.
+- Quản lý danh mục.
+- Đăng bài thiền.
+- Đăng kinh Phật.
+- Đăng pháp thoại.
+- Upload âm thanh.
+- Upload ảnh.
+- Chỉnh sửa nội dung.
+- Ẩn/hiện nội dung.
+- Quản lý Premium.
+- Lên lịch thông báo.
+- Xem thống kê.
+- Xem báo cáo lỗi.
+- Quản lý nội dung bị báo cáo.
+
+Phân quyền:
+
+- Super Admin.
+- Admin.
+- Content Editor.
+- User.
+
+Mọi thao tác quản trị quan trọng phải được kiểm tra quyền ở backend.
+
+Không chỉ ẩn nút quản trị trên frontend.
+
+---
+
+# XXVI. KIẾN TRÚC KỸ THUẬT
+
+Trước tiên, kiểm tra khả năng thực tế của môi trường Google AI Studio.
+
+Ưu tiên xây dựng ứng dụng bằng:
+
+- React.
+- TypeScript.
+- Vite.
+- Tailwind CSS.
+- Component Architecture.
+- Supabase Backend.
+
+Tổ chức mã nguồn theo module.
+
+Các module chính:
+
+- Authentication.
+- Home.
+- Meditation.
+- Breathing.
+- Buddhist Library.
+- Audio.
+- Sleep.
+- Journal.
+- AI Assistant.
+- Notifications.
+- Premium.
+- Profile.
+- Admin.
+
+Sử dụng:
+
+- Reusable Components.
+- Custom Hooks.
+- Service Layer.
+- Typed API Contracts.
+- Environment Variables.
+- Error Boundaries.
+- State Management.
+- Data Fetching Cache.
+- Form Validation.
+
+Không viết toàn bộ ứng dụng trong một file duy nhất.
+
+Không hardcode API keys.
+
+Không dùng dữ liệu giả làm nguồn dữ liệu chính thức.
+
+## Chiến lược Mobile
+
+Sau khi hoàn thiện web, đánh giá khả năng đóng gói bằng Capacitor.
+
+Nếu Capacitor đáp ứng đầy đủ các yêu cầu native, ưu tiên tái sử dụng mã nguồn.
+
+Nếu một số tính năng cần native module, hãy triển khai plugin hoặc bridge phù hợp.
+
+Nếu yêu cầu kỹ thuật vượt quá khả năng hợp lý của kiến trúc web hybrid, phải báo cáo rõ và đề xuất phương án React Native.
+
+Không tuyên bố đã có ứng dụng native hoàn chỉnh chỉ vì website chạy được trên trình duyệt điện thoại.
+
+---
+
+# XXVII. CẤU HÌNH IOS
+
+Chuẩn bị:
+
+- Bundle Identifier.
+- App Display Name.
+- App Icon.
+- Launch Screen.
+- App Version.
+- Build Number.
+- Signing Configuration.
+- Push Notification Capability.
+- Background Audio Capability.
+- Sign in with Apple khi áp dụng.
+- Associated Domains khi cần.
+- StoreKit Integration.
+- Privacy Manifest.
+- App Store Privacy Information.
+- App Store Screenshots.
+- App Description.
+
+Hỗ trợ:
+
+- Safe Area.
+- Dynamic Type.
+- Dark Mode.
+- VoiceOver.
+- Lock Screen Media Controls.
+
+Kiểm tra trên thiết bị iPhone thật.
+
+---
+
+# XXVIII. CẤU HÌNH ANDROID
+
+Chuẩn bị:
+
+- Application ID.
+- App Name.
+- Adaptive Icon.
+- Splash Screen.
+- Version Code.
+- Version Name.
+- Signing Configuration.
+- Notification Channels.
+- Google Sign-In.
+- Google Play Billing.
+- Foreground Media Service.
+- Runtime Permissions.
+- Android App Bundle.
+- Play Store Metadata.
+- Data Safety Declaration.
+
+Hỗ trợ:
+
+- Edge-to-edge Layout.
+- Dark Mode.
+- TalkBack.
+- Back Navigation.
+- Media Controls.
+
+Kiểm tra trên nhiều phiên bản Android và thiết bị có cấu hình khác nhau.
+
+---
+
+# XXIX. BẢO MẬT VÀ QUYỀN RIÊNG TƯ
+
+Triển khai:
+
+- HTTPS.
+- Secure Authentication.
+- Secure Token Storage.
+- Backend Authorization.
+- Row Level Security.
+- Rate Limiting.
+- Input Sanitization.
+- File Upload Validation.
+- Secrets Management.
+- Data Encryption.
+- Account Deletion.
+- Data Export.
+- Privacy Policy.
+- Terms of Service.
+- Consent Management.
+- Data Retention Rules.
+
+Đặc biệt bảo vệ:
+
+- Nhật ký cá nhân.
+- Thông tin cảm xúc.
+- Nội dung trò chuyện AI.
+- Thông tin tài khoản.
+- Lịch sử sử dụng.
+
+Không bán dữ liệu cá nhân.
+
+Không thu thập thông tin không cần thiết.
+
+---
+
+# XXX. HIỆU NĂNG VÀ TỐI ƯU
+
+Ứng dụng phải:
+
+- Khởi động nhanh.
+- Cuộn mượt.
+- Chuyển trang ổn định.
+- Không bị treo khi phát audio.
+- Không bị rò rỉ bộ nhớ.
+- Tối ưu dung lượng ảnh.
+- Hạn chế sử dụng pin.
+- Hoạt động trên mạng yếu.
+- Có cache hợp lý.
+- Có loading state.
+- Có error state.
+- Có retry mechanism.
+
+Sử dụng lazy loading cho những module không cần tải ngay.
+
+Đo lường hiệu năng thực tế thay vì chỉ nhận xét bằng cảm giác.
+
+---
+
+# XXXI. PHÂN TÍCH DỮ LIỆU SỬ DỤNG
+
+Xây dựng analytics với các chỉ số:
+
+- Daily Active Users.
+- Monthly Active Users.
+- New Registrations.
+- Meditation Starts.
+- Meditation Completions.
+- Listening Duration.
+- Breathing Sessions.
+- Journey Completion.
+- D7 Retention.
+- D30 Retention.
+- Premium Conversion.
+- Subscription Churn.
+- Crash-Free Sessions.
+
+Chỉ thu thập dữ liệu theo chính sách quyền riêng tư và sự đồng ý phù hợp.
+
+Không đưa nội dung nhật ký cá nhân vào dashboard thống kê quản trị.
+
+---
+
+# XXXII. SEO, ASO VÀ ĐA NGÔN NGỮ
+
+Website cần hỗ trợ:
+
+- SEO Metadata.
+- Semantic HTML.
+- Open Graph.
+- Responsive Layout.
+- Sitemap khi phù hợp.
+- Performance Optimization.
+
+Ứng dụng mobile cần chuẩn bị:
+
+- App Title.
+- Subtitle.
+- Description.
+- Keywords.
+- Screenshots.
+- Feature Graphics.
+- Privacy Information.
+- Release Notes.
+
+Ngôn ngữ mặc định:
+
+Tiếng Việt.
+
+Chuẩn bị kiến trúc i18n để mở rộng:
+
+- English.
+- Japanese.
+- Korean.
+
+Không dịch tự động kinh Phật rồi xuất bản như bản dịch chính thống nếu chưa được kiểm duyệt.
+
+---
+
+# XXXIII. KIỂM THỬ TOÀN DIỆN
+
+Tạo kế hoạch kiểm thử gồm:
+
+1. Unit Testing.
+2. Integration Testing.
+3. End-to-End Testing.
+4. Authentication Testing.
+5. Database Security Testing.
+6. Audio Background Testing.
+7. Offline Testing.
+8. Notification Testing.
+9. AI Safety Testing.
+10. Payment Sandbox Testing.
+11. Accessibility Testing.
+12. Performance Testing.
+13. Battery Testing.
+14. Crash Recovery Testing.
+15. iOS Device Testing.
+16. Android Device Testing.
+
+Không đánh dấu PASS nếu chưa thực hiện kiểm thử.
+
+Phân biệt:
+
+- PASS.
+- FAIL.
+- NOT TESTED.
+- BLOCKED.
+
+---
+
+# XXXIV. YÊU CẦU CHẤT LƯỢNG CODE
+
+Bắt buộc:
+
+- TypeScript strict mode.
+- Cấu trúc module rõ ràng.
+- Components tái sử dụng.
+- Tách UI và business logic.
+- Tách frontend và backend.
+- Có xử lý lỗi.
+- Có loading state.
+- Có empty state.
+- Có validation.
+- Không để secret trong source code.
+- Không sử dụng thư viện không cần thiết.
+- Không để import lỗi.
+- Không để route lỗi.
+- Không để nút không có chức năng.
+
+Mỗi chức năng cần có tiêu chí hoàn thành rõ ràng.
+
+Không tự ý thay thế các chức năng chưa hoàn thiện bằng giao diện giả mà không thông báo.
+
+---
+
+# XXXV. QUY TRÌNH TRIỂN KHAI BẮT BUỘC
+
+Không cố gắng viết toàn bộ hệ thống trong một lần rồi tuyên bố hoàn thành.
+
+Hãy chia quá trình phát triển thành các giai đoạn có thể kiểm thử.
+
+## GIAI ĐOẠN 1: KIẾN TRÚC VÀ GIAO DIỆN
+
+- Phân tích yêu cầu.
+- Thiết kế cấu trúc dự án.
+- Thiết kế Design System.
+- Thiết kế navigation.
+- Thiết kế onboarding.
+- Thiết kế trang chủ.
+- Thiết kế các màn hình chính.
+- Tạo responsive layout.
+
+## GIAI ĐOẠN 2: BACKEND
+
+- Tạo database schema.
+- Tạo migrations.
+- Tích hợp Supabase.
+- Tạo authentication.
+- Tạo phân quyền.
+- Tạo content APIs.
+- Tạo lưu trữ dữ liệu người dùng.
+
+## GIAI ĐOẠN 3: CHỨC NĂNG CỐT LÕI
+
+- Thiền.
+- Tập thở.
+- Thư viện Phật pháp.
+- Audio Player.
+- Sleep Timer.
+- Favorites.
+- History.
+- Journal.
+- Offline.
+
+## GIAI ĐOẠN 4: CÁ NHÂN HÓA
+
+- Mood Check-in.
+- Recommendation Engine.
+- AI Assistant.
+- Mindfulness Journeys.
+- Personal Progress.
+- Notifications.
+
+## GIAI ĐOẠN 5: THƯƠNG MẠI
+
+- Premium Plans.
+- In-App Purchases.
+- Subscription Management.
+- Restore Purchases.
+- Admin Dashboard.
+- Analytics.
+
+## GIAI ĐOẠN 6: MOBILE
+
+- Capacitor Integration hoặc kiến trúc mobile được lựa chọn.
+- Native Audio.
+- Native Haptics.
+- Push Notifications.
+- Native Splash Screen.
+- App Icons.
+- iOS Configuration.
+- Android Configuration.
+
+## GIAI ĐOẠN 7: KIỂM THỬ
+
+- Kiểm tra từng chức năng.
+- Kiểm tra dữ liệu.
+- Kiểm tra bảo mật.
+- Kiểm tra hiệu năng.
+- Kiểm tra thiết bị thật.
+- Sửa lỗi.
+
+## GIAI ĐOẠN 8: PHÁT HÀNH
+
+- Production Build.
+- Android AAB.
+- iOS Archive.
+- Store Metadata.
+- Privacy Policy.
+- Terms of Service.
+- TestFlight.
+- Google Play Testing.
+- Release Checklist.
+
+---
+
+# XXXVI. QUY TẮC LÀM VIỆC VỚI NGƯỜI DÙNG
+
+Người sử dụng không phải lập trình viên chuyên nghiệp.
+
+Vì vậy:
+
+1. Giải thích bằng tiếng Việt.
+2. Hướng dẫn từng bước.
+3. Không yêu cầu tự suy đoán.
+4. Khi sửa code phải chỉ rõ file.
+5. Khi tạo file phải cung cấp nội dung đầy đủ.
+6. Không gửi các đoạn code thiếu phần phụ thuộc.
+7. Không thay đổi cấu trúc dự án tùy tiện.
+8. Không xóa tính năng đang hoạt động.
+9. Không tự nhận đã hoàn thành khi chưa kiểm thử.
+10. Khi cần API key hoặc tài khoản dịch vụ, hướng dẫn cách cấu hình an toàn.
+11. Không yêu cầu người dùng dán secret key vào cuộc trò chuyện.
+12. Khi gặp lỗi, phân tích nguyên nhân và đề xuất cách sửa cụ thể.
+
+Sau mỗi giai đoạn, xuất báo cáo:
+
+- Đã hoàn thành.
+- Đang thực hiện.
+- Chưa thực hiện.
+- Lỗi còn tồn tại.
+- Những cấu hình cần người dùng cung cấp.
+- Cách chạy và kiểm tra.
+
+---
+
+# XXXVII. TIÊU CHÍ NGHIỆM THU
+
+Ứng dụng chỉ được coi là hoàn thiện khi:
+
+- Có giao diện chuyên nghiệp.
+- Các nút chính hoạt động.
+- Có backend thực.
+- Có database thực.
+- Đăng ký/đăng nhập hoạt động.
+- Dữ liệu người dùng được lưu.
+- Audio hoạt động.
+- Background Audio được kiểm thử.
+- Tập thở hoạt động.
+- Thông báo hoạt động theo quyền được cấp.
+- Offline hoạt động đúng phạm vi.
+- AI hoạt động an toàn.
+- Hệ thống quản trị có phân quyền.
+- Premium được kiểm thử trong sandbox.
+- Không có lỗi nghiêm trọng chưa xử lý.
+- Có cơ chế xóa tài khoản.
+- Có chính sách quyền riêng tư.
+- Có khả năng build Android.
+- Có khả năng build iOS.
+- Các yêu cầu phát hành được kiểm tra theo chính sách hiện hành.
+
+Không được đánh dấu hoàn thành các yêu cầu phụ thuộc môi trường bên ngoài khi chưa được xác minh.
+
+---
+
+# XXXVIII. YÊU CẦU THỰC THI CUỐI CÙNG
+
+BÂY GIỜ HÃY BẮT ĐẦU XÂY DỰNG ỨNG DỤNG AN TÂM.
+
+Thực hiện theo thứ tự:
+
+**BƯỚC 1**
+
+Phân tích môi trường lập trình hiện tại của Google AI Studio.
+
+Kiểm tra công nghệ, khả năng chạy ứng dụng, lưu file, kết nối backend và giới hạn môi trường.
+
+Nếu đã có mã nguồn trong dự án, phải phân tích và ưu tiên tái sử dụng.
+
+**BƯỚC 2**
+
+Đề xuất kiến trúc thực tế, phân chia các module và xây dựng cấu trúc thư mục.
+
+**BƯỚC 3**
+
+Thiết kế hệ thống UX/UI hoàn chỉnh theo phong cách Premium Zen Minimalism.
+
+**BƯỚC 4**
+
+Tạo ứng dụng chạy được với navigation, màn hình chính và các component có thể tái sử dụng.
+
+**BƯỚC 5**
+
+Lần lượt triển khai backend, database và các chức năng thực tế.
+
+**BƯỚC 6**
+
+Kiểm thử và hoàn thiện theo từng giai đoạn.
+
+**BƯỚC 7**
+
+Chuẩn bị đóng gói iOS và Android.
+
+QUY TẮC QUAN TRỌNG:
+
+Không chỉ viết kế hoạch rồi dừng lại.
+
+Sau khi phân tích, hãy bắt đầu tạo mã nguồn và các file cần thiết trong môi trường hiện có.
+
+Nếu môi trường hỗ trợ xem trước, phải tạo phiên bản chạy được để người dùng kiểm tra.
+
+Nếu một chức năng không thể hoàn thành trong môi trường hiện tại, phải nêu rõ giới hạn và cung cấp mã nguồn, cấu hình hoặc hướng dẫn để hoàn thiện ở môi trường phù hợp.
+
+Không tự ý bỏ qua các yêu cầu.
+
+Không tự tuyên bố ứng dụng đã hoàn hảo hoặc sẵn sàng phát hành nếu chưa kiểm thử.
+
+**MỤC TIÊU: XÂY DỰNG AN TÂM THÀNH MỘT ỨNG DỤNG THIỀN ĐỊNH, CHÁNH NIỆM VÀ PHẬT PHÁP CÓ TRẢI NGHIỆM CAO CẤP, KHÁC BIỆT, HOẠT ĐỘNG THỰC TẾ VÀ CÓ KHẢ NĂNG PHÁT TRIỂN THƯƠNG MẠI LÂU DÀI.**
